@@ -1,1 +1,5 @@
+# General Jekyll Config
+url: "https://ottondrumm.github.io/"
+
+# Build settings
 theme: jekyll-theme-midnight
