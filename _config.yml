@@ -3,6 +3,8 @@
 title: Blue Sun Stories
 description: Raccolta di racconti, storie ed esperienze sotto un il Sole Blu
 show_downloads: false
+github:
+  is_project_page: false
 
 # Build settings
 theme: jekyll-theme-midnight
