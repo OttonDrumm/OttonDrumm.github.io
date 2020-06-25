@@ -22,6 +22,12 @@ tw-include[type="startup"] {
 tw-include[type="header"] > tw-hook > tw-link {
 	font-size: small;
 	color: gray;
+}
+
+body, tw-story
+{
+  font-family: monospace;
+  font-size: 16px;
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Introduzione" tags="" position="900,58" size="100,100">Il tuo corpo intorpidito inizia a risvegliarsi.
 La testa rimbomba come se volesse scoppiare.
 I tuoi sensi si attivano pian piano.
@@ -34,7 +40,7 @@ I tuoi sensi si attivano pian piano.
 (set: $water to false)
 (set: $water_array to (a: false,false,false))
 (set: $denial to 0)
-</tw-passagedata><tw-passagedata pid="4" name="Sono solo?" tags="" position="537,390" size="100,100">- &quot;Sono solo?&quot;
+(set: $hope to 0)</tw-passagedata><tw-passagedata pid="4" name="Sono solo?" tags="" position="537,390" size="100,100">- &quot;Sono solo?&quot;
 No.
 {
 (if: $person is &quot;brother&quot;)[Tuo fratello]
@@ -56,7 +62,6 @@ Il tuo corpo è strano, ti senti pesante ma non vedi sangue intorno a te.
 [[Posso muovere le gambe?]]
 [[Posso muovere le braccia?]]
 [[Come sento la testa?]]
-
 (if: all of $self_array is true) [
 {
 (if: $self is not &quot;risalita&quot;) [
@@ -177,12 +182,14 @@ In compenso non senti alcun dolore, forse il sistema nervoso è collassato.
 
 [[Continuo la diagnosi-&gt;Sono ferito?]]
 
-(set: 3rd of $self_array to true)</tw-passagedata><tw-passagedata pid="19" name="Si può ancora salvare" tags="" position="398,852" size="100,100">- &quot;Si può ancora salvare&quot;
+(set: 3rd of $self_array to true)</tw-passagedata><tw-passagedata pid="19" name="Si può ancora salvare" tags="" position="474.6666666666667,902" size="100,100">- &quot;Si può ancora salvare&quot;
 Possibile, ma ha bisogno di cure immediate.
 
 Come se non bastasse si sta avvicinando pericolosamente alla superficie.
 
-[[Capisco-&gt;Che sta facendo?]] </tw-passagedata><tw-passagedata pid="20" name="Sto andando in ipotermia" tags="" position="898,970.3333333333334" size="100,100">Chiaramente il tuo corpo ha qualcosa che non va.
+[[Capisco-&gt;Che sta facendo?]] 
+
+(set: $hope to 1)</tw-passagedata><tw-passagedata pid="20" name="Sto andando in ipotermia" tags="" position="898,970.3333333333334" size="100,100">Chiaramente il tuo corpo ha qualcosa che non va.
 Probabilmente sei sott&#39;acqua da chissà quanto tempo.
 
 Certo è strano andare in ipotermia visto il calore delle acque ma sicuramente c&#39;è una motivazione logica a tutto questo.
@@ -198,7 +205,7 @@ Salire ulteriormente in questo momento non farebbe altro che peggiorare la cosa,
 
 Devi stare qui e riposare, non puoi fare altro.
 
-[[Non può essere-&gt;Denial risalita]]
+[[N̸o̸n̶ ̵p̵u̸ò̶ ̵e̸s̵s̶e̵r̶e̴-&gt;Denial risalita]]
 [[Dev&#39;essere così-&gt;Inizio]]
 (set: $self to &quot;risalita&quot;)</tw-passagedata><tw-passagedata pid="22" name="Sono le mie gambe?" tags="" position="765,707" size="100,100">- &quot;Sono le mie gambe?&quot;
 Sembra di si.
@@ -287,11 +294,12 @@ Inizi a muovere le braccia. L&#39;acqua scivola tra le tue dita.
 Ti muovi.
 
 {
-(if: $denial is 0) [(set: $msg to &quot;Posso Farcela&quot;)]
-(if: $denial is 1) [(set: $msg to &quot;P̶o̶s̶s̷o̶ ̷F̴a̶r̸c̷e̶l̷a̷&quot;)]
-(if: $denial is 2) [(set: $msg to &quot;P̶̫̉ǫ̶̃s̶̲͝š̶̯o̴͉͂ ̶͍̊F̵̰̿ả̶̟ŗ̵̈́ć̸̣e̸͔͋ĺ̴͕a̴̰͝&quot;)]
-(if: $denial is &gt;= 3) [(set: $msg to &quot;N̴͓̄̚o̶̩͓͆n̸͇̽ ̴͙͎̇̄p̵̱͑o̸̩̹̽s̴̮̲̏ṡ̵̡͂ͅȏ̷̺̘ ̷͕̈F̴̲̦̈́å̸̰r̴̪̈́c̵̺̜̽͠e̷̠̚̕l̶̨̛̏ã̷͓&quot;)]
-(if: $denial is &lt; 3) [
+(set: $s to $denial - $hope)
+(if: $s is &lt;= 0) [(set: $msg to &quot;Posso Farcela&quot;)]
+(if: $s is 1) [(set: $msg to &quot;P̶o̶s̶s̷o̶ ̷F̴a̶r̸c̷e̶l̷a̷&quot;)]
+(if: $s is 2) [(set: $msg to &quot;P̶̫̉ǫ̶̃s̶̲͝š̶̯o̴͉͂ ̶͍̊F̵̰̿ả̶̟ŗ̵̈́ć̸̣e̸͔͋ĺ̴͕a̴̰͝&quot;)]
+(if: $s is &gt;= 3) [(set: $msg to &quot;N̴͓̄̚o̶̩͓͆n̸͇̽ ̴͙͎̇̄p̵̱͑o̸̩̹̽s̴̮̲̏ṡ̵̡͂ͅȏ̷̺̘ ̷͕̈F̴̲̦̈́å̸̰r̴̪̈́c̵̺̜̽͠e̷̠̚̕l̶̨̛̏ã̷͓&quot;)]
+(if: $s is &lt; 3) [
 [[$msg-&gt;Posso farcela]]
 ] (else:) [
 $msg
@@ -304,11 +312,11 @@ Ti avvicini.
 La superficie non è lontana, il calore inizia a investire il tuo corpo.
 
 {
-(if: $denial is 0) [(set: $msg to &quot;Devo raggiungerlo&quot;)]
-(if: $denial is 1) [(set: $msg to &quot;D̶e̸v̸o̷ ̴r̸a̶g̴g̷i̶u̷n̸g̶e̴r̷l̶o̴&quot;)]
-(if: $denial is 2) [(set: $msg to &quot;Ȩ̸̀͠ ̸̛͇t̵͇̚r̶̪̄ŏ̶̟p̸̂͜p̸͎̋o̶̹͒ ̴̳̈́l̶̨̆o̵̲̊n̵̥̎t̴͓̀ȃ̸̧ń̴̰o̶͇͝&quot;)]
-(if: $denial is &gt;= 3) [(set: $msg to &quot;È̷̯̐ ̵͈̲͗̊t̶̼͒̆ŗ̸̠̀ö̸̬̒p̷̱̭͐̈́p̵͉̉̃o̸͇͋ ̷̺͍̿l̷̞̆͌o̴̜̿̈́n̵͙̺͝t̵̜̼̆à̷̺͙͗ǹ̶͕͕̀ö̵̭́̈́͜&quot;)]
-(if: $denial is &lt; 2) [
+(if: $s is &lt;= 0) [(set: $msg to &quot;Devo raggiungerlo&quot;)]
+(if: $s is 1) [(set: $msg to &quot;D̶e̸v̸o̷ ̴r̸a̶g̴g̷i̶u̷n̸g̶e̴r̷l̶o̴&quot;)]
+(if: $s is 2) [(set: $msg to &quot;Ȩ̸̀͠ ̸̛͇t̵͇̚r̶̪̄ŏ̶̟p̸̂͜p̸͎̋o̶̹͒ ̴̳̈́l̶̨̆o̵̲̊n̵̥̎t̴͓̀ȃ̸̧ń̴̰o̶͇͝&quot;)]
+(if: $s is &gt;= 3) [(set: $msg to &quot;È̷̯̐ ̵͈̲͗̊t̶̼͒̆ŗ̸̠̀ö̸̬̒p̷̱̭͐̈́p̵͉̉̃o̸͇͋ ̷̺͍̿l̷̞̆͌o̴̜̿̈́n̵͙̺͝t̵̜̼̆à̷̺͙͗ǹ̶͕͕̀ö̵̭́̈́͜&quot;)]
+(if: $s is &lt; 2) [
 [[$msg-&gt;Devo raggiungerlo]]
 ] (else:) [
 $msg
@@ -327,10 +335,10 @@ La risalita è stata troppo rapida.
 }
 
 {
-(if: $denial is 0) [(set: $msg to &quot;Non è possibile tutto ciò&quot;)]
-(if: $denial is 1) [(set: $msg to &quot;N̵o̵n̴ ̶è̵ ̴p̷o̶s̵s̴i̴b̷i̸l̸e̸ ̴t̵u̶t̴t̸o̶ ̴c̶i̶ò̶&quot;)]
-(if: $denial is 2) [(set: $msg to &quot;Ǹ̴͓o̸̭͝n̶̛̜ ̵̣̈è̵̥̔ ̶̖̚p̷̼̍ő̵͈s̵͈̏s̷̺͌ȋ̵̯b̷͈̈́i̴̲̎l̶̡̋e̶͖͗ ̶̹̊ṱ̴͌ù̴̲ț̶̌t̷̞̄o̵͎̎ ̵̲͛c̵͎͌i̷͎̔ò̴̢͝&quot;)]
-(if: $denial is &gt;= 3) [(set: $msg to &quot;N̷͇͆ơ̸̲̽ń̵̰͙ ̷̠̂̿è̵̛̻̇ ̴̦̠̅͊p̸̠̩̔͘o̸̖͝s̸͉̒͗ș̴̻͌̄i̸̘͠b̶̰̱̌̏ì̶̗l̵͎̙̕e̷̫̽ ̷̖̒t̷̹̠͊u̴̳̾ṱ̸͎̊́t̶̢̏͜ö̴͙̪́̈ ̴̥̤̂c̶͓̊i̶̹̪̍ò̸̢̄̄&quot;)]
+(if: $s is &lt;= 0) [(set: $msg to &quot;Non è possibile tutto ciò&quot;)]
+(if: $s is 1) [(set: $msg to &quot;N̵o̵n̴ ̶è̵ ̴p̷o̶s̵s̴i̴b̷i̸l̸e̸ ̴t̵u̶t̴t̸o̶ ̴c̶i̶ò̶&quot;)]
+(if: $s is 2) [(set: $msg to &quot;Ǹ̴͓o̸̭͝n̶̛̜ ̵̣̈è̵̥̔ ̶̖̚p̷̼̍ő̵͈s̵͈̏s̷̺͌ȋ̵̯b̷͈̈́i̴̲̎l̶̡̋e̶͖͗ ̶̹̊ṱ̴͌ù̴̲ț̶̌t̷̞̄o̵͎̎ ̵̲͛c̵͎͌i̷͎̔ò̴̢͝&quot;)]
+(if: $s is &gt;= 3) [(set: $msg to &quot;N̷͇͆ơ̸̲̽ń̵̰͙ ̷̠̂̿è̵̛̻̇ ̴̦̠̅͊p̸̠̩̔͘o̸̖͝s̸͉̒͗ș̴̻͌̄i̸̘͠b̶̰̱̌̏ì̶̗l̵͎̙̕e̷̫̽ ̷̖̒t̷̹̠͊u̴̳̾ṱ̸͎̊́t̶̢̏͜ö̴͙̪́̈ ̴̥̤̂c̶͓̊i̶̹̪̍ò̸̢̄̄&quot;)]
 [[$msg-&gt;Non è possibile tutto ciò]]
 }
 [[Chiudo gli occhi]]</tw-passagedata><tw-passagedata pid="38" name="Non è possibile tutto ciò" tags="" position="2107,795" size="100,100">Perdi velocemente i sensi.
@@ -349,68 +357,66 @@ Il freddo si allontana, lasciando posto ad un dolce tepore.
 L&#39;oscurità avvolgente ti intriga, ti chiama.
 Lo senti quasi cantare il tuo nome.
 
-[[Basta così-&gt;Perché sono qui?]] </tw-passagedata><tw-passagedata pid="41" name="Denaial Ipotermia" tags="" position="898,1125.3333333333335" size="100,100">L̴&#39;̷a̶c̴q̶u̴a̸ ̴è̴ ̸c̵a̴l̷d̶a̶,̴ ̴c̴e̷r̶t̶o̶,̵ ̸m̵a̶ ̵c̸h̵i̶s̶s̶à̸ ̷d̵a̶ ̵q̶u̵a̷n̵t̸o̵ ̵t̷e̴m̸p̴o̶ ̴s̴e̸i̸ ̵i̴m̵m̵e̷r̴s̶o̸ ̸i̷n̷ ̵a̵c̶q̴u̵a̷.̷
-̴
-̸M̴a̸g̷a̸r̶i̵ ̴s̷e̴i̸ ̸r̶i̴s̵a̶l̶i̸t̸o̵ ̸d̶a̷l̷l̸e̶ ̶f̴r̴e̷d̵d̴e̸ ̶p̴r̵o̴f̸o̵n̸d̸i̷t̷à̸ ̵m̵e̴n̴t̶r̷e̷ ̷e̶r̵i̵ ̷i̷n̵c̶o̶s̸c̴i̵e̸n̴t̵e̷.̷
-̸L̷a̶ ̴t̵u̷a̸ ̷b̶o̵l̶l̴a̴ ̴d̷e̶v̷e̵ ̸e̸s̸s̵e̸r̵e̸ ̷r̵i̶m̷a̶s̵t̵a̴ ̴s̸t̵a̶b̷i̶l̵e̴ ̶p̶e̴r̸ ̸d̵i̵v̸e̸r̶s̷e̴ ̷o̵r̸e̸,̸ ̶p̸r̵o̵t̷e̴g̸g̴e̵n̶d̶o̶t̷i̶ ̴s̴i̵a̸ ̵d̵a̵l̴l̵&#39;̷a̶n̵n̷e̷g̵a̶m̸e̶n̷t̷o̷ ̵c̴h̶e̴ ̶d̵a̷l̷l̴&#39;̸i̶p̷o̴t̶e̸r̶m̴i̸a̸,̷ ̶p̴o̴s̷s̵i̶b̸i̶l̵e̴?̷
-̴
-̷L̵a̸ ̶c̶h̵i̴a̶z̷z̶e̴ ̸b̷i̷a̷n̴c̴h̸e̸ ̵s̴u̴l̸l̸a̴ ̶t̵u̸a̸ ̴c̵u̸t̷e̴ ̸s̶i̶ ̴f̴a̴n̶n̴o̵ ̵p̸i̸ù̶ ̷n̶i̶t̵i̸d̴e̶.̷
-̷L̵a̶ ̵p̴e̷l̷l̸e̵ ̵s̵i̵ ̸i̶r̴r̸i̶g̸i̸d̷i̷s̶c̴e̴.̴
-̶S̴e̶n̸t̵i̶ ̶i̸l̸ ̵c̵u̴o̴r̸e̵ ̷r̵a̶l̴l̸e̴n̴t̷a̸r̸e̴.̴
-̵
-̴È̶ ̴i̸p̷o̸t̷e̷r̶m̶i̷a̸.̴
+[[Basta così-&gt;Perché sono qui?]] </tw-passagedata><tw-passagedata pid="41" name="Denaial Ipotermia" tags="" position="898,1125.3333333333335" size="100,100">L̴&#39;̷a̶c̴q̶u̴a̸ ̴è calda, c̴e̷r̶t̶o̶,̵ ̸m̵a̶ ̵c̸hissà da̶ ̵q̶u̵a̷n̵to tempo sei imme̷r̴s̶o̸.̷
+
+Magari s̷e̴i̸ ̸r̶i̴s̵a̶lito dalle ̶f̴r̴e̷d̵d̴e̸ ̶p̴r̵o̴f̸ondità mentre e̶r̵i̵ ̷i̷n̵c̶o̶s̸c̴i̵e̸nte.
+L̷a̶ ̴t̵u̷a̸ ̷bolla dev̷e̵ ̸e̸s̸s̵e̸r̵e̸ ̷r̵i̶masta stabile per d̵i̵v̸e̸r̶s̷e̴ ̷o̵r̸e̸, proteggendoti sia dall&#39;a̶n̵n̷e̷g̵a̶m̸e̶n̷t̷o̷ che dall&#39;i̶p̷o̴t̶e̸r̶m̴i̸a̸, possibile?
+
+La c̶h̵i̴a̶z̷z̶e̴ ̸b̷i̷a̷n̴c̴h̸e̸ sulla t̵u̸a̸ ̴c̵u̸t̷e̴ ̸s̶i̶ ̴f̴a̴n̶n̴o̵ ̵più nitide.
+La pelle s̵i̵ ̸i̶r̴r̸i̶g̸idisce.
+S̴e̶n̸t̵i̶ ̶il cuore̵ ̷r̵a̶l̴l̸e̴n̴t̷a̸r̸e̴.̴
+
+È̶ ̴i̸p̷o̸t̷e̷r̶m̶i̷a̸.̴
 
 [[N̶̻̋ō̴̤n̵̜͆ ̶̨͐h̵̩͛à̸̱ ̴̤̂ṡ̷ͅe̸̪̿n̴̢͘ś̵͕ỏ̵̻-&gt;Denaial Ipotermia 2]]
 [[Dev&#39;essere così-&gt;Inizio]]
 
-(if: $denial is &lt; 1) [(set: $denial to 1)]</tw-passagedata><tw-passagedata pid="42" name="Denaial Ipotermia 2" tags="" position="897.9999999999999,1278.6666666666667" size="100,100">I̸̗̚ ̸̯̏t̴͓̃u̶̟̚o̶̱͆i̵̜͌ ̵̹̽m̴̧̀ũ̷̜s̸̭̆c̴̫̊o̶̟͒l̷͇̒i̵͕͆,̶̺̐ ̶͔͊ṟ̵̉į̶̈́g̸̼̃i̸̮͠d̵͔͒í̵̖ ̷̗̀e̶͉͠ ̵͔́f̵̤͒e̵̞̔r̸̝̔m̶̲̈́i̴͓̍,̸̭́ ̷͖̕n̸̢͑ó̴̗n̵̨͆ ̸̦͛a̷̹͋c̵̲͊c̷̤̀e̸̠͌t̵̡̅t̴̞̾ä̴̘́n̷̥̽õ̷͈ ̷͚̑a̵̘͒l̶͉̓ç̵̾ụ̵̈́n̷̼͝ ̶͈̀c̶̢͠ô̴̲m̶͖̀a̵̬̚n̸̖̓d̶̝͋ő̸̘.̵̘̎
-̵͍̅
-̷̺̀S̶̜͂e̴̮͂n̷̬̑t̷̅͜ì̴͇ ̵̼͂f̸̫͠r̴͓͗e̵̱̓d̶̳̏d̴̥̃o̷͆͜.̴̫̑
-̴̛̝
-̵̩̈́H̴̜͝å̴͙i̸̫͌ ̷̈́ͅs̴͚͋o̵̝̽ń̷̤ṋ̴͛ợ̶.̷̺̐
+(if: $denial is &lt; 1) [(set: $denial to 1)]</tw-passagedata><tw-passagedata pid="42" name="Denaial Ipotermia 2" tags="" position="897.9999999999999,1278.6666666666667" size="100,100">I̸̗̚ ̸̯̏t̴͓̃u̶̟̚o̶̱͆i̵̜͌ ̵̹̽m̴̧̀ũ̷̜s̸̭̆coli,̶̺̐ ̶͔͊ṟ̵̉igidi ̷̗̀e̶͉͠ ̵͔́f̵̤͒e̵̞̔r̸̝̔m̶̲̈́i̴͓̍, non ac̵̲͊c̷̤̀että̴̘́n̷̥̽õ̷͈ alç̵̾ụ̵̈́n̷̼͝ ̶͈̀comando.
+
+Senti f̸̫͠r̴͓͗e̵̱̓d̶̳̏d̴̥̃o̷͆͜.̴̫̑
+
+H̴̜͝å̴͙i̸̫͌ ̷̈́ͅs̴͚͋onno.̷̺̐
 ̷̠̓
-̸̣͒S̴̟̀ȩ̷͒n̷͈̈t̴͕͝i̷̻̿ ̸̝̄ĺ̷̡a̵̟̕ ̴͙̌t̵͜͝u̸͗ͅa̸̞͂ ̴̻͗b̸̏͜o̵̟͛l̶̝̎l̶̲̈́a̸̰͂ ̵̗̿r̸̫͑i̴̳͠m̸̱͗p̶̺̊í̸̜c̵̦͛c̵̟͐ī̶̳ǒ̷̼l̴͍̇i̵̦͒r̵̞̃è̸̱,̶̘̒ ̶̛͖q̸̙̏u̴̟̿ā̴͈s̸͈̏i̷͇̐ ̴̫͘ș̸͝v̷̫͌a̶̹͛n̶̪̉i̶͈͊r̸̭͘e̵̖͐.̵̥̇
-̷̯͌
-̸̟̚T̸̨͋i̶̼͠ ̷̢́r̷̨͛ȋ̷͍m̵̠̈́a̸̱̚ñ̵͕e̴̛͕ ̸̨̛s̴̗̆o̷̭̐l̷͖̈o̶̎ͅ ̸̫̂ů̸͖n̵̖̽ ̷̘̋s̷̜̉o̶̹͂f̸͎̋f̶͚̚ì̷͚o̷̕͜ ̶̭͐d̴̹̕í̷̠ ̷͚͊é̶͉n̸̬̕ȩ̷͑r̴͇̚g̷͓̅i̷͚̓a̷͉̎,̵̢͌ ̶̨͘n̴̥͌ī̸̼ȅ̴̻n̶͓̕t̷͓̒e̴̻̐ ̶̧̔d̵͔̒ì̸͙ ̷̭͊p̶͙̋i̸̥̕ù̶̖̄.̵̤̍
-̶̍͜
-̸͍̍È̴̫͝ ̵͓͆i̴̙̿ṕ̷̨ơ̶̯ṭ̷͝ẽ̸̮r̵͕̃m̵̰͝i̴̘͋a̸̜̒.̸̡͂
+S̴̟̀ȩ̷͒n̷͈̈t̴͕͝i̷̻̿ ̸̝̄ĺ̷̡a̵̟̕ tua bolla rim̸̱͗p̶̺̊í̸̜cciolire, q̸̙̏u̴̟̿ā̴͈s̸͈̏i̷͇̐ ̴̫͘svanire.
+
+Ti rim̵̠̈́a̸̱̚ñ̵͕e̴̛͕ ̸̨̛s̴̗̆o̷̭̐l̷͖̈o̶̎ͅ ̸̫̂ů̸͖n soffio d̴̹̕í̷̠ ̷͚͊é̶͉n̸̬̕ȩ̷͑r̴͇̚g̷͓̅i̷͚̓a̷͉̎,̵̢͌ ̶̨͘n̴̥͌ī̸̼ȅ̴̻n̶͓̕te̴̻̐ di p̶͙̋i̸̥̕ù̶̖̄.
+
+È i̴̙̿ṕ̷̨ơ̶̯ṭ̷͝ẽ̸̮r̵͕̃m̵̰͝i̴̘͋a̸̜̒.
 
 {
 (link: &quot;N̵͖̓ͅo̸̢̻͘n̶̨̟̂ ̶̜̝͗̐p̵̤͑ͅo̸̤͊́s̸̜̣̏s̷̥̃o̴̳̥̎ ̷̖͆̽a̶̯̬̽c̸̖̞̋͝c̴̳̗̎͝e̶̩͘t̵̟́̏t̸̳͛̌͜a̶̫̾̏ŕ̷̠̳͘l̵̮̋o̷̭͋͝&quot;)[
-(set: $self to true)
 (goto: &quot;Inizio&quot;)
 (set: $denial to 3)]
 }
 [[Dev&#39;essere così-&gt;Inizio]]
 
-(if: $denial is &lt; 2) [(set: $denial to 2)]</tw-passagedata><tw-passagedata pid="43" name="Denial risalita" tags="" position="1029.6666666666667,1125.3333333333335" size="100,100">I̵l̸ ̶t̷u̴o̴ ̵c̶o̷r̴p̵o̸ ̴p̶r̵u̷d̵e̷,̸ ̵i̷l̷ ̷p̴r̸u̴r̸i̵t̵o̵ ̷r̵i̸m̸b̴a̶l̸z̸a̷ ̶d̸i̸ ̷p̵u̷n̷t̸o̸ ̴i̴n̶ ̶p̷u̷n̷t̵o̸ ̷s̴e̸n̵z̵a̷ ̴m̶a̸i̶ ̵a̵f̵f̵i̵e̵v̷o̴l̷i̸r̵s̸i̶.̷
-̸
-̷U̷n̶ ̵d̴o̷l̴o̵r̷e̵ ̶a̶l̵l̷e̸ ̵a̴r̶t̴i̸c̵o̸l̶a̷z̶i̷o̷n̴i̴,̵ ̸s̸o̶r̴d̶o̸ ̵e̸ ̵p̶e̷r̷s̴i̴s̶t̶e̴n̵t̵e̵,̶ ̵p̴e̸r̸v̸a̸d̴e̵ ̷i̴l̵ ̷t̵u̶o̵ ̷c̴o̸r̶p̵o̸.̴
-̶
-̵T̸i̴ ̸g̴r̵a̴t̶t̷i̶.̷
-̵
-̷A̴l̶ ̴t̴a̸t̸t̸o̸ ̴s̶e̵n̶t̸i̵ ̶g̶o̴n̶f̷i̵o̶r̷e̶ ̴s̴o̴t̷t̷o̶c̸u̷t̴a̸n̸e̷o̶.̴
-̸
-̷È̶ ̷m̷a̴l̸a̵t̷t̵i̴a̸ ̸d̷a̷ ̵d̷e̵c̶o̶m̷p̵r̵e̷s̷s̵i̵o̵n̶e̷.̵
+(if: $denial is &lt; 2) [(set: $denial to 2)]</tw-passagedata><tw-passagedata pid="43" name="Denial risalita" tags="" position="1029.6666666666667,1125.3333333333335" size="100,100">Il tuo corpo p̶r̵u̷d̵e̷, il prurito rimbalza d̸i̸ ̷p̵u̷n̷t̸o̸ in punto s̴e̸n̵z̵a̷ ̴m̶a̸i̶ ̵affievolirsi.
+
+Un d̴o̷l̴o̵r̷e̵ ̶a̶l̵l̷e̸ articolazio̷n̴i̴, s̸o̶r̴d̶o̸ e persistente, pervade il tuo c̴o̸r̶p̵o̸.
+
+T̸i̴ ̸g̴r̵atti.
+
+Al tatto senti u̸n̴ ̴g̶o̴n̶f̷i̵o̶r̷e̶ sottocutaneo.
+
+È̶ ̷m̷a̴l̸a̵t̷t̵i̴a̸ da d̷e̵c̶o̶m̷p̵r̵e̷s̷s̵i̵o̵n̶e̷.
 
 [[N̶̻̋ō̴̤n̵̜͆ ̶̨͐h̵̩͛à̸̱ ̴̤̂ṡ̷ͅe̸̪̿n̴̢͘ś̵͕ỏ̵̻-&gt;Denaial Risalita 2]]
 [[Dev&#39;essere così-&gt;Inizio]]
 
-(if: $denial is &lt; 1) [(set: $denial to 1)]</tw-passagedata><tw-passagedata pid="44" name="Denaial Risalita 2" tags="" position="1029.6666666666667,1275.3333333333335" size="100,100">L̷̮̍ȁ̴̞ ̷̭̌v̷̬͒ĭ̴͔s̸̗̈́t̵͈͗a̸̡͝ ̶̱͝o̶̺͝f̴̡͆f̷͓̉u̷͚̎s̶̹͘c̶͙̐a̴͍̍t̵̺̕ä̵̺́ ̷̗͒n̸̲̿ô̶̘n̵̺̋ ̶̬͛t̴͖̃i̴̱̾ ̴͚̿p̸̘̀e̵̙͝r̶͚̀m̸͙̽ȅ̵̜t̵̮̐t̸̟͒ȩ̵͌ ̵̫̑d̶̺́i̸͖̓ ̶̳͐o̴̜͊s̵̭̈́ṡ̵̩e̴̩͂r̴̖͂v̵̨̑a̶̮͌r̷̯̂e̵̤͌ ̶͈̕b̴͕̓e̶̢̚n̴͇͌e̶̬̚ ̵̟̌c̴̞̓o̸̙͘s̶̯̍å̵̜ ̵̙͌s̸̳͊t̵͇̒a̵̼͋ ̵̟̽s̷̙̔ū̸̹ċ̵͙c̴͕͛ē̷̱d̵̫̅e̵̩͌n̷̰̂d̷̲̀o̷̻̍.̴̗̾
-̵̩̆
-̴̠̃Ĺ̴̖ḝ̵ ̸̣̚ḍ̷͐i̸̗̎f̵̤̈́f̴̻̊i̷̭͆c̶͚͑o̷͕͐l̷̰̈́t̷̺͆à̷̪̓ ̵̙͑ḿ̷̢ǒ̷͇t̴̩̓ô̶̖r̵̪͛i̴͙͂ẹ̸̿ ̸̡͛s̸̨̋o̷̫͐n̶̲̋o̵͓͋ ̵̝̆f̸͕̀i̴̢͋n̵̢̒ ̵̛̭t̷̮̑r̷̜̓ȯ̵͎p̶͙̍p̴̺̄ö̶̧́ ̸͇́g̸̞͌r̵̺̀â̵̖ń̸͚d̷̟̈i̸͚͝.̷͖̎
-̶̺̋
-̶̖̄P̴̀͜ă̷̧ŗ̸̾t̴̨̒ḙ̷̈́ ̵̟́ḏ̶̃e̷̻̓ļ̴̒ ̴̟̉t̵͕͊ǘ̷̱ô̷̞ ̶͕͂c̵̛̭ô̴͖r̷̻͒p̶͇̐o̴̱̓ ̸̣͂s̵͕̀e̵͉͝m̴̪̌ḃ̵̼r̴͎̍a̸͉̾ ̷͔͒ă̸̩n̸͍̅c̷̝̽h̸̨͆e̷̦̓ ̴̙̚e̵͓̓s̶̘͒s̴͉̋ę̵̎r̸͠ͅs̷͕̾ḯ̷͍ ̴̟̄p̵̼̉a̴̘͒r̵̂ͅä̵̠́l̸̢͗i̷̢̽z̸͚͝z̵̎ͅa̶̖̐t̶̩͆õ̴̧.̵̨̈́
-̵̨͆
-̷̟̆I̵̪͂l̵̺̂ ̵̞̓d̷̙̏ó̶̜l̷͎̏ô̵̭r̶̢̾e̷̱͠ ̶̧̈́a̷̻̕ḻ̵̑ ̶̱̀ṯ̵̾ő̴̗r̶̥͒â̷̖c̷̙͌e̵̟̊ ̶͎͛n̴̾ͅo̶̟̎ṅ̵̨ ̴̺͝f̵͚͛ǎ̷̳ ̷̟̄a̸̗̽l̸̝̉t̸͕̋r̷͎̋o̶̦͝ ̷͓̿c̵̺̍ḧ̶̯e̴̥̓ ̵̘͠p̸̜͛e̸͕̊g̸̺̔g̴̝̈́i̷͇͑o̵̯̿r̶̥̀ȧ̵͙r̷̞̓ẻ̴̹.̷̞͠
-̷͕̂
-̵̬̓L̷͈̓ȩ̴͌ ̴͖̏v̸̝̉ĕ̷̡r̵̫̓t̴̪̃i̴̠̍g̸͓̀ḯ̴͎n̶̝̐i̸͍̾ ̷̧͛e̸̖͝ ̵̗̒i̵͖̎l̴̖̇ ̴̱̈́s̶̠̚ẽ̸͓n̶͓̑s̶̼̑o̷̝̎ ̶̨̃d̸͍͑í̷̘ ̴̢͑n̶͖̓ǎ̴͚u̴̯̅s̶̋ͅė̴̪a̴͙͊ ̸͔͑s̶̯͘t̶̻̒ó̴̲r̷͉̿p̴̪̊ĩ̸̞ą̵͒n̸͍̔ö̶̗ ̷͇̚i̶͓͆l̴̥̆ ̴͙̃m̶͇̆o̶̳͋n̵̮̂d̵̬͑ŏ̴̹ ̶̡̈ǐ̸͜n̷̗͝t̶͇̿o̸̟͛r̴͔̅ń̷͉o̸͚͘ ̶̻̎â̶͇ ̵̥̓ț̵̕è̴ͅ.̸̝̐
-̶̝͊
-̵̙̐Ḛ̷̀͊ ̸͖̏m̶͇̒ả̸̼l̷̘̆a̶͙͑t̷̄͜ṱ̶́i̴̻͘a̸̧͆ ̸͇͠d̸̞̎a̴̹̕ ̵̢̛d̵͙̈́e̶̛̦c̵͕̒ȏ̴̮m̶͉͑p̶͎̀r̵̟̾e̵̞͑s̶̜̆s̷̠̈́i̴̳̅ō̶̻n̸̪̿ẹ̸̋.̷̲͝
+(if: $denial is &lt; 1) [(set: $denial to 1)]</tw-passagedata><tw-passagedata pid="44" name="Denaial Risalita 2" tags="" position="1029.6666666666667,1275.3333333333335" size="100,100">La vista o̶̺͝f̴̡͆f̷͓̉u̷͚̎s̶̹͘c̶͙̐a̴͍̍t̵̺̕ä̵̺́ non ti permette di osservare bene c̴̞̓o̸̙͘s̶̯̍å̵̜ ̵̙͌s̸̳͊t̵͇̒a̵̼͋ ̵̟̽s̷̙̔ū̸̹ċ̵͙c̴͕͛ē̷̱d̵̫̅e̵̩͌n̷̰̂d̷̲̀o̷̻̍.
+
+Ĺ̴̖ḝ̵ ̸̣̚difficoltà motorie s̸̨̋o̷̫͐n̶̲̋o̵͓͋ fin ̵̛̭t̷̮̑r̷̜̓ȯ̵͎p̶͙̍p̴̺̄ö̶̧́ ̸͇́grandi.
+
+Parte ḏ̶̃e̷̻̓ļ̴̒ ̴̟̉t̵͕͊ǘ̷̱ô̷̞ ̶͕͂c̵̛̭ô̴͖r̷̻͒p̶͇̐o̴̱̓ sembra essersi p̵̼̉a̴̘͒r̵̂ͅä̵̠́l̸̢͗i̷̢̽z̸͚͝z̵̎ͅa̶̖̐t̶̩͆õ̴̧.
+
+I̵̪͂l̵̺̂ ̵̞̓d̷̙̏ó̶̜l̷͎̏ô̵̭r̶̢̾e̷̱͠ al torace non fa a̸̗̽l̸̝̉t̸͕̋r̷͎̋o̶̦͝ ̷͓̿c̵̺̍ḧ̶̯e̴̥̓ peggiorare.
+
+Le vertigini e il s̶̠̚ẽ̸͓n̶͓̑s̶̼̑o̷̝̎ ̶̨̃d̸͍͑í̷̘ ̴̢͑n̶͖̓ǎ̴͚u̴̯̅s̶̋ͅė̴̪a̴͙͊ storpiano i̶͓͆l̴̥̆ ̴͙̃m̶͇̆o̶̳͋n̵̮̂d̵̬͑ŏ̴̹ ̶̡̈ǐ̸͜n̷̗͝torno a te.
+
+Ḛ̷̀͊ ̸͖̏m̶͇̒ả̸̼l̷̘̆a̶͙͑t̷̄͜ṱ̶́i̴̻͘a̸̧͆ ̸͇͠d̸̞̎a̴̹̕ ̵̢̛d̵͙̈́e̶̛̦c̵͕̒ȏ̴̮m̶͉͑p̶͎̀r̵̟̾e̵̞͑s̶̜̆s̷̠̈́i̴̳̅ō̶̻n̸̪̿ẹ̸̋.
 
 {
 (link: &quot;N̵͖̓ͅo̸̢̻͘n̶̨̟̂ ̶̜̝͗̐p̵̤͑ͅo̸̤͊́s̸̜̣̏s̷̥̃o̴̳̥̎ ̷̖͆̽a̶̯̬̽c̸̖̞̋͝c̴̳̗̎͝e̶̩͘t̵̟́̏t̸̳͛̌͜a̶̫̾̏ŕ̷̠̳͘l̵̮̋o̷̭͋͝&quot;)[
-(set: $self to true)
 (goto: &quot;Inizio&quot;)
 (set: $denial to 3)]
 }
