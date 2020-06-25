@@ -117,10 +117,8 @@ Galleggi sopra un abisso senza fine.
 ]
 &lt;script&gt;
   var audio= document.createElement(&#39;audio&#39;);
-  audio.setAttribute(&#39;id&#39;, &#39;bg-music&#39;);
   audio.src=&#39;../audio/underwater-breathe.mp3&#39;;
   audio.loop = false;
-  $(&quot;body&quot;).append(audio);
   audio.play();
 &lt;/script&gt;</tw-passagedata><tw-passagedata pid="10" name="Che aspetto ha?" tags="" position="185,701" size="100,100">- &quot;Che aspetto ha?&quot;
 Il suo volto ti fa pensare ad una persona con cui hai condiviso momenti importanti, nel bene e nel male.
@@ -272,7 +270,7 @@ Senti i vostri corpi deformarsi e contorcersi.
 [[Basta, fallo smettere-&gt;Finale4]]</tw-passagedata><tw-passagedata pid="31" name="Finale3" tags="" position="1923,1238" size="100,100">Il vostro volto si contorce alla luce del sole.
 Le carni si fondono.
 Le ossa si deformano fino a spezzarsi.
-La mente si spezza.
+La mente si frantuma.
 
 [[...-&gt;Finale4]]</tw-passagedata><tw-passagedata pid="32" name="Finale4" tags="" position="2089,1235" size="100,100">Riapri improvvisamente gli occhi.
 
@@ -352,7 +350,7 @@ Il freddo si allontana, lasciando posto ad un dolce tepore.
 
 [[...-&gt;Finale]]
 &lt;script&gt;
- $(&#39;#bg-music&#39;)[0].pause();
+ audio.pause();
 &lt;/script&gt;</tw-passagedata><tw-passagedata pid="40" name="Lo contemplo" tags="" position="1412,698" size="100,100">Osservi l&#39;abisso.
 L&#39;oscurità avvolgente ti intriga, ti chiama.
 Lo senti quasi cantare il tuo nome.
