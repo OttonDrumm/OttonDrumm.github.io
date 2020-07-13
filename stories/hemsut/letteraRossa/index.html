@@ -11,7 +11,7 @@
 
 <tw-story></tw-story>
 
-<tw-storydata name="Lettera rossa" startnode="20" creator="Twine" creator-version="2.3.8" ifid="AB3F2F00-D06E-4652-A200-338E0712D2F8" zoom="0.6" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-sidebar {
+<tw-storydata name="Lettera rossa" startnode="19" creator="Twine" creator-version="2.3.8" ifid="AB3F2F00-D06E-4652-A200-338E0712D2F8" zoom="0.6" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-sidebar {
     display: none;
 }
 
@@ -22,7 +22,7 @@ tw-include[type="startup"] {
 tw-include[type="header"] > tw-hook > tw-link {
 	font-size: small;
 	color: gray;
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Intro" tags="" position="342,158.5" size="100,100">Ti trovi sul ponte della nave, da sola. Jil è in sala comandi, Aedril è giù a controllare le provviste.
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Intro" tags="" position="342,158" size="100,100">Ti trovi sul ponte della nave, da sola. Jil è in sala comandi, Aedril è giù a controllare le provviste.
 Siete in attesa di Hugo, Riko e Romualdo che per qualche motivo non sono ancora arrivati.
 
 [[* Ne approfitto per meditare, è il mio modo per prepararmi-&gt;Meditazione]]
@@ -35,7 +35,7 @@ Siete in attesa di Hugo, Riko e Romualdo che per qualche motivo non sono ancora 
   audio.loop = true;
   $(&quot;body&quot;).append(audio);
   audio.play();
-&lt;/script&gt;</tw-passagedata><tw-passagedata pid="2" name="Osservata" tags="" position="342,467.5" size="100,100">Ti senti osservata da uno sguardo penetrante e familiare.
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="2" name="Osservata" tags="" position="342,467" size="100,100">Ti senti osservata da uno sguardo penetrante e familiare.
 Una figura si staglia sul molo, è tuo padre, austero come sempre.
 Ti fissa intensamente in attesa che tu lo raggiunga.
 
@@ -43,41 +43,41 @@ Ti fissa intensamente in attesa che tu lo raggiunga.
 (link: &quot;* Meglio raggiungerlo al più presto, non voglio farlo attendere&quot;)[(set: $respect to $respect+1)(goto: &quot;Raggiunto&quot;)]
 (link: &quot;* Mi devo affrettare, non è un uomo paziente&quot;)[(set: $abusive to $abusive+1)(goto: &quot;Raggiunto&quot;)]
 (link: &quot;* Deve avere qualcosa di importante da dirmi, non arriverebbe fin qui solo per augurarmi buon viaggio&quot;)[(set: $respect to $respect+1)(goto: &quot;Raggiunto&quot;)]
-(hidden:)[[Raggiunto]]</tw-passagedata><tw-passagedata pid="3" name="Meditazione" tags="" position="164,320.5" size="100,100">Svuoti la mente, ti liberi da ogni pensiero e ogni affanno.
+(hidden:)[[Raggiunto]]</tw-passagedata><tw-passagedata pid="3" name="Meditazione" tags="" position="164,320" size="100,100">Svuoti la mente, ti liberi da ogni pensiero e ogni affanno.
 Le voci dal molo si allontanano lasciando posto ad una quiete mentale.
 
-[[* ...-&gt;Osservata]]</tw-passagedata><tw-passagedata pid="4" name="Rilassata" tags="" position="342,320.5" size="100,100">Immenso e sconfinato, ti da un forte senso di libertà.
+[[* ...-&gt;Osservata]]</tw-passagedata><tw-passagedata pid="4" name="Rilassata" tags="" position="342,320" size="100,100">Immenso e sconfinato, ti da un forte senso di libertà.
 Inali con profondi respiri l’aria salina, i tuoi muscoli rilasciano ogni cenno di tensione.
 
-[[* Mi godo il momento-&gt;Osservata]]</tw-passagedata><tw-passagedata pid="5" name="Equipaggiata" tags="" position="542,313.5" size="100,100">Prendi il tuo diario dove prendi ogni sorta di appunto, cerchi una pagina libera e stili una lista.
+[[* Mi godo il momento-&gt;Osservata]]</tw-passagedata><tw-passagedata pid="5" name="Equipaggiata" tags="" position="542,313" size="100,100">Prendi il tuo diario dove prendi ogni sorta di appunto, cerchi una pagina libera e stili una lista.
 Tutto è dove dovrebbe essere, sei pronta.
 
 [[* Annoto ogni cosa-&gt;Osservata]]
-(set:$equip to true)</tw-passagedata><tw-passagedata pid="6" name="Startup" tags="startup" position="118,70.5" size="100,100">(set: $equip to false)
+(set:$equip to true)</tw-passagedata><tw-passagedata pid="6" name="Startup" tags="startup" position="118,70" size="100,100">(set: $equip to false)
 (set: $flinch to false)
 (set: $step to false)
 (set: $abusive to 0)
-(set: $respect to 0)</tw-passagedata><tw-passagedata pid="7" name="Raggiunto" tags="" position="543,460.8333333333333" size="100,100">Smetti di fare ciò che stavi facendo, ti alzi e lo raggiungi velocemente.
+(set: $respect to 0)</tw-passagedata><tw-passagedata pid="7" name="Raggiunto" tags="" position="543,460" size="100,100">Smetti di fare ciò che stavi facendo, ti alzi e lo raggiungi velocemente.
 
 [[* &quot;Padre, cosa vi porta qui?&quot;-&gt;Annullata]]
 (link: &quot;* Faccio un rispettoso segno di saluto.&quot;)[(set: $respect to $respect+1)(goto: &quot;Annullata&quot;)]
-(link: &quot;* Aspetto che parli, ha sempre lui la prima parola.&quot;)[(set: $abusive to $abusive+1)(goto: &quot;Annullata&quot;)]</tw-passagedata><tw-passagedata pid="8" name="Annullata" tags="" position="749,152.1666666666666" size="100,100">&quot;La tua missione è annullata, devi venire con me&quot;
+(link: &quot;* Aspetto che parli, ha sempre lui la prima parola.&quot;)[(set: $abusive to $abusive+1)(goto: &quot;Annullata&quot;)]</tw-passagedata><tw-passagedata pid="8" name="Annullata" tags="" position="749,152" size="100,100">&quot;La tua missione è annullata, devi venire con me&quot;
 Dice l’uomo con tono severo.
 
 [[* &quot;È una lettera rossa, non posso semplicemente andar via, che sta succedendo?&quot;-&gt;Stizzito]]
 (link: &quot;* \&quot;Certo Padre, è successo qualcosa di grave?\&quot;&quot;)[(set: $respect to $respect+1)(goto: &quot;Trapasso&quot;)]
 (link: &quot;* Aspetto che parli, ha sempre lui la prima parola.&quot;)[(set: $abusive to $abusive+1)(goto: &quot;Trapasso&quot;)]
-(hidden:)[[Trapasso]]</tw-passagedata><tw-passagedata pid="9" name="Stizzito" tags="" position="944.6666666666667,305.8333333333333" size="100,100">Infastidito dai tuoi toni risponde stizzito:
+(hidden:)[[Trapasso]]</tw-passagedata><tw-passagedata pid="9" name="Stizzito" tags="" position="944,305" size="100,100">Infastidito dai tuoi toni risponde stizzito:
 &quot;I tuoi doveri religiosi vengono prima di quelli da esploratrice.&quot;
 
 (link: &quot;* Si sta alterando, non avrei dovuto.&quot;)[(set: $abusive to $abusive+2)(goto: &quot;Trapasso&quot;)]
 (link: &quot;* Gli ho mancato di rispetto, non avrei dovuto&quot;)[(set: $respect to $respect+2)(goto: &quot;Trapasso&quot;)]
-(hidden:)[[Trapasso]]</tw-passagedata><tw-passagedata pid="10" name="Trapasso" tags="" position="751,305.83333333333326" size="100,100">&quot;Devi officiare il trapasso di&quot; - fa una breve pausa - &quot;diverse persone&quot;
+(hidden:)[[Trapasso]]</tw-passagedata><tw-passagedata pid="10" name="Trapasso" tags="" position="751,305" size="100,100">&quot;Devi officiare il trapasso di&quot; - fa una breve pausa - &quot;diverse persone&quot;
 &quot;Andiamo in fretta, ho già avvisato i tuoi superiori&quot;
 
 (link: &quot;* Mi richiama da una lettera rossa per dei semplici trapassi? Dev’esserci un motivo importante sotto, non lo farebbe altrimenti.&quot;)[(set: $respect to $respect+1)(goto: &quot;Squadrata&quot;)]
 (link: &quot;* Farò come dice, le sue parole suonano molto come ordini.&quot;)[(set: $abusive to $abusive+1)(goto: &quot;Squadrata&quot;)]
-(hidden:)[[Squadrata]]</tw-passagedata><tw-passagedata pid="11" name="Squadrata" tags="" position="758.3333333333334,465.1666666666667" size="100,100">Si prende un momento.
+(hidden:)[[Squadrata]]</tw-passagedata><tw-passagedata pid="11" name="Squadrata" tags="" position="758,465" size="100,100">Si prende un momento.
 Ti squadra.
 Osserva le tue vesti e il tuo corpo, creando un imbarazzante silenzio.
 
@@ -85,11 +85,11 @@ Osserva le tue vesti e il tuo corpo, creando un imbarazzante silenzio.
 (link: &quot;* Non ha mai accettato la mia scelta di diventare esploratrice, fa sempre così quando mi vede con questi abiti.&quot;)[(set: $respect to $respect+1)(goto: &quot;Vesti&quot;)]
 (link: &quot;* Non sopporta di vedermi con abiti del genere, mi dice sempre che non sono fatti per me.&quot;)[(set: $abusive to $abusive+1)(goto: &quot;Vesti&quot;)]
 (link: &quot;* Non ho il coraggio di parlare.&quot;)[(set: $abusive to $abusive+2)(goto: &quot;Vesti&quot;)]
-(hidden:)[[Vesti]]</tw-passagedata><tw-passagedata pid="12" name="Vesti" tags="" position="760,631.8333333333333" size="100,100">&quot;Tua madre ti aspetta con le vesti da cerimonia pronte, ho fatto preparare un trasporto che ti porterà nel luogo designato&quot;
+(hidden:)[[Vesti]]</tw-passagedata><tw-passagedata pid="12" name="Vesti" tags="" position="760,631" size="100,100">&quot;Tua madre ti aspetta con le vesti da cerimonia pronte, ho fatto preparare un trasporto che ti porterà nel luogo designato&quot;
 
 (link: &quot;* \&quot;Si Padre.\&quot;&quot;)[(set: $respect to $respect+1)(goto: &quot;Non c&#39;è altro&quot;)]
 (link: &quot;* Guardo in basso e faccio un cenno di assenso.&quot;)[(set: $abusive to $abusive+1)(goto: &quot;Non c&#39;è altro&quot;)]
-(hidden:)[[Non c&#39;è altro]]</tw-passagedata><tw-passagedata pid="13" name="Non c&#39;è altro" tags="" position="760,771.8333333333333" size="100,100">Adesso ti osserva di nuovo, immobile, in attesa che ti muova.
+(hidden:)[[Non c&#39;è altro]]</tw-passagedata><tw-passagedata pid="13" name="Non c&#39;è altro" tags="" position="760,771" size="100,100">Adesso ti osserva di nuovo, immobile, in attesa che ti muova.
 Sembra non voglia aggiungere altro.
 Rifletti un momento e ti rendi conto che lasceresti gli altri senza nemmeno un avviso.
 
@@ -97,13 +97,13 @@ Rifletti un momento e ti rendi conto che lasceresti gli altri senza nemmeno un a
 {
 (if:$respect &lt; 6 and $flinch is false) [[* Tentenno un attimo, potrebbe alterarsi se non gliela pongo nel modo corretto-&gt;Tentenna]]
 (if:$flinch is true) [[* Non ho idea di cosa dirgli, se gli chiedo del tempo mi urlerà addosso di sicuro-&gt;Finale Abusivo]]
-}</tw-passagedata><tw-passagedata pid="14" name="Finale Rispetto" tags="" position="666.6666666666666,1001.1666666666665" size="100,100">&quot;Non c’è tempo.&quot; - Risponde con tono brusco.
+}</tw-passagedata><tw-passagedata pid="14" name="Finale Rispetto" tags="" position="666,1001" size="100,100">&quot;Non c’è tempo.&quot; - Risponde con tono brusco.
 &quot;Scriverai un messaggio strada facendo, gli arriverà con un postino.&quot;
 Si volta senza attendere una tua risposta.
 
-[[* &quot;Avete ragione padre, andiamo&quot;-&gt;Un messaggio]]
-[[* Annuisco e lo seguo.-&gt;Un messaggio]]
-[[* Impiegherei così poco ad avvisarli, tutta questa fretta non è normale, lo seguo.-&gt;Un messaggio]]
+[[* &quot;Avete ragione padre, andiamo&quot;-&gt;Spalle]]
+[[* Annuisco e lo seguo.-&gt;Spalle]]
+[[* Impiegherei così poco ad avvisarli, tutta questa fretta non è normale, lo seguo.-&gt;Spalle]]
 {
 (if:$abusive &gt;= 3) [
 	(link: &quot;* Ho paura di cosa possa farmi ma devo dirglielo \&quot;Non posso farlo...\&quot;&quot;)[
@@ -113,11 +113,11 @@ Si volta senza attendere una tua risposta.
 	]
 ]
 }
-(hidden:)[[Finale Abusivo]]</tw-passagedata><tw-passagedata pid="15" name="Tentenna" tags="" position="944.6666666666666,776.1666666666666" size="100,100">Ti perfora con il suo sguardo, stai perdendo tempo ai suoi occhi.
+(hidden:)[[Finale Abusivo]]</tw-passagedata><tw-passagedata pid="15" name="Tentenna" tags="" position="944,776" size="100,100">Ti perfora con il suo sguardo, stai perdendo tempo ai suoi occhi.
 
 [[* Devo sbrigarmi-&gt;Non c&#39;è altro]]
 (set:$abusive to $abusive+1)
-(set:$flinch to true)</tw-passagedata><tw-passagedata pid="16" name="Finale Abusivo" tags="" position="941.6666666666667,1003.4999999999999" size="100,100">Fa un passo verso di te, chiudendo le distanze in un battito di ciglia.
+(set:$flinch to true)</tw-passagedata><tw-passagedata pid="16" name="Finale Abusivo" tags="" position="941,1003" size="100,100">Fa un passo verso di te, chiudendo le distanze in un battito di ciglia.
 &quot;&#39;&#39;TU&#39;&#39;&quot; - Alza la voce, con toni violenti
 &quot;Pensi che &#39;&#39;IO&#39;&#39; venga fin qui, ti sollevi dai tuoi incarichi e ti &#39;&#39;IMPONGA&#39;&#39; di seguirmi senza avere un motivo valido?&quot;
 
@@ -143,21 +143,16 @@ Si volta senza attendere una tua risposta.
   ]
 ]
 }
-(hidden:)[[Finale Rispetto]]</tw-passagedata><tw-passagedata pid="17" name="Un messaggio" tags="" position="666.6666666666666,1151.1666666666665" size="100,100">Segui tuo Padre a passo svelto, raggiungete il vostro mezzo di trasporto e vi avviate verso casa.
-{
-(if:$equip is true)[
-	[[* Prendi il tuo taccuino e inizi a scrivere la lettera.-&gt;Scrivi]]
-]
-(else:)[
-	[[* Cerchi un pezzo di carta dove scrivere la lettera.-&gt;Cerca]]
-]
-}
-</tw-passagedata><tw-passagedata pid="18" name="Scrivi" tags="" position="591.6666666666666,1301.1666666666665" size="100,100">//La storia di Hemsut per adesso finisce qui.
+(hidden:)[[Finale Rispetto]]</tw-passagedata><tw-passagedata pid="17" name="Scrivi" tags="" position="384,1754" size="100,100">//La storia di Hemsut per adesso finisce qui.
 Prendi carta e penna.
 Imposta un timer di 10 minuti e fallo partire appena finisci di leggere queste righe.
-Usa questo tempo per scrivere un messaggio in ruolo agli altri.//</tw-passagedata><tw-passagedata pid="19" name="Cerca" tags="" position="741.6666666666666,1301.1666666666665" size="100,100">//La storia di Hemsut per adesso finisce qui.
+Usa questo tempo per scrivere un messaggio in ruolo agli altri.//
+
+(link:&quot;Rivivi&quot;)[(reload:)]</tw-passagedata><tw-passagedata pid="18" name="Cerca" tags="" position="534,1754" size="100,100">//La storia di Hemsut per adesso finisce qui.
 Imposta subito un timer di 10 minuti e fallo partire appena finisci di leggere queste righe.
-Usa questo tempo per recuperare carta e penna e scrivere un messaggio in ruolo agli altri.//</tw-passagedata><tw-passagedata pid="20" name="Spiegazione" tags="" position="343.3333333333335,17.5" size="100,100">Stai per prendere delle scelte nei panni di Hemsut, non c&#39;è giusto o sbagliato, prendi le scelte che ti sembrano più corrette per il tuo personaggio.
+Usa questo tempo per recuperare carta e penna e scrivere un messaggio in ruolo agli altri.//
+
+(link:&quot;Rivivi&quot;)[(reload:)]</tw-passagedata><tw-passagedata pid="19" name="Spiegazione" tags="" position="343,17" size="100,100">Stai per prendere delle scelte nei panni di Hemsut, non c&#39;è giusto o sbagliato, prendi le scelte che ti sembrano più corrette per il tuo personaggio.
 Le scelte si escludono vicenda molto spesso, gioca quindi come se fosse un dialogo con te e con gli altri.
 
 Le opzioni di dialogo sono precedute da &#39;*&#39;.
@@ -166,37 +161,69 @@ Le scritte in //corsivo// sono off game, ce ne sono poche e niente, non farci tr
 
 La storia impiegherà non più di 20 minuti, consiglio vivamente di ritagliarti del tempo e farla tutta in una volta.
 
-[[Ho capito, andiamo-&gt;Intro]]</tw-passagedata><tw-passagedata pid="21" name="Dovere" tags="" position="941.6666666666667,1151.8333333333333" size="100,100">(if:$step is true) [Fa subito un altro passo verso di te, le tue spalle poggiano su una grossa cassa, non hai dove andare.]
+[[Ho capito, andiamo-&gt;Intro]]</tw-passagedata><tw-passagedata pid="20" name="Dovere" tags="" position="941,1151" size="100,100">(if:$step is true) [Fa subito un altro passo verso di te, le tue spalle poggiano su una grossa cassa, non hai dove andare.]
 &quot;Il tuo &#39;&#39;DOVERE&#39;&#39; è quello di seguire i miei ordini&quot;
 &quot;&#39;&#39;IO&#39;&#39; detto legge e &#39;&#39;TU&#39;&#39; obbedisci.&quot;
 &quot;Quando dico che &#39;&#39;DEVI&#39;&#39; seguirmi non lo faccio perché voglio fare una passeggiata con te e parlare di quanto sia blu il mare, &#39;&#39;ESIGO&#39;&#39; che tu abbassi la testa e mi segua.&quot;
 
 [[* Abbasso la testa-&gt;Passo indietro]]
-[[* Non abbasso la testa-&gt;Sei niente]]</tw-passagedata><tw-passagedata pid="22" name="Passo indietro" tags="" position="881.6666666666667,1453.5" size="100,100">Si allontana di un passo e riprende la sua compostezza.
+[[* Non abbasso la testa-&gt;Sei niente]]</tw-passagedata><tw-passagedata pid="21" name="Passo indietro" tags="" position="881,1453" size="100,100">Si allontana di un passo e riprende la sua compostezza.
 &quot;Adesso andiamo.&quot;
 Si volta.
 &quot;Abbiamo già perso fin troppo tempo&quot;
 
-[[* Lo seguo-&gt;Debriefing]]</tw-passagedata><tw-passagedata pid="23" name="Sei niente" tags="" position="1016.6666666666667,1301.8333333333333" size="100,100">Spalanca gli occhi iniettati di sangue e ti punta con forza il dito sul petto.
+[[* Lo seguo-&gt;Debriefing]]</tw-passagedata><tw-passagedata pid="22" name="Sei niente" tags="" position="1016,1301" size="100,100">Spalanca gli occhi iniettati di sangue e ti punta con forza il dito sul petto.
 &quot;Hemsut tu non capisci che senza di me tu sei niente&quot;
 &quot;Pensi di star facendo carriera ma basta una &#39;&#39;MIA&#39;&#39; parola, &#39;&#39;UNA&#39;&#39; parola e il tuo castello di sabbia verrà travolto da un mare in &#39;&#39;TEMPESTA&#39;&#39;&quot;
 
-[[* ...-&gt;Dito]]</tw-passagedata><tw-passagedata pid="24" name="Dito" tags="" position="1016.6666666666667,1451.8333333333333" size="100,100">&quot;Sono stato fin troppo tollerante con te, ti ho permesso di fare ciò che &#39;&#39;VOLEVI&#39;&#39; e &#39;&#39;TU&#39;&#39; mi ripaghi con una &#39;&#39;TOTALE&#39;&#39;&quot; - Il dito preme.
+[[* ...-&gt;Dito]]</tw-passagedata><tw-passagedata pid="23" name="Dito" tags="" position="1016,1451" size="100,100">&quot;Sono stato fin troppo tollerante con te, ti ho permesso di fare ciò che &#39;&#39;VOLEVI&#39;&#39; e &#39;&#39;TU&#39;&#39; mi ripaghi con una &#39;&#39;TOTALE&#39;&#39;&quot; - Il dito preme.
 &quot;&#39;&#39;MANCANZA&#39;&#39;&quot; - Ruota.
 &quot;&#39;&#39;DI RISPETTO&#39;&#39;&quot;
 
-[[* Fa male...-&gt;Passo indietro]]</tw-passagedata><tw-passagedata pid="25" name="Debriefing" tags="" position="881.6666666666667,1603.5" size="100,100">Segui tuo Padre, sali con lui sul mezzo di trasporto e vi avviate verso casa.
+[[* Fa male...-&gt;Passo indietro]]</tw-passagedata><tw-passagedata pid="24" name="Debriefing" tags="" position="881,1603" size="100,100">Segui tuo Padre, raggiungete i canali interni, salite su di una imbarcazione in cui vi aspetta un vostro inserviente e vi avviate verso casa.
 Il viaggio e silenzioso, l&#39;aria è tesa ma fortunatamente ha fine, forse è meglio indossare quei vestiti invece di avere a che fare con lui.
 
 //La storia di Hemsut per adesso finisce qui.
 Prenditi un momento, scarica eventuali tensioni, allontanati anche dal pc se necessario.//
 
-[[Continua-&gt;Deroling]]</tw-passagedata><tw-passagedata pid="26" name="Deroling" tags="" position="881.6666666666667,1753.5" size="100,100">//Prendi carta e penna.
+[[Continua-&gt;Deroling]]</tw-passagedata><tw-passagedata pid="25" name="Deroling" tags="" position="879.3333333333334,1751.3333333333333" size="100,100">//Prendi carta e penna.
 Scrivi nei panni di Hemsut una lettera al padre che non manderà mai, non la leggerà nessuno oltre te, scrivi per te stesso.
 Scrivi quanto ti serve, anche poche righe vanno più che bene.//
 
-[[Fatto-&gt;Deroling2]]</tw-passagedata><tw-passagedata pid="27" name="Deroling2" tags="" position="1021.6666666666667,1750.1666666666667" size="100,100">//Adesso prenditi del tempo, rilassati e lasciati dietro le spalle la vita di Hemsut.
-Quando avrai tempo e se lo vorrai scrivi pure qualcosa a Hemsut, quello che vuoi va bene, anche qui è qualcosa che scrivi per te e nessun altro.//</tw-passagedata></tw-storydata>
+[[Fatto-&gt;Deroling2]]</tw-passagedata><tw-passagedata pid="26" name="Deroling2" tags="" position="1021,1750" size="100,100">//Adesso prenditi del tempo, rilassati e lasciati dietro le spalle la vita di Hemsut.
+Quando avrai tempo e se lo vorrai scrivi pure qualcosa a Hemsut, quello che vuoi va bene, anche qui è qualcosa che scrivi per te e nessun altro.//
+
+(link:&quot;Rivivi&quot;)[(reload:)]</tw-passagedata><tw-passagedata pid="27" name="Spalle" tags="" position="524,1147" size="100,100">Mentre lo segui per le vie del porto ti ritrovi a osservare le sue spalle.
+Il suo passo svelto, il suo fare distaccato, hai come l&#39;impressione che sia sempre stato così: insegui la sua ombra nella speranza che ti possa guardare con occhi diversi.
+
+[[* La strada che ho scelto è tanto diversa da ciò che aveva pianificato per me, ho sempre voluto che lo accettasse-&gt;Folla]]
+[[* Ha una reputazione derivante dalla sua posizione di rilievo, questi non gli lasciano molto spazio per l&#39;affetto-&gt;Folla]]
+[[* So di non essere la sua prediletta, i miei sforzi per entrare nelle sue grazie non hanno mai ripagato come vorrei-&gt;Folla]]
+[[* Ho imparato e posso imparare ancora tanto da lui, il nostro rapporto sembra più professionale che familiare-&gt;Folla]]</tw-passagedata><tw-passagedata pid="28" name="Folla" tags="" position="471,1297" size="100,100">Vi addentrate nel centro città, la folla vi circonda.
+Tuo Padre scorre velocemente tra la gente, è come se la sua aura fosse pregna di autorità, non ha nemmeno bisogno di proferir parola.
+Rimani indietro, ti fai spazio tra la calca cercando di stare al passo con lui.
+
+[[* Non riesco a stargli dietro ma cerco di fare meglio che posso-&gt;Trasporto]]
+[[* Mi affretto, non voglio stargli ancora più indietro-&gt;Trasporto]]
+[[* Mi faccio spazio con forza, non posso assolutamente rallentare-&gt;Trasporto]]</tw-passagedata><tw-passagedata pid="29" name="Trasporto" tags="" position="471,1447" size="100,100">Raggiungete un canale interno, lì un vostro inserviente vi aspetta, pronto a partire.
+L&#39;inserviente saluta con reverenza tuo Padre.
+Tuo Padre fa un cenno e sale sull&#39;imbarcazione.
+&quot;Signorina Hemsut, prego&quot; - dice l&#39;inserviente rivolgendoti verso di te.
+
+[[* Salgo silenziosamente sulla barca-&gt;Viaggio]]
+[[* Faccio un cenno e salgo sull&#39;imbarcazione-&gt;Viaggio]]
+[[* &quot;Ciao Viske, sempre pronto a portarci in giro eh&quot;-&gt;Viaggio]]</tw-passagedata><tw-passagedata pid="30" name="Viaggio" tags="" position="474,1584" size="100,100">Il viaggio sarà rapido, i canali connettono bene la parte bassa della città.
+Tuo padre non dice una parola, non guarda né te né l&#39;inserviente rimanendo nei suoi pensieri mentre contempla il paesaggio scorrere intorno a voi.
+L&#39;inserviente, anch&#39;egli taciturno, rimane concentrato nella navigazione.
+
+{
+(if:$equip is true)[
+	[[* Prendi il tuo taccuino e inizi a scrivere la lettera.-&gt;Scrivi]]
+]
+(else:)[
+	[[* Cerchi un pezzo di carta dove scrivere la lettera.-&gt;Cerca]]
+]
+}</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
