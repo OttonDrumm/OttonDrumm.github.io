@@ -95,8 +95,7 @@ Rifletti un momento e ti rendi conto che lasceresti gli altri senza nemmeno un a
 
 (if:$abusive &lt; 6) [[* &quot;Padre, voi mi avete insegnato e trasmesso il senso del dovere, vorrei poter avvisare i miei compagni. Farò in un istante.&quot;-&gt;Finale Rispetto]]
 {
-(if:$respect &lt; 6 and $flinch is false) [[* Tentenno un attimo, potrebbe alterarsi se non gliela pongo nel modo corretto-&gt;Tentenna]]
-(if:$flinch is true) [[* Non ho idea di cosa dirgli, se gli chiedo del tempo mi urlerà addosso di sicuro-&gt;Finale Abusivo]]
+(if:$respect &lt; 6) [[* Tentenno un attimo, potrebbe alterarsi se non gliela pongo nel modo corretto-&gt;Tentenna]]
 }</tw-passagedata><tw-passagedata pid="14" name="Finale Rispetto" tags="" position="666,1001" size="100,100">&quot;Non c’è tempo.&quot; - Risponde con tono brusco.
 &quot;Scriverai un messaggio strada facendo, gli arriverà con un postino.&quot;
 Si volta senza attendere una tua risposta.
@@ -113,11 +112,10 @@ Si volta senza attendere una tua risposta.
 	]
 ]
 }
-(hidden:)[[Finale Abusivo]]</tw-passagedata><tw-passagedata pid="15" name="Tentenna" tags="" position="944,776" size="100,100">Ti perfora con il suo sguardo, stai perdendo tempo ai suoi occhi.
+(hidden:)[[Finale Abusivo]]</tw-passagedata><tw-passagedata pid="15" name="Tentenna" tags="" position="944,776" size="100,100">Tuo Padre, chiaramente spazientito, ti perfora con lo sguardo in attesa che ti muova.
+Ai suoi occhi non stai facendo altro che sprecare il suo tempo. 
 
-[[* Devo sbrigarmi-&gt;Non c&#39;è altro]]
-(set:$abusive to $abusive+1)
-(set:$flinch to true)</tw-passagedata><tw-passagedata pid="16" name="Finale Abusivo" tags="" position="941,1003" size="100,100">Fa un passo verso di te, chiudendo le distanze in un battito di ciglia.
+[[* Non ho idea di cosa dirgli, se gli chiedo del tempo mi urlerà addosso di sicuro-&gt;Finale Abusivo]]</tw-passagedata><tw-passagedata pid="16" name="Finale Abusivo" tags="" position="941,1003" size="100,100">Fa un passo verso di te, chiudendo le distanze in un battito di ciglia.
 &quot;&#39;&#39;TU&#39;&#39;&quot; - Alza la voce, con toni violenti
 &quot;Pensi che &#39;&#39;IO&#39;&#39; venga fin qui, ti sollevi dai tuoi incarichi e ti &#39;&#39;IMPONGA&#39;&#39; di seguirmi senza avere un motivo valido?&quot;
 
