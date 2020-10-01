@@ -226,12 +226,16 @@ Non appena la bolla tocca il fondale del lago, la sabbia si alza creando un polv
 
 Di fronte a voi si staglia maestosa la dimora Bael, luci di profondità illuminano di colori freddi le profondità. La struttura esterna in vetro rinforzato avvolge la villa, lasciando spazio ai giardini sempre ben curati.
 
-Vi immettete nell&#39;anticamera, Viske dismette la bolla, non particolarmente provato dalla traversata.
+Vi immettete nell&#39;anticamera che porta al giardino.
+Viske dismette la bolla ed esegue alcuni esercizi per regolarizzare il respiro.
 
 (if:$dossier is false)[[[* Mi chiedo se mi daranno mai i dettagli-&gt;Imboccato Chill]]]
 (else:)[[[* Seguo la via per la dimora-&gt;Giardini]]]
 (set:$time to 0)
-(if:$finale is true)[(goto:$finale_step)]</tw-passagedata><tw-passagedata pid="19" name="Back" tags="" position="589,436" size="100,100">(set:$seen to false)
+(if:$finale is true)[(goto:$finale_step)]
+&lt;script&gt;
+ $(&quot;#bg-music&quot;).animate({volume: 0}, 1000);
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="19" name="Back" tags="" position="589,436" size="100,100">(set:$seen to false)
 (if:$time &gt;= $t1&#39;s 1st) [
 	(set:$seen to true)
 ] (else-if:$time &gt;= $t2&#39;s 1st) [
@@ -641,7 +645,17 @@ Il cadavere A è stato identificato (Allegato A).
 
 [[* Avanziamo verso l&#39;Atrio-&gt;Atrio]]
 (set:$finale to true)
-(set:$finale_step to (passage:)&#39;s name)</tw-passagedata><tw-passagedata pid="56" name="Imboccato Angry" tags="" position="1576,913" size="100,100">Tuo Padre prende improvvisamente la parola.
+(set:$finale_step to (passage:)&#39;s name)
+&lt;script&gt;
+  var audio= document.createElement(&#39;audio&#39;);
+  audio.setAttribute(&#39;id&#39;, &#39;crowd-music&#39;);
+  audio.src=&#39;../../audio/crowd-talking-2.mp3&#39;;
+  audio.loop = true;
+  $(&quot;body&quot;).append(audio);
+  audio.volume = 0;
+  $(&quot;#crowd-music&quot;).animate({volume: 0.5}, 3000);
+  audio.play();
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="56" name="Imboccato Angry" tags="" position="1576,913" size="100,100">Tuo Padre prende improvvisamente la parola.
 
 &quot;Viske, il dossier.&quot; - Dice con tono freddo.
 
@@ -673,11 +687,24 @@ La grande scalinata centrale si apre maestosa al centro dell&#39;atrio, connette
 [[* Non mi manca affatto-&gt;Scale]]
 [[* È tanto che non la vedo-&gt;Scale]]
 (set:$finale to true)
-(set:$finale_step to (passage:)&#39;s name)</tw-passagedata><tw-passagedata pid="60" name="Scale" tags="" position="1476,444" size="100,100">Passo per passo, scalino per scalino vi avvicinate verso la parte bassa della dimora.
+(set:$finale_step to (passage:)&#39;s name)
+&lt;script&gt;
+  var audio= document.createElement(&#39;audio&#39;);
+  audio.setAttribute(&#39;id&#39;, &#39;step-music&#39;);
+  audio.src=&#39;../../audio/footsteps.mp3&#39;;
+  audio.loop = true;
+  $(&quot;body&quot;).append(audio);
+  audio.volume = 0;
+  $(&quot;#step-music&quot;).animate({volume: 1}, 3000);
+  audio.play();
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="60" name="Scale" tags="" position="1476,444" size="100,100">Passo per passo, scalino per scalino vi avvicinate verso la parte bassa della dimora.
 
 Vieni assalita da un senso di disagio, un disagio da cui speravi essere scappata.
 
-[[* Scendo ancora-&gt;Scale2]]</tw-passagedata><tw-passagedata pid="61" name="Fine" tags="" position="1726,447" size="100,100">
+[[* Scendo ancora-&gt;Scale2]]
+&lt;script&gt;
+ $(&quot;#crowd-music&quot;).animate({volume: 0}, 3000);
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="61" name="Fine" tags="" position="1726,447" size="100,100">
 //Fine Episodio 2 - Bolla//
 
 (link:&quot;Rivivi&quot;)[(reload:)]</tw-passagedata><tw-passagedata pid="62" name="Scale2" tags="" position="1602,447" size="100,100">Assalita dai ricordi non fai altro che nuotare in un mare di confusione. Tuo Padre e Viske si allontanano, vi incontrerete al piano di sopra non appena sarai pronta.
@@ -695,7 +722,10 @@ Tua Madre ti attende, seduta lì di fronte allo specchio.
 Ogni cosa è pronta, la vestizione ha inizio.
 
 [[* &quot;Buongiorno Madre&quot; - Fai un profondo inchino-&gt;Fine]]
-[[* &quot;Madre, è tanto che non ci vediamo&quot;-&gt;Fine]]</tw-passagedata><tw-passagedata pid="65" name="P-Aggr-Viske-1" tags="" position="819,1735" size="100,100">Padre: &quot;Non hai alcun diritto ad interferire nel dialogo con $bold[MIA] figlia. Sono $bold[IO] a decidere cosa è giusto e cosa è sabagliato.&quot;
+[[* &quot;Madre, è tanto che non ci vediamo&quot;-&gt;Fine]]
+&lt;script&gt;
+ $(&quot;#step-music&quot;).animate({volume: 0}, 1000);
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="65" name="P-Aggr-Viske-1" tags="" position="819,1735" size="100,100">Padre: &quot;Non hai alcun diritto ad interferire nel dialogo con $bold[MIA] figlia. Sono $bold[IO] a decidere cosa è giusto e cosa è sabagliato.&quot;
 
 Viske rimane in silenzio.
 
