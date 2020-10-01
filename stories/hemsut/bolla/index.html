@@ -66,11 +66,16 @@ La storia impiegherà intorno ai 30 minuti, consiglio vivamente di ritagliarti d
 
 Se dovesse succedere qualcosa di strano in alto c&#39;è un link: &quot;Rivivi&quot;, questo farà ricominciare la storia da zero, facendoti perdere tutti i progressi. 
 
-[[Iniziamo-&gt;Descrizione]]</tw-passagedata><tw-passagedata pid="3" name="Panorama" tags="" position="1119,175" size="100,100">Immerso nel Lago Bael in cui è immersa la dimora di famiglia, l&#39;elevatore scorre all&#39;interno di un tubo di vetro incastonato sul fianco della roccia.
+[[Iniziamo-&gt;Descrizione]]</tw-passagedata><tw-passagedata pid="3" name="Panorama" tags="" position="1119,175" size="100,100">Intorno a voi acqua. Il lago pullula di pesci d&#39;acqua dolce e di vegetazione rara e preziosa.
 
-La piattaforma in cui vi trovate ha un pavimento metallico e una struttura esterna di forma vagamente sferica.
-
-I rinforzi strutturali in metallo scandiscono la discesa insieme al panorama mutevole che vi circonda.
+La bolla di Viske vi circonda e protegge, vibra leggermente, soprattutto avvicinandovi la mano.
+{
+(if:$ambra is true)[
+(print:&quot;\n&quot;)
+Al centro della piattaforma noti il frammento d&#39;ambra di cui parlava Viske.
+(print:&quot;\n&quot;)
+]
+}
 {
 (if:$time &gt;= $t1&#39;s 1st) [[[* Osservo la superficie-&gt;Superficie]]]
 (else-if:$time &gt;= $t2&#39;s 1st) [[[* Osservo i cunicoli-&gt;Cunicoli]]]
@@ -83,7 +88,7 @@ I rinforzi strutturali in metallo scandiscono la discesa insieme al panorama mut
 - Sai di dover fare dei riti funebri, niente di più
 - Hai inviato una lettera al tuo team spiegando brevemente le tue motivazioni
 
-[[È il caso di chiedere qualcosa-&gt;Back]]
+[[* È il caso di chiedere qualcosa-&gt;Back]]
 {
 (if: not ((history:) contains (passage:)&#39;s name))[(set:$time to $time-1)]
 }</tw-passagedata><tw-passagedata pid="5" name="Osservo Padre" tags="" position="189,209" size="100,100">Tuo padre è immerso nei suoi pensieri, sembra stia guardando fuori ma è chiaramente nel suo mondo.
@@ -228,7 +233,7 @@ Vi immettete nell&#39;anticamera, Viske dismette la bolla, non particolarmente p
 (set:$time to 0)
 (if:$finale is true)[(goto:$finale_step)]</tw-passagedata><tw-passagedata pid="19" name="Back" tags="" position="589,436" size="100,100">(set:$seen to false)
 (if:$time &gt;= $t1&#39;s 1st) [
-	(set:$seen to $t1&#39;s 2nd)
+	(set:$seen to true)
 ] (else-if:$time &gt;= $t2&#39;s 1st) [
 	(set:$seen to $t2&#39;s 2nd)
 ] (else-if:$time &gt;= $t3&#39;s 1st) [
@@ -525,13 +530,11 @@ Contiene un dossier composto di alcuni documenti e delle foto.
 {
 (set:$dossier to true)
 (if: not ((history:) contains (passage:)&#39;s name))[(set:$time to $time-1)]
-}</tw-passagedata><tw-passagedata pid="46" name="Descrizione" tags="" position="660,14" size="100,100">Ti trovi con tuo Padre e Viske sulla piattaforma mobile del lago Bael, uno dei pochi punti di accesso alla dimora in cui sei nata e cresciuta.
+}</tw-passagedata><tw-passagedata pid="46" name="Descrizione" tags="" position="661.6666666666666,14" size="100,100">Ti trovi con tuo Padre e Viske sulla piattaforma mobile del lago Bael, uno dei pochi punti di accesso alla dimora in cui sei nata e cresciuta.
 
 La piattaforma è poco più di 2 metri di diametro, ha una forma circolare ed è fissata con dei bracci ad un binario incastonato sulla roccia.
 
 Viske non perde tempo: al cenno di tuo Padre crea una bolla abbastanza grande da avvolgervi insieme all&#39;intera piattaforma.
-
-*Clang* *Clang*
 
 I macchinari reagiscono all&#39;energia di Viske, iniziando a muoversi sempre più rapidamente.
 
@@ -540,21 +543,28 @@ La piattaforma inizia a scendere.
 [[* Ci sono abituata ormai, è la prassi-&gt;Elevatore]]
 [[* Quanta nostalgia-&gt;Elevatore]] 
 [[* Tutto ciò è sempre affascinante-&gt;Elevatore]]
+{
 &lt;script&gt;
-  var audio_intro= document.createElement(&#39;audio_intro&#39;);
-  audio_intro.setAttribute(&#39;id&#39;, &#39;intro-music&#39;);
-  audio_intro.src=&#39;../../audio/immersion.mp3&#39;;
-  audio_intro.loop = false;
-  $(&quot;body&quot;).append(audio_intro);
-  audio_intro.play();
-
   var audio= document.createElement(&#39;audio&#39;);
   audio.setAttribute(&#39;id&#39;, &#39;bg-music&#39;);
   audio.src=&#39;../../audio/underwater-machinery.mp3&#39;;
   audio.loop = true;
   $(&quot;body&quot;).append(audio);
+  audio.volume = 0;
+  $(&quot;#bg-music&quot;).animate({volume: 1}, 3000);
   audio.play();
-&lt;/script&gt;</tw-passagedata><tw-passagedata pid="47" name="Documenti" tags="" position="1415,1370" size="100,100">Il dossier contiene 2 documenti.
+&lt;/script&gt;
+&lt;script&gt;
+  var audio= document.createElement(&#39;audio&#39;);
+  audio.setAttribute(&#39;id&#39;, &#39;intro-music&#39;);
+  audio.src=&#39;../../audio/immersion.mp3&#39;;
+  audio.loop = false;
+  $(&quot;body&quot;).append(audio);
+  audio.volume = 0;
+  $(&quot;#intro-music&quot;).animate({volume: 1}, 3000);
+  audio.play();
+&lt;/script&gt;
+}</tw-passagedata><tw-passagedata pid="47" name="Documenti" tags="" position="1415,1370" size="100,100">Il dossier contiene 2 documenti.
 
 Uno sembra il profilo di una persona, l&#39;altro si direbbe un report.
 
@@ -743,7 +753,8 @@ Viske è sempre stato un esperto nell&#39;attingere agli abissi, non solo ha l&#
 [[* &quot;Cosa intendi?&quot;-&gt;V-Fingi-2]]</tw-passagedata><tw-passagedata pid="72" name="V-Fingi-2" tags="" position="2295,1028" size="100,100">&quot;Non molto tempo fa abbiamo potenziato l&#39;ambra di riverbero sulla piattaforma, migliorando la stabilità delle bolle create al suo interno&quot;
 
 [[* &quot;Interessante, così le nuove leve non avranno la vita troppo facile durante gli esami?&quot;-&gt;V-Fingi-3]]
-[[* &quot;Ottimo, è sicuramente in miglioramento sulla qualità della vita&quot;-&gt;V-Fingi-3]]</tw-passagedata><tw-passagedata pid="73" name="V-Fingi-3" tags="" position="2422,876" size="100,100">&quot;Sia chiaro che durante gli esami di promozione per i maggiordomi della superficie vengono utilizzate piattaforme senza ambra alcuna.&quot;
+[[* &quot;Ottimo, è sicuramente in miglioramento sulla qualità della vita&quot;-&gt;V-Fingi-3]]
+(set:$ambra to true)</tw-passagedata><tw-passagedata pid="73" name="V-Fingi-3" tags="" position="2422,876" size="100,100">&quot;Sia chiaro che durante gli esami di promozione per i maggiordomi della superficie vengono utilizzate piattaforme senza ambra alcuna.&quot;
 
 [[* &quot;Mi sembra corretto&quot;-&gt;Viske]]
 [[* &quot;Speravo che finalmente avremmo avuto maggiordomi più abili nell&#39;organizzazione&quot;-&gt;Viske]]
