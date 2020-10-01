@@ -50,7 +50,10 @@ hr, div, p {
 (if:$silence is false)[
 [[* Parlo con Viske-&gt;Viske]]
 $impact[[[* Parlo con mio padre-&gt;Padre]]]
-](else:)[[[* Attendo silenziosamente-&gt;Silenzio]]]
+]
+{
+(if:$silence is true or $time &lt;= 2)[[[* Attendo silenziosamente-&gt;Silenzio]]]
+}
 (if:$dossier is true)[[* Leggo i documenti-&gt;Dossier]]
 {
 (if:$time &lt;= 0)[(goto:&quot;Atterraggio&quot;)]
@@ -88,10 +91,7 @@ Al centro della piattaforma noti il frammento d&#39;ambra di cui parlava Viske.
 - Sai di dover fare dei riti funebri, niente di più
 - Hai inviato una lettera al tuo team spiegando brevemente le tue motivazioni
 
-[[* È il caso di chiedere qualcosa-&gt;Back]]
-{
-(if: not ((history:) contains (passage:)&#39;s name))[(set:$time to $time-1)]
-}</tw-passagedata><tw-passagedata pid="5" name="Osservo Padre" tags="" position="189,209" size="100,100">Tuo padre è immerso nei suoi pensieri, sembra stia guardando fuori ma è chiaramente nel suo mondo.
+[[* È il caso di chiedere qualcosa-&gt;Elevatore]]</tw-passagedata><tw-passagedata pid="5" name="Osservo Padre" tags="" position="189,209" size="100,100">Tuo padre è immerso nei suoi pensieri, sembra stia guardando fuori ma è chiaramente nel suo mondo.
 
 Ha una corporatura minuta, è più basso di te ed ha sempre avuto una prestanza fisica sotto la media, preferendo da sempre attività mentali piuttosto che fisiche.
 
@@ -116,7 +116,7 @@ Emana il suo odore caratteristico, come al solito, principalmente dovuto al gel 
 {
 (if:$time is 0)[(goto:&quot;No time&quot;)]
 (if: not ((history:) contains (passage:)&#39;s name))[(set:$time to $time-1)]
-}</tw-passagedata><tw-passagedata pid="6" name="Padre" tags="" position="875,687" size="100,100">Tuo padre, pensieroso, osserva vagamente il suo lago.
+}</tw-passagedata><tw-passagedata pid="6" name="Padre" tags="" position="908.3333333333334,683.6666666666666" size="100,100">Tuo padre, pensieroso, osserva vagamente il suo lago.
 
 (if:$p_trouble is false)[[[* &quot;Padre, vi vedo pensieroso, qualcosa vi turba?&quot;-&gt;P-Turbamento]]]
 (if:$dossier is false)[[[* &quot;Padre, avrei bisogno di qualche dettaglio sui riti da officiare&quot;-&gt;P-Dettagli]]]
@@ -142,7 +142,7 @@ Tiene in mano una cartella sottile che sembra contenere documenti o qualcosa di 
 [[* Dopotutto è proprio lui che mi ha insegnato l&#39;arte-&gt;V-Maestro]]
 [[* &quot;Deve essere stressante mantenere la bolla da solo, posso aiutarti?&quot;-&gt;V-Aiuto]]
 [[* &quot;Come riesci a mantenere la bolla e sorridere come se niente fosse?&quot;-&gt;V-Fingi]]
-[[* Non ho altro da drigli-&gt;Back]]
+(if: (history:) contains (passage:)&#39;s name)[[[* Non ho altro da drigli-&gt;Back]]]
 {
 (set:$hello_viske to true)
 (if: not ((history:) contains (passage:)&#39;s name))[(set:$time to $time-1)]
@@ -163,13 +163,13 @@ Tiene in mano una cartella sottile che sembra contenere documenti o qualcosa di 
 Vengono utilizzate per fare gel, creme e budini data la loro consistenza gelatinosa.
 Hanno un sapore abbastanza neutro anche se non sai bene come vengono utilizzati in cucina dato il loro forte odore.
 
-[[Ho capito.-&gt;Back]]</tw-passagedata><tw-passagedata pid="11" name="Startup" tags="startup" position="197,70" size="100,100">{(set: $time to 8)
+[[Ho capito.-&gt;Back]]</tw-passagedata><tw-passagedata pid="11" name="Startup" tags="startup" position="197,70" size="100,100">{(set: $time to 7)
 (set: $action to (a:))
 (set: $make to 0)
 (set: $spoken to false)
 
-(set: $t1 to (a:6,false))
-(set: $t2 to (a:4,false))
+(set: $t1 to (a:5,false))
+(set: $t2 to (a:3,false))
 (set: $t3 to (a:2,false))
 (set: $t4 to (a:0,false))
 
@@ -224,7 +224,7 @@ Guardi altrove, facendo finta di nulla, ti senti osservata per pochi secondi e n
 
 Non appena la bolla tocca il fondale del lago, la sabbia si alza creando un polverone tutto intorno a voi.
 
-Di fronte a voi si staglia maestosa la dimora Bael, luci di profondità illuminano di colori freddi le profondità. La struttura esterna in vetro rinforzato avvolge la villa, lasciando spazio ai giardini sempre ben curati.
+Di fronte a voi si staglia maestosa la dimora Bael, luci dal colore freddo illuminano le profondità del lago creando un&#39;atmosfera alquanto rigida. 
 
 Vi immettete nell&#39;anticamera che porta al giardino.
 Viske dismette la bolla ed esegue alcuni esercizi per regolarizzare il respiro.
@@ -263,12 +263,13 @@ la maggior parte sono vicoli ciechi e in alcuni hai nascosto qualcosa che non vo
 
 [[* Guardo Altro-&gt;Elevatore]]
 (set:$t2&#39;s 2nd to true)</tw-passagedata><tw-passagedata pid="22" name="Sorvolando" tags="" position="1117,49" size="100,100">{(if: not ((history:) contains (passage:)&#39;s name))[
-L&#39;elevatore svolta bruscamente.
-]}
+La piattaforma svolta bruscamente, iniziando un tratto orizzontale.
+(print:&quot;\n&quot;)
+]}Le luci della superficie sono ormai sono fioche.
 
-Le luci della superficie sono ormai sono fioche.
+In basso la dimora Bael, ammirabile in tutta la sua maestosità.
 
-In basso la dimora Bael, in tutta la sua maestosità.
+La struttura è stata fondata proprio sopra una bolla naturale, permettendo la respirazione e la vita al suo interno. Non è delle più grandi, nelle zone esterne questa sarebbe una delle più piccole, ciò nonostante non sono molte le bolle all&#39;interno della casa base.
 
 [[* Guardo Altro-&gt;Elevatore]]
 (set:$t3&#39;s 2nd to true)</tw-passagedata><tw-passagedata pid="23" name="Advance" tags="" position="994,296" size="100,100">Il tempo passa, la destinazione si avvicina.
@@ -278,6 +279,7 @@ In basso la dimora Bael, in tutta la sua maestosità.
 (else-if:$time &gt;= $t3&#39;s 1st) [[[* Mi guardo intorno-&gt;Sorvolando]]]
 (else:) [[[* Mi guardo intorno-&gt;Atterraggio]]]
 }</tw-passagedata><tw-passagedata pid="24" name="No time" tags="" position="1281,294" size="100,100">[[Non c&#39;è tempo per questo, siamo arrivati-&gt;Atterraggio]] </tw-passagedata><tw-passagedata pid="25" name="P-Turbamento" tags="" position="818,833" size="100,100">Tuo Padre non risponde, perso nei suoi pensieri.
+È molto diverso dal solito.
 
 Viske ti guarda un attimo per poi rivolgersi a tuo Padre: 
 	&quot;Padrone&quot; - dice con tono pacato. 
@@ -285,10 +287,10 @@ Viske ti guarda un attimo per poi rivolgersi a tuo Padre:
 Tuo Padre, imperturbabile, risponde:
 	&quot;Ho sentito.&quot;
 	
-Cala il silenzio, spezzato solo dai cigolii dell&#39;elevatore.
+Cala il silenzio.
 
-[[* Attendo pazientemente una risposta-&gt;P-Attendo]]
 [[* &quot;Vi sentite bene?&quot;-&gt;P-Preoccupazione]]
+[[* Non dico altro-&gt;P-Silenzio]]
 {
 (set:$p_trouble to true)
 (if: not ((history:) contains (passage:)&#39;s name))[(set:$time to $time-1)]
@@ -301,24 +303,19 @@ Prendi in mano la cartella.
 
 [[* &quot;Grazie Viske&quot;-&gt;Dossier]]
 [[* &quot;Grazie Padre&quot;-&gt;Dossier]]
-[[* &quot;Grazie...&quot;-&gt;Dossier]]</tw-passagedata><tw-passagedata pid="27" name="P-Attendo" tags="" position="689,834" size="100,100">Tuo Padre rimane silenzioso, non mostra alcuna intenzione nel continuare il discorso.
-
-Non si è mai aperto agli altri, probabilmente non si è mai aperto nemmeno con tua Madre. Il loro matrimonio è stato combinato dai genitori per motivi politici e genetici, risultando più in una relazione di carattere professionale che di intima intesa.
-
-[[* È così con tutti-&gt;Padre]]
-[[* È così con tutti tranne che con la primogenita-&gt;Padre]]
-[[* È così con tutti tranne che con l&#39;ultimogenito-&gt;Padre]]
-[[* È così con tutti tranne che con Guglielmo Maraska-&gt;Padre]]</tw-passagedata><tw-passagedata pid="28" name="P-Preoccupazione" tags="" position="816,971" size="100,100">Noti in lui una certa preoccupazione, è diverso dal solito, non l&#39;hai mai visto così.
+[[* &quot;Grazie...&quot;-&gt;Dossier]]</tw-passagedata><tw-passagedata pid="27" name="P-Preoccupazione" tags="" position="692.6666666666666,832.6666666666666" size="100,100">Noti in lui una certa preoccupazione, è diverso dal solito, non l&#39;hai mai visto così.
 
 Tuo Padre risponde molto pacatamente:
 	&quot;Certo Hemsut, concentrati su ciò che stiamo per fare, non sul mio stato d&#39;animo.&quot;
+	
+Dietro i suoi toni e le sue parole c&#39;è chiaramente qualcosa che non va.
 
 $impact[[[* //IMMERSIONE// Cerco un contatto, voglio che si apra-&gt;P-Contatto]]]
-[[* &quot;A tal proposito, sarebbe ottimo avere qualche dettaglio sulla cerimonia da officiare.&quot;-&gt;P-Dettagli]]</tw-passagedata><tw-passagedata pid="29" name="P-Contatto" tags="" position="693,975" size="100,100">(set:$esito to (random:1,6)+(random:1,6)+$immersione)
+[[* &quot;Come volete Padre&quot;-&gt;Back]]</tw-passagedata><tw-passagedata pid="28" name="P-Contatto" tags="" position="693,975" size="100,100">(set:$esito to (random:1,6)+(random:1,6)+$immersione)
 (if:$esito &gt;= 12)[(goto:&quot;P-C-YA&quot;)]
 (else-if:$esito &gt;= 9)[(goto:&quot;P-C-YB&quot;)]
 (else-if:$esito &gt;= 6)[(goto:&quot;P-C-NB&quot;)]
-(else:)[(goto:&quot;P-C-NA&quot;)]</tw-passagedata><tw-passagedata pid="30" name="P-C-YA" tags="" position="693,1095" size="100,100">//IMMERSIONE: (print:$esito)// 
+(else:)[(goto:&quot;P-C-NA&quot;)]</tw-passagedata><tw-passagedata pid="29" name="P-C-YA" tags="" position="693,1095" size="100,100">//IMMERSIONE: (print:$esito)// 
 Ti avvicini lievemente a tuo Padre e lo sfiori delicatamente sulla spalla.
 
 Lui si volta, un po&#39; sorpreso dal tuo gesto ma non infastidito.
@@ -342,7 +339,7 @@ Alza lo sguardo e, con una parvenza di sorriso intona una preghiera:
 {(link: &quot;* \&quot;(print:$pray_1&#39;s 2nd)\&quot;&quot;)[
 (set:$pray_1&#39;s 3rd to $pray_1&#39;s 2nd)
 (goto:&quot;P-Preghiera-1&quot;)]
-}</tw-passagedata><tw-passagedata pid="31" name="P-C-YB" tags="" position="693,1207" size="100,100">//IMMERSIONE: (print:$esito)// 
+}</tw-passagedata><tw-passagedata pid="30" name="P-C-YB" tags="" position="693,1207" size="100,100">//IMMERSIONE: (print:$esito)// 
 Ti avvicini a tuo Padre, poggiandogli delicatamente la mano sulla spalla.
 
 Lui si volta, un po&#39; sorpreso dal tuo gesto.
@@ -366,7 +363,7 @@ Tuo Padre, ascoltando chiaramente i bisbigli, interrompe intonando una preghiera
 {(link: &quot;* \&quot;(print:$pray_1&#39;s 2nd)\&quot;&quot;)[
 (set:$pray_1&#39;s 3rd to $pray_1&#39;s 2nd)
 (goto:&quot;P-Preghiera-1&quot;)]
-}</tw-passagedata><tw-passagedata pid="32" name="P-C-NB" tags="" position="693,1316" size="100,100">//IMMERSIONE: (print:$esito)// 
+}</tw-passagedata><tw-passagedata pid="31" name="P-C-NB" tags="" position="693,1316" size="100,100">//IMMERSIONE: (print:$esito)// 
 Ti avvicini a tuo Padre, poggiandogli la mano sulla spalla.
 
 Lui si volta, irrigidito. Con un gesto secco si scrolla di dosso la tua mano.
@@ -378,10 +375,10 @@ Tuo Padre, chiaramente infastidito, fulmina Viske con lo sguardo.
 	
 Viske, da tutta la sua altezza, si riduce ad un piccolo ammasso mortificato.
 
-Noti che tuo padre sta per infierire sul pover&#39;uomo, ma istintivamente intoni una preghiera.
+Noti che tuo padre sta per infierire sul pover&#39;uomo, ma istintivamente intoni una preghiera per smorzare gli animi.
 
 [[* &quot;$pray_0&quot;-&gt;P-Preghiera-0]]
-(set:$mortificato to true)</tw-passagedata><tw-passagedata pid="33" name="P-C-NA" tags="" position="694,1427" size="100,100">//IMMERSIONE: (print:$esito)//
+(set:$mortificato to true)</tw-passagedata><tw-passagedata pid="32" name="P-C-NA" tags="" position="694,1427" size="100,100">//IMMERSIONE: (print:$esito)//
 
 Ti avvicini a tuo Padre, poggiandogli la mano sulla spalla.
 
@@ -407,7 +404,7 @@ Sembra che tuo Padre abbia proprio l&#39;intenzione di infierire.
   	(set:$time to $time-2)
   ]
 ]
-}</tw-passagedata><tw-passagedata pid="34" name="P-Preghiera-1" tags="" position="1112,1346" size="100,100">Tutti all&#39;unisono vi immergete nella preghiera.
+}</tw-passagedata><tw-passagedata pid="33" name="P-Preghiera-1" tags="" position="1112,1346" size="100,100">Tutti all&#39;unisono vi immergete nella preghiera.
 	&quot;$pray_0&quot;
 	&quot;(print:$pray_1&#39;s 3rd)&quot;
 	&quot;$pray_10&quot;
@@ -424,7 +421,7 @@ Sembra che tuo Padre abbia proprio l&#39;intenzione di infierire.
 (hidden:)[[[*-&gt;P-Preghiera-2]]]
 (if: not ((history:) contains (passage:)&#39;s name))[(set:$time to $time-1)]
 (set: $pray to true)
-}</tw-passagedata><tw-passagedata pid="35" name="P-Preghiera-2" tags="" position="1106,1457" size="100,100">	&quot;$pray_0&quot;
+}</tw-passagedata><tw-passagedata pid="34" name="P-Preghiera-2" tags="" position="1106,1457" size="100,100">	&quot;$pray_0&quot;
 	&quot;(print:$pray_1&#39;s 3rd)&quot;
 	&quot;$pray_10&quot;
 	&quot;(print:$pray_2&#39;s 3rd)&quot;
@@ -438,7 +435,7 @@ Sembra che tuo Padre abbia proprio l&#39;intenzione di infierire.
 (set:$pray_3&#39;s 3rd to $pray_3&#39;s 2nd)
 (goto:&quot;P-Preghiera-3&quot;)]
 }
-(hidden:)[[[*-&gt;P-Preghiera-3]]]</tw-passagedata><tw-passagedata pid="36" name="P-Preghiera-3" tags="" position="1105,1571" size="100,100">	&quot;$pray_0&quot;
+(hidden:)[[[*-&gt;P-Preghiera-3]]]</tw-passagedata><tw-passagedata pid="35" name="P-Preghiera-3" tags="" position="1105,1571" size="100,100">	&quot;$pray_0&quot;
 	&quot;(print:$pray_1&#39;s 3rd)&quot;
 	&quot;$pray_10&quot;
 	&quot;(print:$pray_2&#39;s 3rd)&quot;
@@ -462,7 +459,7 @@ Sembra che tuo Padre abbia proprio l&#39;intenzione di infierire.
 (set:$pray_4&#39;s 5th to $pray_4&#39;s 4th)
 (goto:&quot;P-Preghiera-4&quot;)]
 }
-(hidden:)[[[*-&gt;P-Preghiera-4]]]</tw-passagedata><tw-passagedata pid="37" name="P-Preghiera-0" tags="" position="1111,1227" size="100,100">Viske ti segue nella preghiera.
+(hidden:)[[[*-&gt;P-Preghiera-4]]]</tw-passagedata><tw-passagedata pid="36" name="P-Preghiera-0" tags="" position="1111,1227" size="100,100">Viske ti segue nella preghiera.
 	&quot;$pray_0&quot;
 
 {(link: &quot;* \&quot;(print:$pray_1&#39;s 1st)\&quot;&quot;)[
@@ -473,7 +470,7 @@ Sembra che tuo Padre abbia proprio l&#39;intenzione di infierire.
 (set:$pray_1&#39;s 3rd to $pray_1&#39;s 2nd)
 (goto:&quot;P-Preghiera-1&quot;)]
 }
-(hidden:)[[[*-&gt;P-Preghiera-1]]]</tw-passagedata><tw-passagedata pid="38" name="P-Preghiera-4" tags="" position="1104,1692" size="100,100">	&quot;$pray_0&quot;
+(hidden:)[[[*-&gt;P-Preghiera-1]]]</tw-passagedata><tw-passagedata pid="37" name="P-Preghiera-4" tags="" position="1104,1692" size="100,100">	&quot;$pray_0&quot;
 	&quot;(print:$pray_1&#39;s 3rd)&quot;
 	&quot;$pray_10&quot;
 	&quot;(print:$pray_2&#39;s 3rd)&quot;
@@ -485,14 +482,14 @@ Sembra che tuo Padre abbia proprio l&#39;intenzione di infierire.
 Concludete la preghiera con il tipico gesto delle mani accompagnate da un rispettoso silenzio.
 
 [[* Faccio un profondo respiro-&gt;Back]]
-[[* Ascolto il silenzio-&gt;Back]]</tw-passagedata><tw-passagedata pid="39" name="P-Aggr-Hemsut" tags="" position="552,1574" size="100,100">Viske non merita di essere trattato così, sono io ad aver fatto un passo falso.
+[[* Ascolto il silenzio-&gt;Back]]</tw-passagedata><tw-passagedata pid="38" name="P-Aggr-Hemsut" tags="" position="552,1574" size="100,100">Viske non merita di essere trattato così, sono io ad aver fatto un passo falso.
 
 [[* &quot;Padre, Viske non ha colpa alcuna&quot;-&gt;P-Aggr-H-1]]
-[[* &quot;Padre, capisco bene la vostra sofferenza&quot;-&gt;P-Aggr-H-1]]</tw-passagedata><tw-passagedata pid="40" name="P-Aggr-Viske" tags="" position="819,1585" size="100,100">Padre: &quot;La tua lingua deve rimanere al posto giusto, il tuo corpo muoversi quando e come dico $bold[IO], la tua stessa anima deve sottostare al $bold[MIO] dettame.&quot;
+[[* &quot;Padre, capisco bene la vostra sofferenza&quot;-&gt;P-Aggr-H-1]]</tw-passagedata><tw-passagedata pid="39" name="P-Aggr-Viske" tags="" position="819,1585" size="100,100">Padre: &quot;La tua lingua deve rimanere al posto giusto, il tuo corpo muoversi quando e come dico $bold[IO], la tua stessa anima deve sottostare al $bold[MIO] dettame.&quot;
 
 Viske: &quot;Si Gran Sacerdote.&quot;
 
-[[* ...-&gt;P-Aggr-Viske-1]]</tw-passagedata><tw-passagedata pid="41" name="P-Aggr-H-1" tags="" position="552,1724" size="100,100">Tuo Padre si volta lentamente verso di te.
+[[* ...-&gt;P-Aggr-Viske-1]]</tw-passagedata><tw-passagedata pid="40" name="P-Aggr-H-1" tags="" position="552,1724" size="100,100">Tuo Padre si volta lentamente verso di te.
 Il suo sguardo minaccioso ti trapassa di parte in parte, guardandoti dall&#39;alto verso il basso.
 
 &quot;$shake[Hemsut]&quot;
@@ -502,14 +499,14 @@ Un brivido ti attraversa la spina dorsale.
 &quot;Non ti improvvisare psicologa con $bold[ME], ancor meno amica. Sei una serva degli Abissi, in quanto tale sei e sempre sarai una $bold[MIA] sottoposta.&quot;
 
 [[* &quot;Ero solo preoccupata, non volevo mancarle di rispetto&quot;-&gt;P-Aggr-H-2]]
-[[* Rimango in silenzio-&gt;P-Aggr-H-2]]</tw-passagedata><tw-passagedata pid="42" name="P-Aggr-H-2" tags="" position="552,1874" size="100,100">&quot;È così che ti comporti con gli altri esponenti della Gilda?&quot;
+[[* Rimango in silenzio-&gt;P-Aggr-H-2]]</tw-passagedata><tw-passagedata pid="41" name="P-Aggr-H-2" tags="" position="552,1874" size="100,100">&quot;È così che ti comporti con gli altri esponenti della Gilda?&quot;
 &quot;Impieghi le tue energie ficcando il naso negli affari dei tuoi superiori?&quot;
 
 Il suo sguardo si riempie sempre più di gelido disprezzo.
 
 [[* &quot;No, Padre volevo solo assicurarmi del vostro benessere&quot;-&gt;P-Aggr-H-3]]
 [[* &quot;Essere di supporto in ogni momento, è questo ciò che ho imparato dalla Gilda&quot;-&gt;P-Aggr-H-3]]
-[[* Rimango in silenzio-&gt;P-Aggr-H-4]]</tw-passagedata><tw-passagedata pid="43" name="P-Aggr-H-3" tags="" position="477,2024" size="100,100">&quot;Ciò che pensi di sapere e ciò che credi di aver imparato non ha alcuna valenza di fronte a $shake[ME].&quot;
+[[* Rimango in silenzio-&gt;P-Aggr-H-4]]</tw-passagedata><tw-passagedata pid="42" name="P-Aggr-H-3" tags="" position="477,2024" size="100,100">&quot;Ciò che pensi di sapere e ciò che credi di aver imparato non ha alcuna valenza di fronte a $shake[ME].&quot;
 
 I suoi toni si inaspriscono.
 
@@ -518,13 +515,13 @@ I suoi toni si inaspriscono.
 &quot;Devi solo eseguire i $bold[MIEI] ordini, non pensare inutilmente.&quot;
 
 [[* &quot;Si, Padre&quot;-&gt;P-Aggr-H-4]]
-[[* Rimango in silenzio-&gt;P-Aggr-H-4]]</tw-passagedata><tw-passagedata pid="44" name="P-Aggr-H-4" tags="" position="611,2025" size="100,100">Si volta.
+[[* Rimango in silenzio-&gt;P-Aggr-H-4]]</tw-passagedata><tw-passagedata pid="43" name="P-Aggr-H-4" tags="" position="611,2025" size="100,100">Si volta.
 Sistema la sua giacca e ritorna a guardare l&#39;esterno.
 
 [[* Cosa pensavo di ottenere? Sono una stupida-&gt;Elevatore]]
 [[* Volevo solo essergli d&#39;aiuto, non doveva trattarmi così-&gt;Elevatore]]
 [[* Non so cosa pensare-&gt;Elevatore]]
-(set:$silence to true)</tw-passagedata><tw-passagedata pid="45" name="Dossier" tags="" position="1568,1230" size="100,100">Apri la cartella.
+(set:$silence to true)</tw-passagedata><tw-passagedata pid="44" name="Dossier" tags="" position="1568,1230" size="100,100">Apri la cartella.
 
 Contiene un dossier composto di alcuni documenti e delle foto.
 
@@ -534,7 +531,7 @@ Contiene un dossier composto di alcuni documenti e delle foto.
 {
 (set:$dossier to true)
 (if: not ((history:) contains (passage:)&#39;s name))[(set:$time to $time-1)]
-}</tw-passagedata><tw-passagedata pid="46" name="Descrizione" tags="" position="661,14" size="100,100">Ti trovi con tuo Padre e Viske sulla piattaforma mobile del lago Bael, uno dei pochi punti di accesso alla dimora in cui sei nata e cresciuta.
+}</tw-passagedata><tw-passagedata pid="45" name="Descrizione" tags="" position="661,14" size="100,100">Ti trovi con tuo Padre e Viske sulla piattaforma mobile del lago Bael, uno dei pochi punti di accesso alla dimora in cui sei nata e cresciuta.
 
 La piattaforma è poco più di 2 metri di diametro, ha una forma circolare ed è fissata con dei bracci ad un binario incastonato sulla roccia.
 
@@ -568,21 +565,21 @@ La piattaforma inizia a scendere.
   $(&quot;#intro-music&quot;).animate({volume: 1}, 3000);
   audio.play();
 &lt;/script&gt;
-}</tw-passagedata><tw-passagedata pid="47" name="Documenti" tags="" position="1415,1370" size="100,100">Il dossier contiene 2 documenti.
+}</tw-passagedata><tw-passagedata pid="46" name="Documenti" tags="" position="1415,1370" size="100,100">Il dossier contiene 2 documenti.
 
 Uno sembra il profilo di una persona, l&#39;altro si direbbe un report.
 
 [[* Leggo il profilo-&gt;Profilo]]
 [[* Leggo il report-&gt;Report]]
 [[* Guardo le foto-&gt;Foto]]
-[[* Chiudo la cartella-&gt;Back]]</tw-passagedata><tw-passagedata pid="48" name="Foto" tags="" position="1706,1384" size="100,100">Ci sono tre foto allegate al dossier.
+[[* Chiudo la cartella-&gt;Back]]</tw-passagedata><tw-passagedata pid="47" name="Foto" tags="" position="1706,1384" size="100,100">Ci sono tre foto allegate al dossier.
 
 &lt;img src=&quot;./foto/fototutte.png&quot;&gt;
 
 [[* Guardo la foto del volto-&gt;Foto-Volto]]
 [[* Guardo la foto della stanza-&gt;Foto-Stanza]]
 [[* Guardo la foto della macchia-&gt;Foto-Macchia]]
-[[* Chiudo la cartella-&gt;Back]]</tw-passagedata><tw-passagedata pid="49" name="Profilo" tags="" position="1341,1520" size="100,100">Nome: Guglielmo
+[[* Chiudo la cartella-&gt;Back]]</tw-passagedata><tw-passagedata pid="48" name="Profilo" tags="" position="1341,1520" size="100,100">Nome: Guglielmo
 Cognome: Maraska
 Professione: Esploratore Veterano
 ---
@@ -601,7 +598,7 @@ Il soggetto è stato dichiarato disperso in seguito al mancato ritorno dalla sua
 Il soggetto è stato dichiarato deceduto in seguito alla comparsa del nome sul Monumento dei Caduti.
 ---
 [[* Leggo gli altri documenti-&gt;Documenti]] 
-[[* Guardo le foto-&gt;Foto]] </tw-passagedata><tw-passagedata pid="50" name="Report" tags="" position="1490,1520" size="100,100">Data del report: $report_date
+[[* Guardo le foto-&gt;Foto]] </tw-passagedata><tw-passagedata pid="49" name="Report" tags="" position="1490,1520" size="100,100">Data del report: $report_date
 Testimoni: Nessuno
 Segnalazione: Guido Testablu
 ---
@@ -626,22 +623,23 @@ Il cadavere A è stato identificato (Allegato A).
 ---
 [[* &quot;Viske, che giorno è oggi?&quot;-&gt;Today]]
 [[* Leggo gli altri documenti-&gt;Documenti]]
-[[* Guardo le foto-&gt;Foto]]  </tw-passagedata><tw-passagedata pid="51" name="Foto-Volto" tags="" position="1708,1490" size="100,100">
+[[* Guardo le foto-&gt;Foto]]  </tw-passagedata><tw-passagedata pid="50" name="Foto-Volto" tags="" position="1708,1490" size="100,100">
 &lt;img src=&quot;./foto/uomo.png&quot;&gt;
 
 [[* Guardo le altre foto-&gt;Foto]]
-[[* Leggo i documenti-&gt;Documenti]] </tw-passagedata><tw-passagedata pid="52" name="Foto-Stanza" tags="" position="1710,1594" size="100,100">
+[[* Leggo i documenti-&gt;Documenti]] </tw-passagedata><tw-passagedata pid="51" name="Foto-Stanza" tags="" position="1710,1594" size="100,100">
 &lt;img src=&quot;./foto/stanza.png&quot;&gt;
 
 [[* Guardo le altre foto-&gt;Foto]]
-[[* Leggo i documenti-&gt;Documenti]] </tw-passagedata><tw-passagedata pid="53" name="Foto-Macchia" tags="" position="1710,1695" size="100,100">
+[[* Leggo i documenti-&gt;Documenti]] </tw-passagedata><tw-passagedata pid="52" name="Foto-Macchia" tags="" position="1710,1695" size="100,100">
 &lt;img src=&quot;./foto/blob.png&quot;&gt;
 
 [[* Guardo le altre foto-&gt;Foto]]
-[[* Leggo i documenti-&gt;Documenti]] </tw-passagedata><tw-passagedata pid="54" name="Today" tags="" position="1490,1670" size="100,100">&quot;Oggi è il $today signorina Bael&quot;
+[[* Leggo i documenti-&gt;Documenti]] </tw-passagedata><tw-passagedata pid="53" name="Today" tags="" position="1490,1670" size="100,100">&quot;Oggi è il $today signorina Bael&quot;
 
 [[* &quot;Grazie Viske&quot;-&gt;Report]]
-[[* Mormori &quot;(print:$today) 812...&quot; e ritorni al report-&gt;Report]]</tw-passagedata><tw-passagedata pid="55" name="Giardini" tags="" position="1194,447" size="100,100">Attraversate i giardini, stupendi dipinti dai colori quasi surreali. Le statue di personaggi storici scandiscono le diverse sezioni, accompagnate da fiori e alberi non più presenti sulla terraferma.
+[[* Mormori &quot;(print:$today) 812...&quot; e ritorni al report-&gt;Report]]</tw-passagedata><tw-passagedata pid="54" name="Giardini" tags="" position="1194,447" size="100,100">Attraversate i giardini, stupendi dipinti dai colori quasi surreali.
+Le statue di personaggi storici scandiscono le diverse sezioni, ognuna delle quali accompagnata da fiori e alberi unici, alcuni non più presenti sulla terraferma.
 
 [[* Avanziamo verso l&#39;Atrio-&gt;Atrio]]
 (set:$finale to true)
@@ -653,28 +651,28 @@ Il cadavere A è stato identificato (Allegato A).
   audio.loop = true;
   $(&quot;body&quot;).append(audio);
   audio.volume = 0;
-  $(&quot;#crowd-music&quot;).animate({volume: 0.5}, 3000);
+  $(&quot;#crowd-music&quot;).animate({volume: 0.2}, 3000);
   audio.play();
-&lt;/script&gt;</tw-passagedata><tw-passagedata pid="56" name="Imboccato Angry" tags="" position="1576,913" size="100,100">Tuo Padre prende improvvisamente la parola.
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="55" name="Imboccato Angry" tags="" position="1576,913" size="100,100">Tuo Padre prende improvvisamente la parola.
 
 &quot;Viske, il dossier.&quot; - Dice con tono freddo.
 
 &quot;Studialo.&quot; - continua rivolgendosi a te.
 
 [[* Non dico nulla-&gt;Dossier]]
-[[* &quot;Si, Padre&quot;-&gt;Dossier]]</tw-passagedata><tw-passagedata pid="57" name="Imboccato Chill" tags="" position="1696,915" size="100,100">Tuo Padre prende improvvisamente la parola.
+[[* &quot;Si, Padre&quot;-&gt;Dossier]]</tw-passagedata><tw-passagedata pid="56" name="Imboccato Chill" tags="" position="1696,915" size="100,100">Tuo Padre prende improvvisamente la parola.
 
 &quot;Mi aspettavo avessi bisogno dei dettagli per la cerimonia.&quot; - Dice con tono pacato.
 
 [[* &quot;Sono pronta quando lo siete voi, Padre&quot;-&gt;P-Dettagli]]
 [[* &quot;Non volevo essere insistente, Padre.&quot;-&gt;P-Dettagli]]
 [[* &quot;Sono sempre pronta, qualunque cosa accada&quot;-&gt;Arrogante]]
-[[* &quot;Improvviserò, fluisco come acqua adattandomi al mio contenitore&quot;-&gt;Arrogante]]</tw-passagedata><tw-passagedata pid="58" name="Arrogante" tags="" position="1696,1065" size="100,100">&quot;Arrogante.&quot; - Dice tuo Padre stizzito.
+[[* &quot;Improvviserò, fluisco come acqua adattandomi al mio contenitore&quot;-&gt;Arrogante]]</tw-passagedata><tw-passagedata pid="57" name="Arrogante" tags="" position="1696,1065" size="100,100">&quot;Arrogante.&quot; - Dice tuo Padre stizzito.
 
 &quot;Non si è mai pronti alle intemperie della tempesta, una buona preparazione è di fondamentale importanza per navigare tra le onde adirate.&quot;
 
 [[* &quot;Avete ragione Padre&quot;-&gt;P-Dettagli]]
-[[* Non sono d&#39;accordo, non rispondo-&gt;P-Dettagli]]</tw-passagedata><tw-passagedata pid="59" name="Atrio" tags="" position="1339,445" size="100,100">Vi avvicinate al portone principale, dove i maggiordomi vi attendono.
+[[* Non sono d&#39;accordo, non rispondo-&gt;P-Dettagli]]</tw-passagedata><tw-passagedata pid="58" name="Atrio" tags="" position="1339,445" size="100,100">Vi avvicinate al portone principale, dove i maggiordomi vi attendono.
 
 &quot;Bentornati Padroni&quot; - Dicono inchinandosi.
 
@@ -695,21 +693,21 @@ La grande scalinata centrale si apre maestosa al centro dell&#39;atrio, connette
   audio.loop = true;
   $(&quot;body&quot;).append(audio);
   audio.volume = 0;
-  $(&quot;#step-music&quot;).animate({volume: 1}, 3000);
+  $(&quot;#step-music&quot;).animate({volume: 0.5}, 3000);
   audio.play();
-&lt;/script&gt;</tw-passagedata><tw-passagedata pid="60" name="Scale" tags="" position="1476,444" size="100,100">Passo per passo, scalino per scalino vi avvicinate verso la parte bassa della dimora.
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="59" name="Scale" tags="" position="1476,444" size="100,100">Passo per passo, scalino per scalino vi avvicinate verso la parte bassa della dimora.
 
 Vieni assalita da un senso di disagio, un disagio da cui speravi essere scappata.
 
 [[* Scendo ancora-&gt;Scale2]]
 &lt;script&gt;
  $(&quot;#crowd-music&quot;).animate({volume: 0}, 3000);
-&lt;/script&gt;</tw-passagedata><tw-passagedata pid="61" name="Fine" tags="" position="1726,447" size="100,100">
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="60" name="Fine" tags="" position="1726,447" size="100,100">
 //Fine Episodio 2 - Bolla//
 
-(link:&quot;Rivivi&quot;)[(reload:)]</tw-passagedata><tw-passagedata pid="62" name="Scale2" tags="" position="1602,447" size="100,100">Assalita dai ricordi non fai altro che nuotare in un mare di confusione. Tuo Padre e Viske si allontanano, vi incontrerete al piano di sopra non appena sarai pronta.
+(link:&quot;Rivivi&quot;)[(reload:)]</tw-passagedata><tw-passagedata pid="61" name="Scale2" tags="" position="1602,447" size="100,100">Assalita dai ricordi non fai altro che nuotare in un mare di confusione. Tuo Padre e Viske si allontanano, vi incontrerete al piano di sopra non appena sarai pronta.
 
-[[* Un altro passo ancora-&gt;Scale3]]</tw-passagedata><tw-passagedata pid="63" name="Scale3" tags="" position="1602,330" size="100,100">Ti avvi verso la tua vecchia camera, la porta socchiusa lascia trapelare una luce intensa, di un colore caldo.
+[[* Un altro passo ancora-&gt;Scale3]]</tw-passagedata><tw-passagedata pid="62" name="Scale3" tags="" position="1602,330" size="100,100">Ti avvi verso la tua vecchia camera, la porta socchiusa lascia trapelare una luce intensa, di un colore caldo.
 
 Le cerimonie funebri richiedono delle vesti tanto scomode quanto ricercate, insieme ad un trucco complesso e pesante.
 
@@ -717,7 +715,7 @@ Ti chiedi quanto tempo è passato dall&#39;ultima volta.
 [[* Saranno passati 10 anni-&gt;Scale4]]
 [[* 5 anni, non di più-&gt;Scale4]]
 [[* È più di 1 anno che non ne officio una-&gt;Scale4]]
-[[* Pochi mesi ma sembrano passati anni-&gt;Scale4]]</tw-passagedata><tw-passagedata pid="64" name="Scale4" tags="" position="1726,330" size="100,100">Apri la porta, lentamente.
+[[* Pochi mesi ma sembrano passati anni-&gt;Scale4]]</tw-passagedata><tw-passagedata pid="63" name="Scale4" tags="" position="1726,330" size="100,100">Apri la porta, lentamente.
 Tua Madre ti attende, seduta lì di fronte allo specchio.
 Ogni cosa è pronta, la vestizione ha inizio.
 
@@ -725,11 +723,11 @@ Ogni cosa è pronta, la vestizione ha inizio.
 [[* &quot;Madre, è tanto che non ci vediamo&quot;-&gt;Fine]]
 &lt;script&gt;
  $(&quot;#step-music&quot;).animate({volume: 0}, 1000);
-&lt;/script&gt;</tw-passagedata><tw-passagedata pid="65" name="P-Aggr-Viske-1" tags="" position="819,1735" size="100,100">Padre: &quot;Non hai alcun diritto ad interferire nel dialogo con $bold[MIA] figlia. Sono $bold[IO] a decidere cosa è giusto e cosa è sabagliato.&quot;
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="64" name="P-Aggr-Viske-1" tags="" position="819,1735" size="100,100">Padre: &quot;Non hai alcun diritto ad interferire nel dialogo con $bold[MIA] figlia. Sono $bold[IO] a decidere cosa è giusto e cosa è sabagliato.&quot;
 
 Viske rimane in silenzio.
 
-[[* ...-&gt;P-Aggr-Viske-2]]</tw-passagedata><tw-passagedata pid="66" name="P-Aggr-Viske-2" tags="" position="819,1873" size="100,100">Padre: &quot;Dove saresti adesso senza di me?&quot;
+[[* ...-&gt;P-Aggr-Viske-2]]</tw-passagedata><tw-passagedata pid="65" name="P-Aggr-Viske-2" tags="" position="819,1873" size="100,100">Padre: &quot;Dove saresti adesso senza di me?&quot;
 
 Viske: &quot;Ha ragione Padrone&quot;
 
@@ -738,7 +736,7 @@ Padre: &quot;$shake[RISPONDI]&quot; - La bolla stessa vibra a queste parole. La 
 Viske tentenna un attimo, ti lancia uno sguardo veloce.
 
 [[* Sai a cosa si riferiscono-&gt;P-Aggr-Viske-3]]
-[[* Non vuole dirlo di fronte a me-&gt;P-Aggr-Viske-4]]</tw-passagedata><tw-passagedata pid="67" name="P-Aggr-Viske-3" tags="" position="749,2022" size="100,100">Ripensi a dove sarebbe Viske adesso senza tuo Padre.
+[[* Non vuole dirlo di fronte a me-&gt;P-Aggr-Viske-4]]</tw-passagedata><tw-passagedata pid="66" name="P-Aggr-Viske-3" tags="" position="749,2022" size="100,100">Ripensi a dove sarebbe Viske adesso senza tuo Padre.
 
 {
 (link: &quot;* &quot;+$viske_secret_option&#39;s 1st)[
@@ -763,14 +761,14 @@ Viske tentenna un attimo, ti lancia uno sguardo veloce.
 	(set: $viske_secret to $viske_secret_value&#39;s 4th)
 	(goto: &quot;P-Aggr-Viske-4&quot;)
 ]
-}</tw-passagedata><tw-passagedata pid="68" name="P-Aggr-Viske-4" tags="" position="867,2024" size="100,100">Viske: &quot;$viske_secret, Padrone&quot; - guarda in basso
+}</tw-passagedata><tw-passagedata pid="67" name="P-Aggr-Viske-4" tags="" position="867,2024" size="100,100">Viske: &quot;$viske_secret, Padrone&quot; - guarda in basso
 
 Padre: &quot;Bene.&quot; - riprende la sua compostezza e torna a guardare fuori.
 
 La bolla lentamente si stabilizza e la piattaforma riprende a muoversi fluidamente.
 
 [[* ...-&gt;Back]]
-(set:$silence to true)</tw-passagedata><tw-passagedata pid="69" name="V-Maestro" tags="" position="1995,878" size="100,100">I maggiordomi devono necessariamente saper attingere all&#39;abisso per poter accedere alla dimora, coloro che non riescono dimangono nelle abitazioni in superficie.
+(set:$silence to true)</tw-passagedata><tw-passagedata pid="68" name="V-Maestro" tags="" position="1995,878" size="100,100">I maggiordomi devono necessariamente saper attingere all&#39;abisso per poter accedere alla dimora, coloro che non riescono dimangono nelle abitazioni in superficie.
 
 Viske, in quanto primo Maggiordomo, si occupa anche della valutazione e delle promozioni, mettendo alla prova chi ritiene possa essere in grado di lavorare all&#39;interno della dimora stessa.
 
@@ -778,22 +776,22 @@ Viske è sempre stato un esperto nell&#39;attingere agli abissi, non solo ha l&#
 
 [[* Mi ha sempre dato il buon esempio-&gt;Viske]]
 [[* Raggiungere il suo livello è uno dei miei traguardi-&gt;Viske]]
-[[* Ormai l&#39;allieva ha superato il maestro-&gt;Viske]]</tw-passagedata><tw-passagedata pid="70" name="V-Aiuto" tags="" position="2145,878" size="100,100">&quot;Padroncina, apprezzo la vostra preoccupazione ma non potrei mai permetterglielo. È mio dovere e piacere usare le mie energie come fossero le vostre.&quot;
+[[* Ormai l&#39;allieva ha superato il maestro-&gt;Viske]]</tw-passagedata><tw-passagedata pid="69" name="V-Aiuto" tags="" position="2145,878" size="100,100">&quot;Padroncina, apprezzo la vostra preoccupazione ma non potrei mai permetterglielo. È mio dovere e piacere usare le mie energie come fossero le vostre.&quot;
 
 [[* &quot;Va bene Viske ma non esagerare&quot;-&gt;Viske]]
-[[* Annuisco rispettosamente-&gt;Viske]]</tw-passagedata><tw-passagedata pid="71" name="V-Fingi" tags="" position="2295,878" size="100,100">Ride di gusto creando una marea di rughe su tutto il suo volto.
+[[* Annuisco rispettosamente-&gt;Viske]]</tw-passagedata><tw-passagedata pid="70" name="V-Fingi" tags="" position="2295,878" size="100,100">Ride di gusto creando una marea di rughe su tutto il suo volto.
 
 &quot;Padroncina devo ammettere che non è tutta farina del mio sacco.&quot;
 
-[[* &quot;Cosa intendi?&quot;-&gt;V-Fingi-2]]</tw-passagedata><tw-passagedata pid="72" name="V-Fingi-2" tags="" position="2295,1028" size="100,100">&quot;Non molto tempo fa abbiamo potenziato l&#39;ambra di riverbero sulla piattaforma, migliorando la stabilità delle bolle create al suo interno&quot;
+[[* &quot;Cosa intendi?&quot;-&gt;V-Fingi-2]]</tw-passagedata><tw-passagedata pid="71" name="V-Fingi-2" tags="" position="2295,1028" size="100,100">&quot;Non molto tempo fa abbiamo potenziato l&#39;ambra di riverbero sulla piattaforma, migliorando la stabilità delle bolle create al suo interno&quot;
 
 [[* &quot;Interessante, così le nuove leve non avranno la vita troppo facile durante gli esami?&quot;-&gt;V-Fingi-3]]
 [[* &quot;Ottimo, è sicuramente in miglioramento sulla qualità della vita&quot;-&gt;V-Fingi-3]]
-(set:$ambra to true)</tw-passagedata><tw-passagedata pid="73" name="V-Fingi-3" tags="" position="2422,876" size="100,100">&quot;Sia chiaro che durante gli esami di promozione per i maggiordomi della superficie vengono utilizzate piattaforme senza ambra alcuna.&quot;
+(set:$ambra to true)</tw-passagedata><tw-passagedata pid="72" name="V-Fingi-3" tags="" position="2422,876" size="100,100">&quot;Sia chiaro che durante gli esami di promozione per i maggiordomi della superficie vengono utilizzate piattaforme senza ambra alcuna.&quot;
 
 [[* &quot;Mi sembra corretto&quot;-&gt;Viske]]
 [[* &quot;Speravo che finalmente avremmo avuto maggiordomi più abili nell&#39;organizzazione&quot;-&gt;Viske]]
-[[* Annuisci-&gt;Viske]]</tw-passagedata><tw-passagedata pid="74" name="Sorriso" tags="" position="230,822" size="100,100">L&#39;uomo alto nota il tuo sguardo, si volta leggermente e sul suo volto si dipinge un sorriso.
+[[* Annuisci-&gt;Viske]]</tw-passagedata><tw-passagedata pid="73" name="Sorriso" tags="" position="230,822" size="100,100">L&#39;uomo alto nota il tuo sguardo, si volta leggermente e sul suo volto si dipinge un sorriso.
 
 Dato che il suo volto è estremamente rugoso cerca di enfatizzare ogni espressione con ogni muscolo del corpo, i suoi occhi piccoli vengono nascosti dalle pieghe della pelle mentre gli zigomi si inarcano dolcemente.
 
@@ -801,13 +799,20 @@ La pelle ruvida riflette le luci filtrate dall&#39;acqua, creando un&#39;armonia
 
 [[* Ricambio gioiosamente-&gt;Gioia]]
 [[* Ricambio cortesemente-&gt;Cortese]]
-[[* Distolgo lo sguardo, imbarazzata-&gt;Imbarazzo]]</tw-passagedata><tw-passagedata pid="75" name="Header" tags="header" position="58,64" size="100,100">{(text-colour: gray)[(link:&quot;Rivivi&quot;)[
+[[* Distolgo lo sguardo, imbarazzata-&gt;Imbarazzo]]</tw-passagedata><tw-passagedata pid="74" name="Header" tags="header" position="58,64" size="100,100">{(text-colour: gray)[(link:&quot;Rivivi&quot;)[
 (set: $r to false)
 (set: $r to (confirm: &quot;Vuoi davvero ricominciare tutto da capo? Perderai tutti i tuoi progressi e le scelte fatte.&quot;))
 (live:1)[(if: $r is true)[(set:$r to false)(reload:)]]
 ]]}
 ---
-</tw-passagedata></tw-storydata>
+</tw-passagedata><tw-passagedata pid="75" name="P-Silenzio" tags="" position="813.3333333333335,969.1666666666667" size="100,100">Lo assecondi rimanendo in silenzio.
+
+Non puoi fare a meno di notare in lui una certa preoccupazione, è diverso dal solito, non l&#39;hai mai visto così.
+
+Dietro il suo silenzio si nasconde agitazione, è irrequieto ma non arrabbiato.
+
+$impact[[[* //IMMERSIONE// Cerco un contatto, voglio essergli d&#39;aiuto-&gt;P-Contatto]]]
+[[* Non voglio disturbarlo-&gt;Back]]</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
