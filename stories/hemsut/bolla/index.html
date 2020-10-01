@@ -131,6 +131,7 @@ Tiene in mano una cartella sottile che sembra contenere documenti o qualcosa di 
 [[* &quot;Come riesci a mantenere la bolla e sorridere come se niente fosse?&quot;-&gt;V-Fingi]]
 [[* Non ho altro da drigli-&gt;Back]]
 {
+(set:$hello_viske to true)
 (if: not ((history:) contains (passage:)&#39;s name))[(set:$time to $time-1)]
 }</tw-passagedata><tw-passagedata pid="9" name="Silenzio" tags="" position="1636.0000000000002,778.3333333333335" size="100,100">Rimani in silenzio, in attesa di arrivare a destinazione.
 {
@@ -150,14 +151,14 @@ Tiene in mano una cartella sottile che sembra contenere documenti o qualcosa di 
 Vengono utilizzate per fare gel, creme e budini data la loro consistenza gelatinosa.
 Hanno un sapore abbastanza neutro anche se non sai bene come vengono utilizzati in cucina dato il loro forte odore.
 
-[[Ho capito.-&gt;Back]]</tw-passagedata><tw-passagedata pid="11" name="Startup" tags="startup" position="197.33333333333334,70" size="100,100">{(set: $time to 10)
+[[Ho capito.-&gt;Back]]</tw-passagedata><tw-passagedata pid="11" name="Startup" tags="startup" position="197.33333333333334,70" size="100,100">{(set: $time to 8)
 (set: $action to (a:))
 (set: $make to 0)
 (set: $spoken to false)
 
-(set: $t1 to (a:8,false))
-(set: $t2 to (a:5,false))
-(set: $t3 to (a:3,false))
+(set: $t1 to (a:6,false))
+(set: $t2 to (a:4,false))
+(set: $t3 to (a:2,false))
 (set: $t4 to (a:0,false))
 
 (set: $report_date to &quot;21-09-812&quot;)
@@ -381,7 +382,13 @@ Sembra che tuo Padre abbia proprio l&#39;intenzione di infierire.
 [[* Rimani in silenzio-&gt;P-Aggr-Viske]]
 {
 (set:$angry to true)
-(if: not ((history:) contains (passage:)&#39;s name))[(set:$time to $time-1)]
+(if: not ((history:) contains (passage:)&#39;s name))[
+  (if:$hello_viske is true)[
+	  (set:$time to $time-1)
+  ] (else:) [
+  	(set:$time to $time-2)
+  ]
+]
 }</tw-passagedata><tw-passagedata pid="34" name="P-Preghiera-1" tags="" position="1112.3333333333333,1346.3333333333335" size="100,100">Tutti all&#39;unisono vi immergete nella preghiera.
 	&quot;$pray_0&quot;
 	&quot;(print:$pray_1&#39;s 3rd)&quot;
