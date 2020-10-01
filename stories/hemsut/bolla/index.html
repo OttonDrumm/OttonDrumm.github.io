@@ -173,8 +173,8 @@ Hanno un sapore abbastanza neutro anche se non sai bene come vengono utilizzati 
 (set: $t3 to (a:2,false))
 (set: $t4 to (a:0,false))
 
-(set: $report_date to &quot;21-09-812&quot;)
-(set: $today to &quot;22 Settembre&quot;)
+(set: $report_date to &quot;20-09-812&quot;)
+(set: $today to &quot;21 Settembre&quot;)
 (set: $impact to (text-colour: red))
 (set: $shake to (text-style: &quot;rumble&quot;)+(text-style: &quot;bold&quot;))
 (set: $bold to (text-style: &quot;bold&quot;))
@@ -530,7 +530,7 @@ Contiene un dossier composto di alcuni documenti e delle foto.
 {
 (set:$dossier to true)
 (if: not ((history:) contains (passage:)&#39;s name))[(set:$time to $time-1)]
-}</tw-passagedata><tw-passagedata pid="46" name="Descrizione" tags="" position="661.6666666666666,14" size="100,100">Ti trovi con tuo Padre e Viske sulla piattaforma mobile del lago Bael, uno dei pochi punti di accesso alla dimora in cui sei nata e cresciuta.
+}</tw-passagedata><tw-passagedata pid="46" name="Descrizione" tags="" position="661,14" size="100,100">Ti trovi con tuo Padre e Viske sulla piattaforma mobile del lago Bael, uno dei pochi punti di accesso alla dimora in cui sei nata e cresciuta.
 
 La piattaforma è poco più di 2 metri di diametro, ha una forma circolare ed è fissata con dei bracci ad un binario incastonato sulla roccia.
 
@@ -573,15 +573,12 @@ Uno sembra il profilo di una persona, l&#39;altro si direbbe un report.
 [[* Guardo le foto-&gt;Foto]]
 [[* Chiudo la cartella-&gt;Back]]</tw-passagedata><tw-passagedata pid="48" name="Foto" tags="" position="1706,1384" size="100,100">Ci sono tre foto allegate al dossier.
 
-La prima raffigura il volto di un uomo.
-La seconda dipinge una stanza con diverse persone per terra.
-la terza si direbbe una macchia nera.
+&lt;img src=&quot;./foto/fototutte.png&quot;&gt;
 
 [[* Guardo la foto del volto-&gt;Foto-Volto]]
 [[* Guardo la foto della stanza-&gt;Foto-Stanza]]
 [[* Guardo la foto della macchia-&gt;Foto-Macchia]]
-[[* Chiudo la cartella-&gt;Back]]</tw-passagedata><tw-passagedata pid="49" name="Profilo" tags="" position="1341,1520" size="100,100">---
-Nome: Guglielmo
+[[* Chiudo la cartella-&gt;Back]]</tw-passagedata><tw-passagedata pid="49" name="Profilo" tags="" position="1341,1520" size="100,100">Nome: Guglielmo
 Cognome: Maraska
 Professione: Esploratore Veterano
 ---
@@ -600,8 +597,7 @@ Il soggetto è stato dichiarato disperso in seguito al mancato ritorno dalla sua
 Il soggetto è stato dichiarato deceduto in seguito alla comparsa del nome sul Monumento dei Caduti.
 ---
 [[* Leggo gli altri documenti-&gt;Documenti]] 
-[[* Guardo le foto-&gt;Foto]] </tw-passagedata><tw-passagedata pid="50" name="Report" tags="" position="1490,1520" size="100,100">---
-Data del report: $report_date
+[[* Guardo le foto-&gt;Foto]] </tw-passagedata><tw-passagedata pid="50" name="Report" tags="" position="1490,1520" size="100,100">Data del report: $report_date
 Testimoni: Nessuno
 Segnalazione: Guido Testablu
 ---
@@ -611,11 +607,14 @@ Il casolare è di proprietà del Sig. TestaBlu, questo vive da solo con la figli
 Il Sig. Testablu dichiara di aver sentito un rumore improvviso proveniente dalla sua camera mentre si trovava in cucina con la figlia.
 ---
 Stato della stanza:
-La stanza è stata ritrovata ricolma di un liquido nero e denso non identificato, potrebbe essere pece.
+La stanza è stata ritrovata ricolma di un liquido nero e denso non identificato.
+Le prime ipotesi la identificavano come pece ma il colore nero intenso e la consistenza melmosa hanno smentito immediatamente tale ipotesi.
+Il liquido quasi non riflette luce.
 La mobilia è smossa o spinta, coperta almeno in parte del liquido nero.
 Sull&#39;epicentro della macchia è presente un denso agglomerato, al suo interno vi sono dei corpuscoli duri, dello stesso colore del liquido.
 ---
 Stato dei cadaveri:
+Tutti i cadaveri sono stati ritrovati ricoperti del liquido nero.
 I cadaveri B, C, D ed E presentano lividi e segni di collutazione.
 Il cadavere C presenta uno squarcio sullo stomaco, dalle prime analisi sembrerebbe derivante da un morso di bestia marina.
 Le unghie del cadavere C sono consumate e sollevate dal letto ungueale.
@@ -624,10 +623,16 @@ Il cadavere A è stato identificato (Allegato A).
 [[* &quot;Viske, che giorno è oggi?&quot;-&gt;Today]]
 [[* Leggo gli altri documenti-&gt;Documenti]]
 [[* Guardo le foto-&gt;Foto]]  </tw-passagedata><tw-passagedata pid="51" name="Foto-Volto" tags="" position="1708,1490" size="100,100">
+&lt;img src=&quot;./foto/uomo.png&quot;&gt;
+
 [[* Guardo le altre foto-&gt;Foto]]
 [[* Leggo i documenti-&gt;Documenti]] </tw-passagedata><tw-passagedata pid="52" name="Foto-Stanza" tags="" position="1710,1594" size="100,100">
+&lt;img src=&quot;./foto/stanza.png&quot;&gt;
+
 [[* Guardo le altre foto-&gt;Foto]]
 [[* Leggo i documenti-&gt;Documenti]] </tw-passagedata><tw-passagedata pid="53" name="Foto-Macchia" tags="" position="1710,1695" size="100,100">
+&lt;img src=&quot;./foto/blob.png&quot;&gt;
+
 [[* Guardo le altre foto-&gt;Foto]]
 [[* Leggo i documenti-&gt;Documenti]] </tw-passagedata><tw-passagedata pid="54" name="Today" tags="" position="1490,1670" size="100,100">&quot;Oggi è il $today signorina Bael&quot;
 
