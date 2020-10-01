@@ -51,7 +51,7 @@ hr, div, p {
 [[* Parlo con Viske-&gt;Viske]]
 $impact[[[* Parlo con mio padre-&gt;Padre]]]
 ](else:)[[[* Attendo silenziosamente-&gt;Silenzio]]]
-(if:$dossier is true)[[* Analizza il dossier-&gt;Dossier]]
+(if:$dossier is true)[[* Leggo i documenti-&gt;Dossier]]
 {
 (if:$time &lt;= 0)[(goto:&quot;Atterraggio&quot;)]
 }</tw-passagedata><tw-passagedata pid="2" name="Introduzione" tags="" position="535.3333333333333,15.666666666666671" size="100,100">Stai per prendere delle scelte nei panni di Hemsut, non c&#39;è giusto o sbagliato, prendi le scelte che ti sembrano più corrette per il tuo personaggio.
@@ -146,16 +146,15 @@ Tiene in mano una cartella sottile che sembra contenere documenti o qualcosa di 
 (if:$pray is false)[
   	[[* Intono una preghiera &quot;$pray_0&quot;-&gt;P-Preghiera-0]] 
   ] (else:) [
-	(if:$dossier is true)[
+	(if:$dossier is false)[
 	  (if:$angry is false)[
 	  [[* Attendo-&gt;Imboccato Chill]]
 	  ] (else:) [
 	  [[* Attendo-&gt;Imboccato Angry]] 
 	  ]
-	]
+	] (else:)[[[* Attendo-&gt;Atterraggio]]]
 ]
-}
-(else:)[[[* Attendo-&gt;Atterraggio]]]</tw-passagedata><tw-passagedata pid="10" name="Makè" tags="" position="190.66666666666669,354.3333333333333" size="100,100">Le bacche di Maké sono molto comuni nella vostra zona anche se raramente vengono coltivate. Intere non hanno un odore particolare ma quando vengono trattate spigionano un pungente aroma.
+}</tw-passagedata><tw-passagedata pid="10" name="Makè" tags="" position="190.66666666666669,354.3333333333333" size="100,100">Le bacche di Maké sono molto comuni nella vostra zona anche se raramente vengono coltivate. Intere non hanno un odore particolare ma quando vengono trattate spigionano un pungente aroma.
 Vengono utilizzate per fare gel, creme e budini data la loro consistenza gelatinosa.
 Hanno un sapore abbastanza neutro anche se non sai bene come vengono utilizzati in cucina dato il loro forte odore.
 
@@ -172,6 +171,8 @@ Hanno un sapore abbastanza neutro anche se non sai bene come vengono utilizzati 
 (set: $report_date to &quot;21-09-812&quot;)
 (set: $today to &quot;22 Settembre&quot;)
 (set: $impact to (text-colour: red))
+(set: $shake to (text-style: &quot;rumble&quot;)+(text-style: &quot;bold&quot;))
+(set: $bold to (text-style: &quot;bold&quot;))
 (set: $p_trouble to false)
 (set: $dossier to false)
 (set: $silence to false)
@@ -478,18 +479,18 @@ Concludete la preghiera con il tipico gesto delle mani accompagnate da un rispet
 [[* Ascolto il silenzio-&gt;Back]]</tw-passagedata><tw-passagedata pid="39" name="P-Aggr-Hemsut" tags="" position="552.6666666666666,1574" size="100,100">Viske non merita di essere trattato così, sono io ad aver fatto un passo falso.
 
 [[* &quot;Padre, Viske non ha colpa alcuna&quot;-&gt;P-Aggr-H-1]]
-[[* &quot;Padre, capisco bene la vostra sofferenza&quot;-&gt;P-Aggr-H-1]]</tw-passagedata><tw-passagedata pid="40" name="P-Aggr-Viske" tags="" position="819.3333333333333,1585.666666666667" size="100,100">Padre: &quot;La tua lingua deve rimanere al posto giusto, il tuo corpo muoversi quando e come dico io, la tua stessa anima deve sottostare al mio dettame.&quot;
+[[* &quot;Padre, capisco bene la vostra sofferenza&quot;-&gt;P-Aggr-H-1]]</tw-passagedata><tw-passagedata pid="40" name="P-Aggr-Viske" tags="" position="819.3333333333333,1585.666666666667" size="100,100">Padre: &quot;La tua lingua deve rimanere al posto giusto, il tuo corpo muoversi quando e come dico $bold[IO], la tua stessa anima deve sottostare al $bold[MIO] dettame.&quot;
 
 Viske: &quot;Si Gran Sacerdote.&quot;
 
 [[* ...-&gt;P-Aggr-Viske-1]]</tw-passagedata><tw-passagedata pid="41" name="P-Aggr-H-1" tags="" position="552.6666666666666,1724" size="100,100">Tuo Padre si volta lentamente verso di te.
 Il suo sguardo minaccioso ti trapassa di parte in parte, guardandoti dall&#39;alto verso il basso.
 
-&quot;Hemsut.&quot;
+&quot;$shake[Hemsut]&quot;
 
 Un brivido ti attraversa la spina dorsale.
 
-&quot;Non ti improvvisare psicologa con me, ancor meno amica. Sei una serva degli Abissi, in quanto tale sei e sempre sarai una mia sottoposta.&quot;
+&quot;Non ti improvvisare psicologa con $bold[ME], ancor meno amica. Sei una serva degli Abissi, in quanto tale sei e sempre sarai una $bold[MIA] sottoposta.&quot;
 
 [[* &quot;Ero solo preoccupata, non volevo mancarle di rispetto&quot;-&gt;P-Aggr-H-2]]
 [[* Rimango in silenzio-&gt;P-Aggr-H-2]]</tw-passagedata><tw-passagedata pid="42" name="P-Aggr-H-2" tags="" position="552.6666666666666,1874" size="100,100">&quot;È così che ti comporti con gli altri esponenti della Gilda?&quot;
@@ -499,13 +500,13 @@ Il suo sguardo si riempie sempre più di gelido disprezzo.
 
 [[* &quot;No, Padre volevo solo assicurarmi del vostro benessere&quot;-&gt;P-Aggr-H-3]]
 [[* &quot;Essere di supporto in ogni momento, è questo ciò che ho imparato dalla Gilda&quot;-&gt;P-Aggr-H-3]]
-[[* Rimango in silenzio-&gt;P-Aggr-H-4]]</tw-passagedata><tw-passagedata pid="43" name="P-Aggr-H-3" tags="" position="477.6666666666667,2024" size="100,100">&quot;Ciò che pensi di sapere e ciò che credi di aver imparato non ha alcuna valenza di fronte a me.&quot;
+[[* Rimango in silenzio-&gt;P-Aggr-H-4]]</tw-passagedata><tw-passagedata pid="43" name="P-Aggr-H-3" tags="" position="477.6666666666667,2024" size="100,100">&quot;Ciò che pensi di sapere e ciò che credi di aver imparato non ha alcuna valenza di fronte a $shake[ME].&quot;
 
 I suoi toni si inaspriscono.
 
 &quot;È già tanto che tu possa essere una sacerdotessa.&quot;
 &quot;Sai bene quanto ho sudato per portarti dove sei, con quel tuo corpo deforme uscito da chissà quale peccato del passato.&quot;
-&quot;Devi solo eseguire i miei ordini, non pensare inutilmente.&quot;
+&quot;Devi solo eseguire i $bold[MIEI] ordini, non pensare inutilmente.&quot;
 
 [[* &quot;Si, Padre&quot;-&gt;P-Aggr-H-4]]
 [[* Rimango in silenzio-&gt;P-Aggr-H-4]]</tw-passagedata><tw-passagedata pid="44" name="P-Aggr-H-4" tags="" position="611,2025.6666666666667" size="100,100">Si volta.
@@ -664,7 +665,7 @@ Tua Madre ti attende, seduta lì di fronte allo specchio.
 Ogni cosa è pronta, la vestizione ha inizio.
 
 [[* &quot;Buongiorno Madre&quot; - Fai un profondo inchino-&gt;Fine]]
-[[* &quot;Madre, è tanto che non ci vediamo&quot;-&gt;Fine]]</tw-passagedata><tw-passagedata pid="65" name="P-Aggr-Viske-1" tags="" position="819.3333333333333,1735.666666666667" size="100,100">Padre: &quot;Non hai alcun diritto ad interferire nel dialogo con &#39;&#39;MIA&#39;&#39; figlia. Sono &#39;&#39;IO&#39;&#39; a decidere cosa è giusto e cosa è sabagliato.&quot;
+[[* &quot;Madre, è tanto che non ci vediamo&quot;-&gt;Fine]]</tw-passagedata><tw-passagedata pid="65" name="P-Aggr-Viske-1" tags="" position="819.3333333333333,1735.666666666667" size="100,100">Padre: &quot;Non hai alcun diritto ad interferire nel dialogo con $bold[MIA] figlia. Sono $bold[IO] a decidere cosa è giusto e cosa è sabagliato.&quot;
 
 Viske rimane in silenzio.
 
@@ -672,7 +673,7 @@ Viske rimane in silenzio.
 
 Viske: &quot;Ha ragione Padrone&quot;
 
-Padre: &quot;&#39;&#39;RISPONDI&#39;&#39;&quot; - La bolla stessa vibra a queste parole. La piattaforma singhiozza nel suo movimento.
+Padre: &quot;$shake[RISPONDI]&quot; - La bolla stessa vibra a queste parole. La piattaforma singhiozza nel suo movimento.
 
 Viske tentenna un attimo, ti lancia uno sguardo veloce.
 
@@ -680,25 +681,25 @@ Viske tentenna un attimo, ti lancia uno sguardo veloce.
 [[* Non vuole dirlo di fronte a me-&gt;P-Aggr-Viske-4]]</tw-passagedata><tw-passagedata pid="67" name="P-Aggr-Viske-3" tags="" position="749.3333333333333,2022.333333333333" size="100,100">Ripensi a dove sarebbe Viske adesso senza tuo Padre.
 
 {
-(link: $viske_secret_option&#39;s 1st)[
+(link: &quot;* &quot;+$viske_secret_option&#39;s 1st)[
 	(set: $viske_secret to $viske_secret_value&#39;s 1st)
 	(goto: &quot;P-Aggr-Viske-4&quot;)
 ]
 }
 {
-(link: $viske_secret_option&#39;s 2nd)[
+(link: &quot;* &quot;+$viske_secret_option&#39;s 2nd)[
 	(set: $viske_secret to $viske_secret_value&#39;s 2nd)
 	(goto: &quot;P-Aggr-Viske-4&quot;)
 ]
 }
 {
-(link: $viske_secret_option&#39;s 3rd)[
+(link: &quot;* &quot;+$viske_secret_option&#39;s 3rd)[
 	(set: $viske_secret to $viske_secret_value&#39;s 3rd)
 	(goto: &quot;P-Aggr-Viske-4&quot;)
 ]
 }
 {
-(link: $viske_secret_option&#39;s 4th)[
+(link: &quot;* &quot;+$viske_secret_option&#39;s 4th)[
 	(set: $viske_secret to $viske_secret_value&#39;s 4th)
 	(goto: &quot;P-Aggr-Viske-4&quot;)
 ]
