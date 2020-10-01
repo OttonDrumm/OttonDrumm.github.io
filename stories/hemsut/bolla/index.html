@@ -273,6 +273,7 @@ La struttura è stata fondata proprio sopra una bolla naturale, permettendo la r
 
 [[* Guardo Altro-&gt;Elevatore]]
 (set:$t3&#39;s 2nd to true)</tw-passagedata><tw-passagedata pid="23" name="Advance" tags="" position="994,296" size="100,100">Il tempo passa, la destinazione si avvicina.
+
 {
 (if:$time &gt;= $t1&#39;s 1st) [[[* Mi guardo intorno-&gt;Superficie]]]
 (else-if:$time &gt;= $t2&#39;s 1st) [[[* Mi guardo intorno-&gt;Cunicoli]]]
@@ -699,19 +700,20 @@ La grande scalinata centrale si apre maestosa al centro dell&#39;atrio, connette
 
 Vieni assalita da un senso di disagio, un disagio da cui speravi essere scappata.
 
-[[* Scendo ancora-&gt;Scale2]]
-&lt;script&gt;
- $(&quot;#crowd-music&quot;).animate({volume: 0}, 3000);
-&lt;/script&gt;</tw-passagedata><tw-passagedata pid="60" name="Fine" tags="" position="1726,447" size="100,100">
+[[* Scendo ancora-&gt;Scale2]]</tw-passagedata><tw-passagedata pid="60" name="Fine" tags="" position="1726,447" size="100,100">
 //Fine Episodio 2 - Bolla//
 
-(link:&quot;Rivivi&quot;)[(reload:)]</tw-passagedata><tw-passagedata pid="61" name="Scale2" tags="" position="1602,447" size="100,100">Assalita dai ricordi non fai altro che nuotare in un mare di confusione. Tuo Padre e Viske si allontanano, vi incontrerete al piano di sopra non appena sarai pronta.
+(link:&quot;Rivivi&quot;)[(reload:)]</tw-passagedata><tw-passagedata pid="61" name="Scale2" tags="" position="1602,447" size="100,100">Sommersa dai ricordi non fai altro che nuotare in un mare di confusione. Tuo Padre e Viske si allontanano, vi incontrerete al piano di sopra non appena sarai pronta.
 
-[[* Un altro passo ancora-&gt;Scale3]]</tw-passagedata><tw-passagedata pid="62" name="Scale3" tags="" position="1602,330" size="100,100">Ti avvi verso la tua vecchia camera, la porta socchiusa lascia trapelare una luce intensa, di un colore caldo.
+[[* Un altro passo ancora-&gt;Scale3]]
+&lt;script&gt;
+ $(&quot;#crowd-music&quot;).animate({volume: 0}, 3000);
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="62" name="Scale3" tags="" position="1602,330" size="100,100">Ti avvi verso la tua vecchia camera, la porta socchiusa lascia trapelare una luce intensa, di un colore caldo.
 
 Le cerimonie funebri richiedono delle vesti tanto scomode quanto ricercate, insieme ad un trucco complesso e pesante.
 
-Ti chiedi quanto tempo è passato dall&#39;ultima volta.
+Ti chiedi quanto tempo è passato dall&#39;ultima volta che ne hai officiata una.
+
 [[* Saranno passati 10 anni-&gt;Scale4]]
 [[* 5 anni, non di più-&gt;Scale4]]
 [[* È più di 1 anno che non ne officio una-&gt;Scale4]]
