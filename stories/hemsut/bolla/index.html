@@ -116,7 +116,7 @@ Emana il suo odore caratteristico, come al solito, principalmente dovuto al gel 
 {
 (if:$time is 0)[(goto:&quot;No time&quot;)]
 (if: not ((history:) contains (passage:)&#39;s name))[(set:$time to $time-1)]
-}</tw-passagedata><tw-passagedata pid="6" name="Padre" tags="" position="908.3333333333334,683.6666666666666" size="100,100">Tuo padre, pensieroso, osserva vagamente il suo lago.
+}</tw-passagedata><tw-passagedata pid="6" name="Padre" tags="" position="908,683" size="100,100">Tuo padre, pensieroso, osserva vagamente il suo lago.
 
 (if:$p_trouble is false)[[[* &quot;Padre, vi vedo pensieroso, qualcosa vi turba?&quot;-&gt;P-Turbamento]]]
 (if:$dossier is false)[[[* &quot;Padre, avrei bisogno di qualche dettaglio sui riti da officiare&quot;-&gt;P-Dettagli]]]
@@ -304,7 +304,7 @@ Prendi in mano la cartella.
 
 [[* &quot;Grazie Viske&quot;-&gt;Dossier]]
 [[* &quot;Grazie Padre&quot;-&gt;Dossier]]
-[[* &quot;Grazie...&quot;-&gt;Dossier]]</tw-passagedata><tw-passagedata pid="27" name="P-Preoccupazione" tags="" position="692.6666666666666,832.6666666666666" size="100,100">Noti in lui una certa preoccupazione, è diverso dal solito, non l&#39;hai mai visto così.
+[[* &quot;Grazie...&quot;-&gt;Dossier]]</tw-passagedata><tw-passagedata pid="27" name="P-Preoccupazione" tags="" position="692,832" size="100,100">Noti in lui una certa preoccupazione, è diverso dal solito, non l&#39;hai mai visto così.
 
 Tuo Padre risponde molto pacatamente:
 	&quot;Certo Hemsut, concentrati su ciò che stiamo per fare, non sul mio stato d&#39;animo.&quot;
@@ -582,13 +582,14 @@ Uno sembra il profilo di una persona, l&#39;altro si direbbe un report.
 [[* Guardo la foto della macchia-&gt;Foto-Macchia]]
 [[* Chiudo la cartella-&gt;Back]]</tw-passagedata><tw-passagedata pid="48" name="Profilo" tags="" position="1341,1520" size="100,100">Nome: Guglielmo
 Cognome: Maraska
-Professione: Esploratore Veterano
+Professione: Esploratore Veterano - Guida
+Data di nascita: 23-01-733
 ---
 Stato: 
-- Dichiarato disperso il 11-03-756
-- Dichiarato deceduto il 16-03-756
+- Dichiarato disperso il 11-03-774
+- Dichiarato deceduto il 16-03-774
 ---
-Stato di famiglia:
+Familiari:
 - Anna Umido, Moglie, deceduta
 - Amedeo Maraksa, Figlio, deceduto
 - Vinnie Maraska, Nipote, in vita
@@ -807,7 +808,7 @@ La pelle ruvida riflette le luci filtrate dall&#39;acqua, creando un&#39;armonia
 (live:1)[(if: $r is true)[(set:$r to false)(reload:)]]
 ]]}
 ---
-</tw-passagedata><tw-passagedata pid="75" name="P-Silenzio" tags="" position="813.3333333333335,969.1666666666667" size="100,100">Lo assecondi rimanendo in silenzio.
+</tw-passagedata><tw-passagedata pid="75" name="P-Silenzio" tags="" position="813,969" size="100,100">Lo assecondi rimanendo in silenzio.
 
 Non puoi fare a meno di notare in lui una certa preoccupazione, è diverso dal solito, non l&#39;hai mai visto così.
 
