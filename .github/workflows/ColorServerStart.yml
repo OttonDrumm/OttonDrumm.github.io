@@ -9,9 +9,12 @@ on: [workflow_dispatch]
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   start_color_server:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
         
+      - name: Grant permissions
+        run: chmod +h ./deep_blue/server/linux/ColorServer
+        
       - name: Run a one-line script
-        run: ./deep_blue/server/windows/ColorServer
+        run: ./deep_blue/server/linux/ColorServer
