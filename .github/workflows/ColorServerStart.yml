@@ -20,4 +20,4 @@ jobs:
         run: chmod 777 ./deep_blue/server/linux/ColorServer
         
       - name: Run a one-line script
-        run: ./deep_blue/server/linux/ColorServer
+        run: sudo ./deep_blue/server/linux/ColorServer
