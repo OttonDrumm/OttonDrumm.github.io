@@ -12,6 +12,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      
+      - name: Install dependecies
+        run: apt-get install -y libpulse0
         
       - name: Grant permissions
         run: chmod +x ./deep_blue/server/linux/ColorServer
