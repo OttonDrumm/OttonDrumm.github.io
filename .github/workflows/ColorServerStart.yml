@@ -20,7 +20,7 @@ jobs:
         run: chmod 777 ./deep_blue/server/linux/ColorServer
         
       - name: Open port
-        run: sudo ufw allow 51234/tcp
+        run: sudo ufw allow 51234/udp
         
       - name: Run a one-line script
         run: sudo ./deep_blue/server/linux/ColorServer
