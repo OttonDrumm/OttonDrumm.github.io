@@ -17,10 +17,7 @@ jobs:
         run: sudo apt-get install libpulse0
         
       - name: Grant permissions
-        run: chmod 777 ./deep_blue/server/linux/ColorServer
-        
-      - name: Open port
-        run: sudo ufw allow 51234/udp
+        run: chmod +x ./deep_blue/server/linux/ColorServer
         
       - name: Run a one-line script
-        run: sudo ./deep_blue/server/linux/ColorServer
+        run: sudo ./deep_blue/server/linux/ColorServer --no-window
