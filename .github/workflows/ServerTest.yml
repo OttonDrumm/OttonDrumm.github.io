@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: ColorServerStart
+name: ServerTest
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
@@ -12,12 +12,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      
-      - name: Install dependencies
-        run: sudo apt-get install libpulse0
         
       - name: Grant permissions
-        run: chmod +x ./deep_blue/server/linux/ColorServer
+        run: chmod +x ./godot_server/linux/Server
         
       - name: Run a one-line script
-        run: sudo ./deep_blue/server/linux/ColorServer --no-window
+        run: sudo ./godot_server/linux/Server --no-window
