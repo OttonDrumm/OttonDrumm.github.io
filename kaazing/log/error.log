@@ -1,0 +1,72 @@
+2020-11-01 14:40:19,704 [main] INFO  Kaazing Gateway (5.8.10)
+2020-11-01 14:40:19,706 [main] INFO  Configuration file: E:\Develop\Web\Kaazing\kaazing-enterprise-gateway-5.8.10\conf\gateway-config.xml
+2020-11-01 14:40:20,255 [main] INFO  Checking license information
+2020-11-01 14:40:20,314 [main] INFO    No valid Kaazing license found
+2020-11-01 14:40:20,314 [main] INFO  Using Kaazing developer license, maximum 100 connections
+2020-11-01 14:40:22,883 [main] INFO  Starting server
+2020-11-01 14:40:22,883 [main] INFO  Starting services
+2020-11-01 14:40:22,883 [main] INFO    http://localhost:8000/
+2020-11-01 14:40:22,883 [main] INFO    ws://localhost:8000/amqp
+2020-11-01 14:40:22,883 [main] INFO    ws://localhost:8000/echo
+2020-11-01 14:40:22,884 [main] INFO    ws://localhost:8000/jms
+2020-11-01 14:40:22,884 [main] INFO  Started services
+2020-11-01 14:40:22,886 [main] INFO  Started server successfully in 0,730 secs at 2020-11-01 14:40:22
+2020-11-01 14:40:25,099 [EagerCP_0-1] WARN  Unable to establish JMS Connection due to the following exception: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused: connect
+2020-11-01 14:40:25,107 [EagerCP_0-1] INFO  Connection failed while attempting to connect to a remote server. Please verify that the servers to which your Gateway is configured to connect are successfully started.  See the Administrator's Guide for more information.
+2020-11-01 14:40:32,162 [EagerCP_0-1] WARN  Unable to establish JMS Connection due to the following exception: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused: connect
+2020-11-01 14:40:32,163 [EagerCP_0-1] INFO  Connection failed while attempting to connect to a remote server. Please verify that the servers to which your Gateway is configured to connect are successfully started.  See the Administrator's Guide for more information.
+2020-11-01 14:40:39,222 [EagerCP_0-1] WARN  Unable to establish JMS Connection due to the following exception: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused: connect
+2020-11-01 14:40:39,223 [EagerCP_0-1] INFO  Connection failed while attempting to connect to a remote server. Please verify that the servers to which your Gateway is configured to connect are successfully started.  See the Administrator's Guide for more information.
+2020-11-01 14:40:46,292 [EagerCP_0-1] WARN  Unable to establish JMS Connection due to the following exception: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused: connect
+2020-11-01 14:40:46,293 [EagerCP_0-1] INFO  Connection failed while attempting to connect to a remote server. Please verify that the servers to which your Gateway is configured to connect are successfully started.  See the Administrator's Guide for more information.
+2020-11-01 14:40:48,022 [New I/O worker #1] INFO  [tcp#5 0:0:0:0:0:0:0:1:49381] OPENED: (#00000005: kaazing tcp, server, /0:0:0:0:0:0:0:1:49381 => /0:0:0:0:0:0:0:1:8000)
+2020-11-01 14:40:48,054 [New I/O worker #1] INFO  /0:0:0:0:0:0:0:1:49381 - [localhost:8000] "GET / HTTP/1.1 " "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36"
+2020-11-01 14:40:48,074 [New I/O worker #1] INFO  [http#6 [0:0:0:0:0:0:0:1]:49381] OPENED: (#00000006: kzg http, server, http://localhost:8000/ => http://localhost:8000/)
+2020-11-01 14:40:48,100 [New I/O worker #1] INFO  [http#6 [0:0:0:0:0:0:0:1]:49381] CLOSED: (#00000006: kzg http, server, http://localhost:8000/ => http://localhost:8000/)
+2020-11-01 14:40:48,129 [New I/O worker #1] INFO  /0:0:0:0:0:0:0:1:49381 - [localhost:8000] "GET /bootstrap/css/bootstrap.min.css HTTP/1.1 " "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36"
+2020-11-01 14:40:48,130 [New I/O worker #1] INFO  [http#8 [0:0:0:0:0:0:0:1]:49381] OPENED: (#00000008: kzg http, server, http://localhost:8000/bootstrap/css/bootstrap.min.css => http://localhost:8000/)
+2020-11-01 14:40:48,131 [New I/O worker #2] INFO  [tcp#7 0:0:0:0:0:0:0:1:49382] OPENED: (#00000007: kaazing tcp, server, /0:0:0:0:0:0:0:1:49382 => /0:0:0:0:0:0:0:1:8000)
+2020-11-01 14:40:48,132 [New I/O worker #2] INFO  /0:0:0:0:0:0:0:1:49382 - [localhost:8000] "GET /css/main.css HTTP/1.1 " "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36"
+2020-11-01 14:40:48,133 [New I/O worker #2] INFO  [http#9 [0:0:0:0:0:0:0:1]:49382] OPENED: (#00000009: kzg http, server, http://localhost:8000/css/main.css => http://localhost:8000/)
+2020-11-01 14:40:48,133 [New I/O worker #1] INFO  [http#8 [0:0:0:0:0:0:0:1]:49381] CLOSED: (#00000008: kzg http, server, http://localhost:8000/bootstrap/css/bootstrap.min.css => http://localhost:8000/)
+2020-11-01 14:40:48,137 [New I/O worker #2] INFO  [http#9 [0:0:0:0:0:0:0:1]:49382] CLOSED: (#00000009: kzg http, server, http://localhost:8000/css/main.css => http://localhost:8000/)
+2020-11-01 14:40:48,160 [New I/O worker #2] INFO  /0:0:0:0:0:0:0:1:49382 - [localhost:8000] "GET /jquery/jquery-2.2.2.min.js HTTP/1.1 " "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36"
+2020-11-01 14:40:48,161 [New I/O worker #2] INFO  [http#10 [0:0:0:0:0:0:0:1]:49382] OPENED: (#00000010: kzg http, server, http://localhost:8000/jquery/jquery-2.2.2.min.js => http://localhost:8000/)
+2020-11-01 14:40:48,164 [New I/O worker #2] INFO  [http#10 [0:0:0:0:0:0:0:1]:49382] CLOSED: (#00000010: kzg http, server, http://localhost:8000/jquery/jquery-2.2.2.min.js => http://localhost:8000/)
+2020-11-01 14:40:48,193 [New I/O worker #2] INFO  /0:0:0:0:0:0:0:1:49382 - [localhost:8000] "GET /bootstrap/js/bootstrap.min.js HTTP/1.1 " "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36"
+2020-11-01 14:40:48,193 [New I/O worker #1] INFO  /0:0:0:0:0:0:0:1:49381 - [localhost:8000] "GET /images/kaazing.png HTTP/1.1 " "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36"
+2020-11-01 14:40:48,194 [New I/O worker #2] INFO  [http#11 [0:0:0:0:0:0:0:1]:49382] OPENED: (#00000011: kzg http, server, http://localhost:8000/bootstrap/js/bootstrap.min.js => http://localhost:8000/)
+2020-11-01 14:40:48,194 [New I/O worker #1] INFO  [http#12 [0:0:0:0:0:0:0:1]:49381] OPENED: (#00000012: kzg http, server, http://localhost:8000/images/kaazing.png => http://localhost:8000/)
+2020-11-01 14:40:48,196 [New I/O worker #1] INFO  [http#12 [0:0:0:0:0:0:0:1]:49381] CLOSED: (#00000012: kzg http, server, http://localhost:8000/images/kaazing.png => http://localhost:8000/)
+2020-11-01 14:40:48,196 [New I/O worker #2] INFO  [http#11 [0:0:0:0:0:0:0:1]:49382] CLOSED: (#00000011: kzg http, server, http://localhost:8000/bootstrap/js/bootstrap.min.js => http://localhost:8000/)
+2020-11-01 14:40:48,290 [New I/O worker #2] INFO  /0:0:0:0:0:0:0:1:49382 - [localhost:8000] "GET /images/favicon.png HTTP/1.1 " "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36"
+2020-11-01 14:40:48,290 [New I/O worker #2] INFO  [http#13 [0:0:0:0:0:0:0:1]:49382] OPENED: (#00000013: kzg http, server, http://localhost:8000/images/favicon.png => http://localhost:8000/)
+2020-11-01 14:40:48,292 [New I/O worker #2] INFO  [http#13 [0:0:0:0:0:0:0:1]:49382] CLOSED: (#00000013: kzg http, server, http://localhost:8000/images/favicon.png => http://localhost:8000/)
+2020-11-01 14:40:53,378 [EagerCP_0-1] WARN  Unable to establish JMS Connection due to the following exception: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused: connect
+2020-11-01 14:40:53,379 [EagerCP_0-1] INFO  Connection failed while attempting to connect to a remote server. Please verify that the servers to which your Gateway is configured to connect are successfully started.  See the Administrator's Guide for more information.
+2020-11-01 14:41:00,447 [EagerCP_0-1] WARN  Unable to establish JMS Connection due to the following exception: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused: connect
+2020-11-01 14:41:00,448 [EagerCP_0-1] INFO  Connection failed while attempting to connect to a remote server. Please verify that the servers to which your Gateway is configured to connect are successfully started.  See the Administrator's Guide for more information.
+2020-11-01 14:41:07,513 [EagerCP_0-1] WARN  Unable to establish JMS Connection due to the following exception: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused: connect
+2020-11-01 14:41:07,514 [EagerCP_0-1] INFO  Connection failed while attempting to connect to a remote server. Please verify that the servers to which your Gateway is configured to connect are successfully started.  See the Administrator's Guide for more information.
+2020-11-01 14:41:14,588 [EagerCP_0-1] WARN  Unable to establish JMS Connection due to the following exception: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused: connect
+2020-11-01 14:41:14,589 [EagerCP_0-1] INFO  Connection failed while attempting to connect to a remote server. Please verify that the servers to which your Gateway is configured to connect are successfully started.  See the Administrator's Guide for more information.
+2020-11-01 14:41:18,204 [New I/O worker #1] INFO  [tcp#5 0:0:0:0:0:0:0:1:49381] CLOSED: (#00000005: kaazing tcp, server, /0:0:0:0:0:0:0:1:49381 => /0:0:0:0:0:0:0:1:8000)
+2020-11-01 14:41:18,340 [New I/O worker #2] INFO  [tcp#7 0:0:0:0:0:0:0:1:49382] CLOSED: (#00000007: kaazing tcp, server, /0:0:0:0:0:0:0:1:49382 => /0:0:0:0:0:0:0:1:8000)
+2020-11-01 14:41:21,657 [EagerCP_0-1] WARN  Unable to establish JMS Connection due to the following exception: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused: connect
+2020-11-01 14:41:21,658 [EagerCP_0-1] INFO  Connection failed while attempting to connect to a remote server. Please verify that the servers to which your Gateway is configured to connect are successfully started.  See the Administrator's Guide for more information.
+2020-11-01 14:41:28,727 [EagerCP_0-1] WARN  Unable to establish JMS Connection due to the following exception: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused: connect
+2020-11-01 14:41:28,728 [EagerCP_0-1] INFO  Connection failed while attempting to connect to a remote server. Please verify that the servers to which your Gateway is configured to connect are successfully started.  See the Administrator's Guide for more information.
+2020-11-01 14:41:35,810 [EagerCP_0-1] WARN  Unable to establish JMS Connection due to the following exception: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused: connect
+2020-11-01 14:41:35,810 [EagerCP_0-1] INFO  Connection failed while attempting to connect to a remote server. Please verify that the servers to which your Gateway is configured to connect are successfully started.  See the Administrator's Guide for more information.
+2020-11-01 14:41:42,858 [EagerCP_0-1] WARN  Unable to establish JMS Connection due to the following exception: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused: connect
+2020-11-01 14:41:42,858 [EagerCP_0-1] INFO  Connection failed while attempting to connect to a remote server. Please verify that the servers to which your Gateway is configured to connect are successfully started.  See the Administrator's Guide for more information.
+2020-11-01 14:41:49,943 [EagerCP_0-1] WARN  Unable to establish JMS Connection due to the following exception: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused: connect
+2020-11-01 14:41:49,944 [EagerCP_0-1] INFO  Connection failed while attempting to connect to a remote server. Please verify that the servers to which your Gateway is configured to connect are successfully started.  See the Administrator's Guide for more information.
+2020-11-01 14:41:57,001 [EagerCP_0-1] WARN  Unable to establish JMS Connection due to the following exception: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused: connect
+2020-11-01 14:41:57,002 [EagerCP_0-1] INFO  Connection failed while attempting to connect to a remote server. Please verify that the servers to which your Gateway is configured to connect are successfully started.  See the Administrator's Guide for more information.
+2020-11-01 14:42:04,081 [EagerCP_0-1] WARN  Unable to establish JMS Connection due to the following exception: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused: connect
+2020-11-01 14:42:04,082 [EagerCP_0-1] INFO  Connection failed while attempting to connect to a remote server. Please verify that the servers to which your Gateway is configured to connect are successfully started.  See the Administrator's Guide for more information.
+2020-11-01 14:42:11,136 [EagerCP_0-1] WARN  Unable to establish JMS Connection due to the following exception: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused: connect
+2020-11-01 14:42:11,137 [EagerCP_0-1] INFO  Connection failed while attempting to connect to a remote server. Please verify that the servers to which your Gateway is configured to connect are successfully started.  See the Administrator's Guide for more information.
+2020-11-01 14:42:18,196 [EagerCP_0-1] WARN  Unable to establish JMS Connection due to the following exception: Could not connect to broker URL: tcp://localhost:61616. Reason: java.net.ConnectException: Connection refused: connect
+2020-11-01 14:42:18,197 [EagerCP_0-1] INFO  Connection failed while attempting to connect to a remote server. Please verify that the servers to which your Gateway is configured to connect are successfully started.  See the Administrator's Guide for more information.
