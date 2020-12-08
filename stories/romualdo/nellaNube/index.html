@@ -43,27 +43,41 @@ Se vuoi spingere verso una direzione ma non sei sicuro di introdurre qualcosa di
 
 [[Sono pronto-&gt;Principale]]
 
+(link: &quot;Carica Salvataggio&quot; + (&quot;Slot Nella Nube&quot;) of Saves)[
+  (load-game: &quot;Slot Nella Nube&quot;)
+]
+
 [[debug-&gt;Stillborn1]]</tw-passagedata><tw-passagedata pid="2" name="Principale" tags="" position="370,275" size="100,100">[[Cerco sul Manuale-&gt;Ricerca]]
 [[Guardo il Bio-Sonar-&gt;Bio-Sonar]]
-[[Salgo sulla postazione di vedetta-&gt;Vedetta]]</tw-passagedata><tw-passagedata pid="3" name="Albero" tags="" position="88,616" size="100,100">$u[Alberi]
+[[Salgo sulla postazione di vedetta-&gt;Vedetta]]</tw-passagedata><tw-passagedata pid="3" name="Albero" tags="no_back" position="88,616" size="100,100">$u[Alberi]
 Gli alberi sono una forma floreale organica avente una vasta gamma di sottospecie.
 
 Gli alberi sono caratteristici delle Bolle più superficiali, nelle bolle più abissali invece non sembrano essere in grado di crescere.
 
 Tutti i tentativi di far crescere alberi sulla terraferma sono stati vani tranne per poche $w[specie].
 
-Gli alberi crescono tendenzialmente in bolle ad alto contenuto energetico, spesso formando boschi.</tw-passagedata><tw-passagedata pid="4" name="Lago" tags="" position="478,773" size="100,100">$w[Lago]
+Gli alberi crescono tendenzialmente in bolle ad alto contenuto energetico, spesso formando boschi.
+
+[[Cerco altro-&gt;Ricerca]]
+[[Faccio altro-&gt;Principale]]</tw-passagedata><tw-passagedata pid="4" name="Lago" tags="" position="478,773" size="100,100">$w[Lago]
 Bacino d&#39;acqua circondato da terraferma.
 I laghi possono essere di acqua dolce o salata, i primi sono formati per lo più dalle precipitazioni, gli altri sono provocati da maree.
 
 Per esistere, i laghi, devono avere una qualche forma di bacino (naturale o artificiale).
 
-Talvolta alcune $u[specie] scavano per creare habitat isolati.</tw-passagedata><tw-passagedata pid="5" name="Nebbia" tags="" position="617,616" size="100,100">$b[Nebbia]
-[[Nebbia - Fenomeno metereologico]]
-[[Nebbia - Subacquea]]
-[[Nebbia - Artificiale]]
-[[Nebbia - Organica]]
-[[Nebbia - Mentale]]</tw-passagedata><tw-passagedata pid="6" name="Ricerca" tags="no_back" position="199,429" size="100,100">{(set: $s to false)
+Talvolta alcune $u[specie] scavano per creare habitat isolati.
+
+[[Cerco altro-&gt;Ricerca]]
+[[Faccio altro-&gt;Principale]]</tw-passagedata><tw-passagedata pid="5" name="Nebbia" tags="no_back" position="617,616" size="100,100">$b[Nebbia]
+* [[Nebbia - Fenomeno metereologico]]
+* [[Nebbia - Subacquea]]
+* [[Nebbia - Artificiale]]
+* [[Nebbia - Organica]]
+* [[Nebbia - Mentale]]
+
+
+[[Cerco altro-&gt;Ricerca]]
+[[Faccio altro-&gt;Principale]]</tw-passagedata><tw-passagedata pid="6" name="Ricerca" tags="no_back" position="199,429" size="100,100">{(set: $s to false)
 (set: $p to &quot;&quot;)
 (set: $count to 0)
 (set: $r to (random: 10,30))
@@ -86,17 +100,23 @@ Le cause più comuni della nebbia mentale sono: &#39;&#39;stress&#39;&#39;, &#39
 
 Si verifica quando liquidi di diversa &#39;&#39;densità&#39;&#39; entrano in contatto tra loro, formando una flebile &#39;&#39;superficie&#39;&#39; visibile ad occhio nudo.
 
-Il fenomeno avviene principalmente quando le acque cambiano densità in &#39;&#39;bacini&#39;&#39; più o meno confinati.</tw-passagedata><tw-passagedata pid="13" name="Polpi" tags="" position="226,770" size="100,100">$u[Polpi]
+Il fenomeno avviene principalmente quando le acque cambiano densità in &#39;&#39;bacini&#39;&#39; più o meno confinati.</tw-passagedata><tw-passagedata pid="13" name="Polpi" tags="no_back" position="226,770" size="100,100">$u[Polpi]
 È un mollusco cefalopode molto diffuso nei bassi fondali, non oltre i 200 metri. Preferisce i substrati aspri, rocciosi, perché ricchi di nascondigli, fessure e piccole caverne in cui nascondersi: l&#39;assenza di endo- ed esoscheletro gli permette di prendere qualsiasi forma, e di passare attraverso cunicoli molto stretti.
 
-L&#39;elevata presenza di cromatofori sul loro derma li rende esperti nel camuffamento. Non è raro infatti che assumano la forma e il colore di altri animali, in particolare di animali velenosi, di modo da non essere attaccati dai predatori.</tw-passagedata><tw-passagedata pid="14" name="Seppie" tags="" position="84,768" size="100,100">$u[Seppia]
+L&#39;elevata presenza di cromatofori sul loro derma li rende esperti nel camuffamento. Non è raro infatti che assumano la forma e il colore di altri animali, in particolare di animali velenosi, di modo da non essere attaccati dai predatori.
+
+[[Cerco altro-&gt;Ricerca]]
+[[Faccio altro-&gt;Principale]]</tw-passagedata><tw-passagedata pid="14" name="Seppie" tags="no_back" position="84,766.3333333333334" size="100,100">$u[Seppia]
 Presentano 10 appendici circumorali retrattili: 8 braccia di pari lunghezza e 2 lunghe appendici dotate di ventose denticolate, adibite alla difesa e spesso alla riproduzione.
 L&#39;animale presenta anche occhi sporgenti con una pupilla molto sviluppata e a forma di W. Le specie di dimensioni maggiori non superano i 50 cm, e possono raggiungere i 12 kg di peso.
 Presentano una conchiglia interna detta &quot;osso di seppia&quot; e una sacca per l&#39;inchiostro, posta in prossimità dell&#39;ano, che viene espulso quando la seppia si sente minacciata.
 
 Possiedono una spiccata capacità mimetica, e possono cambiare il proprio colore, grazie alla presenza nel derma di una ricca rete di cromatofori, dal marrone al nero, dal giallo al rosso.
 
-Alcune specie sono dotate di bioluminescenza.</tw-passagedata><tw-passagedata pid="15" name="Bio-Sonar" tags="" position="1111,16" size="100,100">Il dispositivo ha un&#39;interfaccia semi-sferica, emette suoni di vario genere genera macchie di diversa forma, colore e dimensione.
+Alcune specie sono dotate di bioluminescenza.
+
+[[Cerco altro-&gt;Ricerca]]
+[[Faccio altro-&gt;Principale]]</tw-passagedata><tw-passagedata pid="15" name="Bio-Sonar" tags="" position="2019.3333333333335,61" size="100,100">Il dispositivo ha un&#39;interfaccia semi-sferica, emette suoni di vario genere genera macchie di diversa forma, colore e dimensione.
 
 Tramite i movimenti della mano puoi indirizzarlo per scansionare diverse zone.
 
@@ -129,13 +149,17 @@ Una volta che si esegue una nuova scansione i precedenti risultati verranno rimo
 (set: $scan_type to false)
 (set: $scan_time to 0)
 (set: $no_back_tag to &quot;no_back&quot;)
-(set: $destra_scan to false)}</tw-passagedata><tw-passagedata pid="17" name="Leviatano" tags="" position="353,770" size="100,100">$b[Leviatano]
+(set: $destra_scan to false)}</tw-passagedata><tw-passagedata pid="17" name="Leviatano" tags="no_back" position="353,770" size="100,100">$b[Leviatano]
 Famiglia animale che include specie marine di grande dimensione.
 Gli incontri con i leviatani sono pochi e poco tracciati ma tra le specie più comuni si annoverano:
 * [[Leviatano Aquilone]]
 * [[Leviatano dal Muso a nido]]
 * [[Leviatano Palmato]]
-* [[Leviatano Zebrato]]</tw-passagedata><tw-passagedata pid="18" name="Leviatano Aquilone" tags="" position="336,915" size="100,100">$u[Leviatano Aquilone]
+* [[Leviatano Zebrato]]
+
+
+[[Cerco altro-&gt;Ricerca]]
+[[Faccio altro-&gt;Principale]]</tw-passagedata><tw-passagedata pid="18" name="Leviatano Aquilone" tags="" position="336,915" size="100,100">$u[Leviatano Aquilone]
 Temperamento: Aggressivo
 Alimentazione: Sconosciuta
 
@@ -159,7 +183,7 @@ Alimentazione: Carnivoro
 
 Cacciatore di Cetacei avvistato nel Mare Tossico, nonostante le sue dimensioni relativemente piccole rispetto a quelle degli altri leviatani, si è dimostrato un cacciatore eccellente e persistente.
 
-Attacca anche le navi ma solo se entrano nel suo territorio, sembra sia in grado di distinguere navi dagli animali, mostrando segni di intelligenza.</tw-passagedata><tw-passagedata pid="22" name="Vedetta" tags="" position="1264,520" size="100,100">Da qui si vede ben poco, la fitta nebbia permette a malapena di vedere la terraferma, niente di più.
+Attacca anche le navi ma solo se entrano nel suo territorio, sembra sia in grado di distinguere navi dagli animali, mostrando segni di intelligenza.</tw-passagedata><tw-passagedata pid="22" name="Vedetta" tags="" position="2172.3333333333335,565" size="100,100">Da qui si vede ben poco, la fitta nebbia permette a malapena di vedere la terraferma, niente di più.
 
 [[Guardo a Poppa]]
 [[Guardo a Prua]]
@@ -175,16 +199,16 @@ Attacca anche le navi ma solo se entrano nel suo territorio, sembra sia in grado
 (text-style:&quot;shudder&quot;)[*THUMP*]
 (link: &quot;Un rumore sordo, proviene da fuori&quot;)[[[Una salsiccia?-&gt;Salsiccia]]] ]
 (stop:)
-]}</tw-passagedata><tw-passagedata pid="23" name="Salsiccia" tags="" position="1257,672" size="100,100">La salsiccia appesa oscilla battendo dolcemente sul vetro.
+]}</tw-passagedata><tw-passagedata pid="23" name="Salsiccia" tags="" position="2165.3333333333335,717" size="100,100">La salsiccia appesa oscilla battendo dolcemente sul vetro.
 
 [[La rientro-&gt;Rientra salsiccia]]
 [[La lascio lì-&gt;Vedetta]]
-(set: $salsiccia_check to true)</tw-passagedata><tw-passagedata pid="24" name="Rientra salsiccia" tags="" position="1262,819" size="100,100">Crei una bolla e apri l&#39;oblò.
+(set: $salsiccia_check to true)</tw-passagedata><tw-passagedata pid="24" name="Rientra salsiccia" tags="" position="2170.3333333333335,864" size="100,100">Crei una bolla e apri l&#39;oblò.
 
 La nube entra copiosa, la afferri al volo e richiudi immediatamente.
 
 [[Torno in sala comandi-&gt;Principale]] 
-(set: $salsiccia to false)</tw-passagedata><tw-passagedata pid="25" name="SalsicciaCheck" tags="" position="1133,668" size="100,100">La $w[salsiccia] oscilla appesa.
+(set: $salsiccia to false)</tw-passagedata><tw-passagedata pid="25" name="SalsicciaCheck" tags="" position="2041.3333333333335,713" size="100,100">La $w[salsiccia] oscilla appesa.
 La carne essiccata rifrange la luce sulla scorza frastagliata.
 
 Ecco alcuni $w[spunti] sulla salsiccia:
@@ -193,17 +217,23 @@ Ecco alcuni $w[spunti] sulla salsiccia:
 * com&#39;è appesa?
 
 [[Torno in sala comandi-&gt;Principale]] 
-[[La prendo-&gt;Rientra salsiccia]] </tw-passagedata><tw-passagedata pid="26" name="Linfa" tags="" position="230,615" size="100,100">$u[Linfa]
+[[La prendo-&gt;Rientra salsiccia]] </tw-passagedata><tw-passagedata pid="26" name="Linfa" tags="no_back" position="230,615" size="100,100">$u[Linfa]
 Molte specie vegetali contengono al loro interno una sostanza viscosa che trasporta diverse sostanze all&#39;interno della pianta.
 
-Sono stati registrati casi in cui, a causa di debollamenti, alberi e piante sono state inabissate: in queste condizioni si è potuto osservare come diverse specie di molluschi sono attratte da questa sostanza.</tw-passagedata><tw-passagedata pid="27" name="De-Bollamento" tags="" position="363,624" size="100,100">$b[De-Bollamento]
+Sono stati registrati casi in cui, a causa di debollamenti, alberi e piante sono state inabissate: in queste condizioni si è potuto osservare come diverse specie di molluschi sono attratte da questa sostanza.
+
+[[Cerco altro-&gt;Ricerca]]
+[[Faccio altro-&gt;Principale]]</tw-passagedata><tw-passagedata pid="27" name="De-Bollamento" tags="no_back" position="363,624" size="100,100">$b[De-Bollamento]
 Fenomeno di origine incerta che causa la scomparsa o la riduzione in dimensione di bolle subacquee.
 
 Questo fenomeno risulta essere in alcuni casi del tutto improvviso, esponendo all&#39;oceano l&#39;intero ecosistema contenuto all&#39;interno della bolla scomparsa. Questo avvenimento lascia numerose tracce biologiche dietro di sé, alterando spesso l&#39;intero bioma in cui si trova.
 
 In altri casi il fenomeno è costante nel tempo, esponendo pian piano il contenuto e lasciando alla sua scomparsa ben pochi resti.
 
-Le cause di questi fenomeni sono tutt&#39;ora sconosciute ma si teorizza che alcune specie di leviatano siano in grado di destabilizzare talmente tanto la struttura delle bolle da farle scomparire.</tw-passagedata><tw-passagedata pid="28" name="Bolla" tags="" position="496,621" size="100,100">$u[Bolla]
+Le cause di questi fenomeni sono tutt&#39;ora sconosciute ma si teorizza che alcune specie di leviatano siano in grado di destabilizzare talmente tanto la struttura delle bolle da farle scomparire.
+
+[[Cerco altro-&gt;Ricerca]]
+[[Faccio altro-&gt;Principale]]</tw-passagedata><tw-passagedata pid="28" name="Bolla" tags="" position="496,621" size="100,100">$u[Bolla]
 I fenomeni di Respirazione Ambientale vengono comunemente definiti &quot;Bolle&quot;, questi sono l&#39;insieme di due sotto-fenomeni:
 - Mucolaminazione, la formazione di un sottile strato mucoso idrorepellente - Polmonazione, la generazione di gas di varia natura
 
@@ -211,11 +241,19 @@ La generazione delle bolle è per lo più attribuita ad un&#39;origine vegetale,
 
 Lo strato mucoso può essere attraversato senza problemi ma farlo può destabilizzare eventuali Bolle personali, in quanto il muco è naturalemente attratto da masse più grosse del muco stesso.
 
-È stato rilevato che il territorio intorno alle bolle di origine vegetale tende ad essere arido e privo di energie, questo avviene in quanto la flora che genera e tiene attiva la bolla trae energia dall&#39;intero bioma circostante esaurendolo velocemente.</tw-passagedata><tw-passagedata pid="29" name="Header" tags="header" position="526,35" size="100,100">{
+È stato rilevato che il territorio intorno alle bolle di origine vegetale tende ad essere arido e privo di energie, questo avviene in quanto la flora che genera e tiene attiva la bolla trae energia dall&#39;intero bioma circostante esaurendolo velocemente.</tw-passagedata><tw-passagedata pid="29" name="Header" tags="header" position="526,36.666666666666664" size="100,100">{
 (set:$time to (history:)&#39;s length)
 (if: $time &gt; 0 and  not ((passage:)&#39;s tags contains $no_back_tag))[
 (link-goto: &quot;&lt; Indietro&quot;, (history:)&#39;s $time)
+ - 
 ] (else:) []
+{(link:&quot;Salva&quot;)[
+  (if:(save-game:&quot;Slot Nella Nube&quot;))[
+    Salvato
+  ](else: )[
+    Errore
+  ]
+]}
 }
 
 </tw-passagedata><tw-passagedata pid="30" name="Footer" tags="footer" position="654,36" size="100,100">(live: 60s)[
@@ -251,7 +289,7 @@ $p
   (if: $s is &quot;genitori&quot; or $s is &quot;genitore&quot; or $s is &quot;neonato&quot; or $s is &quot;neonati&quot; or $s is &quot;cuccioli&quot; or $s is &quot;cucciolo&quot; or $s is &quot;nascita&quot; or $s is &quot;nascituro&quot; or $s is &quot;nido&quot; or $s is &quot;padre&quot; or $s is &quot;madre&quot;)[(goto:&quot;Neonato&quot;)]
   (goto:&quot;Nessun Risultato&quot;)
 ]]
-}</tw-passagedata><tw-passagedata pid="32" name="Bio-Sonar-Sotto" tags="no_back" position="879,166" size="100,100">{
+}</tw-passagedata><tw-passagedata pid="32" name="Bio-Sonar-Sotto" tags="no_back" position="1787.3333333333335,211" size="100,100">{
 (if:$scan_type is not (passage:)&#39;s name)[
 Con alcuni e ponderati tocchi dirigi il Bio-Sonar sotto la nave.
 (set:$scan_time to 0)
@@ -269,7 +307,7 @@ Percentuale di completamento: (live:1s)[(round: $scan_time/$req_scan*100)%]
 ] (else:) [
 (goto:&quot;Done Scan Sotto&quot;)
 (hidden:)[[Done Scan Sotto]]
-]</tw-passagedata><tw-passagedata pid="33" name="Bio-Sonar-Prua" tags="no_back" position="1030,170" size="100,100">{
+]</tw-passagedata><tw-passagedata pid="33" name="Bio-Sonar-Prua" tags="no_back" position="1938.3333333333335,215" size="100,100">{
 (if:$scan_type is not (passage:)&#39;s name)[
 Con alcuni e ponderati tocchi dirigi il Bio-Sonar a prua.
 (set:$scan_time to 0)
@@ -287,7 +325,7 @@ Percentuale di completamento: (live:1s)[(round: $scan_time/$req_scan*100)%]
 ] (else:) [
 (goto:&quot;Done Scan Prua&quot;)
 (hidden:)[[Done Scan Prua]]
-]</tw-passagedata><tw-passagedata pid="34" name="Bio-Sonar-Sinistra" tags="no_back" position="1300,167" size="100,100">{
+]</tw-passagedata><tw-passagedata pid="34" name="Bio-Sonar-Sinistra" tags="no_back" position="2208.3333333333335,212" size="100,100">{
 (if:$scan_type is not (passage:)&#39;s name)[
 Con alcuni e ponderati tocchi dirigi il Bio-Sonar verso la sinistra.
 (set:$scan_time to 0)
@@ -305,7 +343,7 @@ Percentuale di completamento: (live:1s)[(round: $scan_time/$req_scan*100)%]
 ] (else:) [
 (goto:&quot;Done Scan Sinistra&quot;)
 (hidden:)[[Done Scan Sinistra]]
-]</tw-passagedata><tw-passagedata pid="35" name="Bio-Sonar-Destra" tags="no_back" position="1450,167" size="100,100">{
+]</tw-passagedata><tw-passagedata pid="35" name="Bio-Sonar-Destra" tags="no_back" position="2358.3333333333335,212" size="100,100">{
 (if:$scan_type is not (passage:)&#39;s name)[
 Con alcuni e ponderati tocchi dirigi il Bio-Sonar verso nord-ovest.
 (set:$scan_time to 0)
@@ -323,8 +361,8 @@ Percentuale di completamento: (live:1s)[(round: $scan_time/$req_scan*100)%]
 ] (else:) [
 (goto:&quot;Done Scan Destra&quot;)
 (hidden:)[[Done Scan Destra]]
-]</tw-passagedata><tw-passagedata pid="36" name="AbortScan" tags="" position="1296,19" size="100,100">(set: $scan_type to false)
-(goto: &quot;Bio-Sonar&quot;)</tw-passagedata><tw-passagedata pid="37" name="Done Scan Sotto" tags="no_back" position="877,318" size="100,100">---Risultato della Scansione della zona sottostante---
+]</tw-passagedata><tw-passagedata pid="36" name="AbortScan" tags="" position="2204.3333333333335,64" size="100,100">(set: $scan_type to false)
+(goto: &quot;Bio-Sonar&quot;)</tw-passagedata><tw-passagedata pid="37" name="Done Scan Sotto" tags="no_back" position="1785.3333333333335,363" size="100,100">---Risultato della Scansione della zona sottostante---
 Attività Biologica: 17%
 Profondità massima: 11 metri
 Precisione: 98%
@@ -337,7 +375,7 @@ Normalmente l&#39;attività biologica su spiagge selvagge è del 25% o più.
 Non sono presenti fosse immediatamente sotto di noi.
 
 [[Esegui un&#39;altra scansione-&gt;Bio-Sonar]]
-[[Faccio altro-&gt;Principale]]</tw-passagedata><tw-passagedata pid="38" name="Done Scan Prua" tags="no_back" position="1030,324" size="100,100">---Risultato della Scansione della zona a Prua---
+[[Faccio altro-&gt;Principale]]</tw-passagedata><tw-passagedata pid="38" name="Done Scan Prua" tags="no_back" position="1938.3333333333335,369" size="100,100">---Risultato della Scansione della zona a Prua---
 Attività Biologica: 69%
 Precisione: 32%
 Tipologia segnale primario: Viola
@@ -351,7 +389,7 @@ Non è chiaro se i segnali sono di origine animale o vegetale.
 
 
 [[Esegui un&#39;altra scansione-&gt;Bio-Sonar]]
-[[Faccio altro-&gt;Principale]]</tw-passagedata><tw-passagedata pid="39" name="Done Scan Sinistra" tags="no_back" position="1305,330" size="100,100">---Risultato della Scansione della zona a Babordo---
+[[Faccio altro-&gt;Principale]]</tw-passagedata><tw-passagedata pid="39" name="Done Scan Sinistra" tags="no_back" position="2213.3333333333335,375" size="100,100">---Risultato della Scansione della zona a Babordo---
 Attività Biologica: 47%
 Profondità massima: 20 metri
 Precisione: 84%
@@ -363,33 +401,33 @@ Sembra esserci una concentrazione animale, è possibile una sorta di $u[corallo]
 A giudicare da come varia la tipologia del segnale secondario è probabile la presenza di diverse specie di $w[piccoli animali].
 
 [[Esegui un&#39;altra scansione-&gt;Bio-Sonar]]
-[[Faccio altro-&gt;Principale]]</tw-passagedata><tw-passagedata pid="40" name="Guardo a Poppa" tags="" position="1442,464" size="100,100">Di fronte alla nave, in direzione Sud-Ovest, si staglia massiccia l&#39;ombra dell&#39;isolotto.
+[[Faccio altro-&gt;Principale]]</tw-passagedata><tw-passagedata pid="40" name="Guardo a Poppa" tags="" position="2350.3333333333335,509" size="100,100">Di fronte alla nave, in direzione Sud-Ovest, si staglia massiccia l&#39;ombra dell&#39;isolotto.
 
 L&#39;unico dettaglio che riesci a distinguere è la forma: come se un grande pilastro fosse conficcato sull&#39;isola stessa.
 
 [[Guardo a Prua]]
 [[Guardo a babordo]] 
 [[Guardo a tribordo]] 
-[[Scendo in sala comandi-&gt;Principale]] </tw-passagedata><tw-passagedata pid="41" name="Guardo a Prua" tags="" position="1445,593" size="100,100">Ti volti in direzione Nord-Est.
+[[Scendo in sala comandi-&gt;Principale]] </tw-passagedata><tw-passagedata pid="41" name="Guardo a Prua" tags="" position="2353.3333333333335,638" size="100,100">Ti volti in direzione Nord-Est.
 Il mare, increspato e mosso da un vento sottile, non mostra nient&#39;altro che acqua.
 
 [[Guardo a Poppa]]
 [[Guardo a babordo]] 
 [[Guardo a tribordo]] 
 
-[[Scendo in sala comandi-&gt;Principale]] </tw-passagedata><tw-passagedata pid="42" name="Guardo a babordo" tags="" position="1438,841" size="100,100">Ti volti a sinistra, in direzione Sud-Est ci sono degli scogli appuntiti, li avete aggirati per venire fin qui.
+[[Scendo in sala comandi-&gt;Principale]] </tw-passagedata><tw-passagedata pid="42" name="Guardo a babordo" tags="" position="2346.3333333333335,886" size="100,100">Ti volti a sinistra, in direzione Sud-Est ci sono degli scogli appuntiti, li avete aggirati per venire fin qui.
 
 [[Guardo a Poppa]] 
 [[Guardo a Prua]]
 [[Guardo a tribordo]] 
 
-[[Scendo in sala comandi-&gt;Principale]] </tw-passagedata><tw-passagedata pid="43" name="Guardo a tribordo" tags="" position="1441,716" size="100,100">Il fianco destro della nave, rivolto a Nord-Ovest, mostra un piccolo promontorio immerso nella nebbia, circondato dal mare aperto.
+[[Scendo in sala comandi-&gt;Principale]] </tw-passagedata><tw-passagedata pid="43" name="Guardo a tribordo" tags="" position="2349.3333333333335,761" size="100,100">Il fianco destro della nave, rivolto a Nord-Ovest, mostra un piccolo promontorio immerso nella nebbia, circondato dal mare aperto.
 
 [[Guardo a Poppa]] 
 [[Guardo a Prua]]
 [[Guardo a babordo]] 
 
-[[Scendo in sala comandi-&gt;Principale]] </tw-passagedata><tw-passagedata pid="44" name="Bio-Sonar-Poppa" tags="no_back" position="1167,168" size="100,100">{
+[[Scendo in sala comandi-&gt;Principale]] </tw-passagedata><tw-passagedata pid="44" name="Bio-Sonar-Poppa" tags="no_back" position="2075.3333333333335,213" size="100,100">{
 (if:$scan_type is not (passage:)&#39;s name)[
 Con alcuni e ponderati tocchi dirigi il Bio-Sonar a poppa.
 (set:$scan_time to 0)
@@ -407,7 +445,7 @@ Percentuale di completamento: (live:1s)[(round: $scan_time/$req_scan*100)%]
 ] (else:) [
 (goto:&quot;Done Scan Poppa&quot;)
 (hidden:)[[Done Scan Poppa]]
-]</tw-passagedata><tw-passagedata pid="45" name="Done Scan Poppa" tags="no_back" position="1167,325" size="100,100">---Risultato della Scansione della zona a Poppa---
+]</tw-passagedata><tw-passagedata pid="45" name="Done Scan Poppa" tags="no_back" position="2075.3333333333335,370" size="100,100">---Risultato della Scansione della zona a Poppa---
 Attività Biologica: 33%
 Profondità massima: 38 metri
 Precisione: 71%
@@ -418,7 +456,7 @@ Dettagli:
 I segnali biologici sono regolari e non presentano anomalie, la $w[fauna e la flora] non sembrano essere particolarmente influenzati dalla presenza della nube.
 
 [[Esegui un&#39;altra scansione-&gt;Bio-Sonar]]
-[[Faccio altro-&gt;Principale]]</tw-passagedata><tw-passagedata pid="46" name="Done Scan Destra" tags="no_back" position="1448,318" size="100,100">---Risultato della Scansione della zona a Tribordo---
+[[Faccio altro-&gt;Principale]]</tw-passagedata><tw-passagedata pid="46" name="Done Scan Destra" tags="no_back" position="2356.3333333333335,363" size="100,100">---Risultato della Scansione della zona a Tribordo---
 Attività Biologica: 23%
 Profondità massima: non calcolabile
 Precisione: 56%
@@ -432,7 +470,7 @@ Il resto del segnale ha parametri abbastanza standard.
 
 [[Esegui un&#39;altra scansione-&gt;Bio-Sonar]]
 [[Faccio altro-&gt;Principale]] 
-(set: $destra_scan to true)</tw-passagedata><tw-passagedata pid="47" name="Bio-Sonar-Profondità" tags="" position="1610,170" size="100,100">{
+(set: $destra_scan to true)</tw-passagedata><tw-passagedata pid="47" name="Bio-Sonar-Profondità" tags="" position="2518.3333333333335,215" size="100,100">{
 (if:$scan_type is not (passage:)&#39;s name)[
 Con alcuni e ponderati tocchi dirigi il Bio-Sonar verso nord-ovest, puntando diritto in profondità.
 (set:$scan_time to 0)
@@ -450,7 +488,7 @@ Percentuale di completamento: (live:1s)[(round: $scan_time/$req_scan*100)%]
 ] (else:) [
 (goto:&quot;Done Scan Profondità&quot;)
 (hidden:)[[Done Scan Profondità]]
-]</tw-passagedata><tw-passagedata pid="48" name="Done Scan Profondità" tags="" position="1607,314" size="100,100">---Risultato della Scansione della zona a Tribordo---
+]</tw-passagedata><tw-passagedata pid="48" name="Done Scan Profondità" tags="" position="2515.3333333333335,359" size="100,100">---Risultato della Scansione della zona a Tribordo---
 Attività Biologica: rilevata
 Profondità massima: 80-120 metri
 Precisione: 7%
@@ -461,7 +499,7 @@ Il segnale sembra indicare un movimento in direzione nord, forse nord-est.
 La debolezza del segnale non permette di escludere neanche gli scenari meno comuni.
 
 [[Esegui un&#39;altra scansione-&gt;Bio-Sonar]]
-[[Faccio altro-&gt;Principale]]</tw-passagedata><tw-passagedata pid="49" name="Neonato" tags="no_back" position="851,896" size="100,100">$b[Neonato]
+[[Faccio altro-&gt;Principale]]</tw-passagedata><tw-passagedata pid="49" name="Neonato" tags="no_back" position="1344.3333333333335,869.3333333333334" size="100,100">$b[Neonato]
 Con questo termine ci si può riferire a bambini e a cuccioli di tutti gli animali, nel periodo di tempo vario e proporzionale ai differenti sviluppi fisiologici nelle diverse specie, comunque compreso, per i mammiferi, entro il periodo dello svezzamento.
 
 Negli umani il periodo di svezzamento corrisponde ai primi 28 giorni di vita.
@@ -472,12 +510,12 @@ Nel corso dello sviluppo umano, il neonato è la fase successiva a quella fetale
 	- Neonati a termine nati tra la 37ª e la 42ª settimana di gravidanza
 	- Neonati post-termine, nati oltre la 42ª settimana di gravidanza
 	
-[[Avanti &gt; -&gt;Neonato2]]</tw-passagedata><tw-passagedata pid="50" name="Neonato2" tags="" position="852,1046" size="100,100">$b[Nascita]
+[[Avanti &gt; -&gt;Neonato2]]</tw-passagedata><tw-passagedata pid="50" name="Neonato2" tags="" position="1345.3333333333335,1019.3333333333334" size="100,100">$b[Nascita]
 La nascita è il momento dell&#39;entrata in (link:&quot;v̵̢̡̢̛̛̼̗̠͈͈̱̦̺̳̬͙͌̑̆͗̿̐̋͐́̀͐̑̓̋́̓́̈́̽͜͜͜͠į̵̛̝̮̰̩̻̻̥͔̣̋̃̎̇̈̾͒̎͒̑̂̽̀̑̑̈́̓́̌̽͘t̵̩͙̥͐ḁ̶̢͎̫͚̻͎͚͉̥͕̤̱̓̈́̐́̍̀̏͊͑͘̚ͅ&quot;)[vita] di un essere. Generalmente è considerata nascita il momento in cui un (link:&quot;ȩ̵̧̦̪̬̤̤̠̪̘̩̟͓̤͇̺͎̒͐͗̐̀̆̿̈́͛̑̋̈́͊̿̽̄̆̊͋̚̚s̵̢̛̖̤̠͖̯̦̬̱̫͙͖̤͋͋͆͋̾͐̉̚̕ͅs̶̛͈͈͈̗̝͓̟͙̽̿̀̓͛͌̇̐͋̃̓͌́̑̍͂̈̌͒̈́͘͝e̴̝̥̠̙̻̦̦͖̬͖̊̅̈́̐́͜r̸̛̤̟̮̱͈̱͔̩̗͍͙̹̈̅̀̽̌̑͛̓̄̿̆̕͜͝ͅě̷̝̜̺̭͔̲̬̥̮̻͍̪̟̦̪͔̤̼́̌̀̈́̇̈́͜ͅͅ ̴̧̛͔̘͇̣̟̖̦̫̤̰̩̉̌͌̍̀̊͆͌̑͒̂̎͐̏̑̄̾͘̚͠v̶̧̢̨̨̛̹̼̞̲͕̖̗̙̻̣͍͎̥̬͖̦͔̲̯̝̱̥̇̄̀̂̽͂̽̓̎̎͒̌̓͑͊͋̋̔͋͆̾͌͗̚͝į̴̝̳̼̰̼̜̲̭͍̰͙͕̈́̈́̉͌̊͐̆͑͋͌̈́͒̈́̑̈͆͘̕͠v̵̨̙͉̯̪͍̮̘̗̹͎̗͚̼̰̺̮͍̬̠̒̌̓͊̋͘ͅȩ̴̢̛͉̥̥̣̥͕̖̬͙̠̖̿̄̈̌̈́͋͒́̚̕͝n̶̢̢̡̧̳̠͔̱̬̭͕̣̦͉̩̹̰̣̻̝̱̤̹̬̓͆̎͑͌̓͌͊̕̚̚͝t̴̤̬̫̀̏̈͐͛͆̒̎͆̅͜ế̴̢̪͙̪̜͔̦͚͍̝̘͉̲̣̺̩͇̖͙͔͓̙͔͇̀̂̌̎̂͌̀͂̉̀͛͘͜͠ͅ&quot;)[essere vivente] emerge dal (link:&quot;c̶̛̲̫̟̮̺͔̰̟̪͒̅̀̌̇̅̃́̊̈́̾̿͛͗̈̆̆̊͌̚̕͠͝o̵̢̨͉̫͍͓̘̜̼͖̼̯̳̖̲͋͆̃̍̃̌́̑́̀̈́̒̍̋̑̒͋͆̾̆̒͘͠͝ŗ̵̡̲̙̤̟̱̠̪̭͈͔͓̤̯̭̟̙͐́̈́̓̍͑̽̕ͅp̷̧̞͇̯̩̞̹͑̀̈͗̎͑̐̒̍͒̿̇̈̏̈́͌͘͜͠͝ǫ̶̤͍͈̱̺̰̯͍̠̪̮͙̜͚̼̝̗̖̤̐ ̵̣͐͆́̌̋̓̽̐̓̈́̐̆̏̑̊̋̏͊̕d̷͔̥̟̻̣̻̼̺̪͉̥̜̲̤̯͈̮̣̬̽̀̋͂e̴̱̩̼̬̠̣͇̞̘̠͇͍̪͇͙̻̻̟̯̅̔̐͑̅̃̆̅̈́̀̔̎̀̊̿͜͝ĺ̸̪͎̻͓̩̠̜͕̙͉͕̻̗̯̖̙̠͕̬͔̦̯̽̔͗͝ͅl̴̨̧̮̬̳̯̱͓̬̹̲̮̃̈̋̉́͛́̿͝͝ą̴̺̥̗̥̺͓̻̹̖̹̭̻̘̺̳͓̰̩͍͚̋͌́̋̍͒ ̷̢̖̞̥̳͍̺̣̟̰̺̻̤̖̩̼͙͚̟̞̫̈̈́̋͌͛̃̒̄̂͂͂̈́̈́̈́̈́̋͌̅̈́͆̽̚ͅm̵̢̧̛̛̞͎̩̞͈̙̪̥̰̦͚̝͈͇̲̩͚͍̬̤̪̀̓̈́̅̑̃̂̈́̎͆͌͋̈́̿̕͝ͅá̸̪̝̝̺̭̬͚̹̭̠̅́͐͗̔̽̃̈̒̓̈́̽̒͑̀̄̚d̸̦̥̤͚̹͇̫̤̫̺͈̼̻̫̦͍͈͖̈̌͊̓̒́̀͛̑̉̒̌̾͛̐̈́̽̊̈̔̏̌͝r̶̯̖̭̲̒̿̔̌͛͊̐̉̈́̂̈̄̉͆̋̋̈́͆̉̑͐͐̀̚̕͝e̶̢̹̣̖̺̩͎̝̰̘̍̓̆͜͝&quot;)[corpo della madre]; dal ventre nel caso dei mammiferi o dal guscio come nel caso degli ovipari e ovovivipari.
 
 [[Smetto di l̸͎͐̏̑̕e̸̞͛́̈́g̷̠̺̜͇͝g̷̯̽̓̕e̴̠̺̬̾͂͋̚r̵̰̪̩̈ę̶͈͇̦̦͌͊̿-&gt;Pass Out]]
 [[Non mi s̶̻̣̦̻̘̔ë̶̦̗́͛́̏ń̴̹̈ͅẗ̷̤̭́õ̷̺̻͐́̉ͅ molto bene...-&gt;Pass Out]]
-[[Č̶͎͙͈͚̭̑͝o̵̘̞̊͗̋͒̍n̶͖̫͠t̶͎̓͛ĩ̷̠̯̫͛̆̓n̶̟͎͛̋ú̷̲͎̺͕̪̄͗̈̚ǫ̵͕̈́ a leggere-&gt;Neonato3]] </tw-passagedata><tw-passagedata pid="51" name="Neonato3" tags="no_back" position="852,1196" size="100,100">$b[Parto] (set: $next to false)
+[[Č̶͎͙͈͚̭̑͝o̵̘̞̊͗̋͒̍n̶͖̫͠t̶͎̓͛ĩ̷̠̯̫͛̆̓n̶̟͎͛̋ú̷̲͎̺͕̪̄͗̈̚ǫ̵͕̈́ a leggere-&gt;Neonato3]] </tw-passagedata><tw-passagedata pid="51" name="Neonato3" tags="no_back" position="1345.3333333333335,1169.3333333333333" size="100,100">$b[Parto] (set: $next to false)
 I̷l̴ ̶p̷a̷r̶t̶o̷ ̸p̴u̷ò̵ ̷d̴i̴s̸t̸i̷n̴g̴u̴e̶r̴s̵i̵ ̴i̶n̴ ̶&quot;̴e̴u̴t̵o̵c̷i̴c̷o̵&quot;̵ ̶o̴ ̵&quot;̷f̶i̴s̴i̷o̷l̵o̷g̸i̷c̸o̴&quot;̵ ̷s̷e̶ ̸a̶v̷v̵i̷e̶n̵e̵ ̸s̷p̷o̶n̷t̶a̸n̶e̷a̷m̵e̵n̷t̶e̵,̸ ̴o̴p̸p̷u̵r̸e̶ ̸i̸n̸ ̴&quot;̶d̷i̸s̸t̶o̶c̷i̵c̷o̶&quot;̸ ̷o̸ ̶&quot;̷n̶o̶n̸ ̴f̷i̸s̴i̶o̶l̷o̵g̴i̷c̷o̶&quot;̷ ̶s̶e̴,̸ ̶i̷n̵ ̸s̶e̷g̸u̶i̵t̴o̴ ̵a̸ ̷c̶o̴m̶p̵l̸i̴c̶a̸z̴i̴o̶n̴i̸,̶ ̶è̶ ̴n̴e̷c̷e̵s̵s̸a̵r̶i̴o̵ ̷l̵&#39;̴i̸n̷t̶e̶r̷v̵e̵n̵t̵o̵ ̷m̶e̵d̸i̷c̵o̶.̴ ̷L̸a̴ ̶d̶i̴s̶t̴o̷c̵i̵a̵ ̵p̴u̷ò̴ ̵e̷s̷s̴e̶r̸e̷ ̵p̸r̵o̸v̶o̴c̷a̶t̷a̷ ̵d̴a̷ ̸a̴n̵o̸m̷a̷l̶i̶e̸ ̷d̷e̸l̷l̴&#39;̸a̶p̸p̷a̸r̶a̷t̷o̵ ̷g̶e̶n̷i̶t̴a̵l̸e̴,̷ ̴d̶a̵ ̴a̶l̵t̵e̵r̴a̸z̶i̸o̵n̶i̴ ̴d̴e̸l̸l̸a̵ ̴c̵o̴n̷t̵r̷a̷z̴i̸o̸n̷e̸ ̵u̶t̴e̵r̵i̶n̴a̶,̷ ̵d̵a̴ ̶m̸a̶l̵a̷t̷t̶i̵e̷ ̷d̵e̴l̴ ̶n̵a̸s̵c̴i̶t̶u̶r̴o̷ ̵o̴ ̷d̶a̵ ̸f̶a̸t̸t̸o̴r̵i̴ ̸p̷s̵i̶c̷h̵i̶c̸i̷ ̵c̶h̶e̷ ̴o̶s̸t̵a̵c̶o̷l̸a̸n̶o̷ ̶o̶ ̴i̵m̷p̵e̸d̶i̵s̴c̶o̷n̵o̶ ̴i̵l̸ ̴n̶o̶r̸m̸a̶l̷e̶ ̵s̴v̷o̵l̸g̵i̴m̶e̶n̵t̶o̷ ̴d̴e̷l̶ ̴p̵a̴r̸t̴o̴.̷
 
 (link: &quot;C̶o̵n̵t̷i̸n̸u̶o̸&quot;)[
@@ -487,7 +525,7 @@ A̶ ̴s̴e̶c̵o̴n̴d̵a̷ ̶d̶e̷l̸ ̶m̸o̷m̵e̸n̶t̸o̵ ̶d̸e̷l̷l̶a�
 	(link:&quot;A̸̗͝ ̵̞͠t̶̡̊e̵͕͒r̴̲͠m̷̠̃i̸͓̅n̷͖̍ę̵̈&quot;)[(text-style:&quot;shudder&quot;)[A̸̗͝ ̵̞͠t̶̡̊e̵͕͒r̴̲͠m̷̠̃i̸͓̅n̷͖̍ę̵̈]:̷͚̊ ̶͍̑ţ̵̄r̴̟͝á̵͉ ̵͊͜l̵͈͝&#39;̵̧̉ḯ̸͇n̸̪̉i̸̼͛z̶̬̈́î̸͖o̶̡̕ ̷̹͒d̷̯̽e̵̫͘l̴̽ͅl̶̦̈́ḁ̷̐ ̸̻͠3̴̫̾7̴̣͋ª̵̫̈ ̵̤͠e̷̗̍ ̷̦̄l̸̰̋a̵̟͆ ̸͖̇f̵̞͗i̵̯͗n̵̲̊e̶̬͗ ̴͇̌d̵̘̃e̶̢̾l̷̹͆ĺ̶͜a̶̩̓ ̷̛̝4̴̣͊1̸̗̈́ª̶̨̒ ̸͔̇s̵̟̊e̴͔̅t̷̗͐t̶͈͠ḭ̵͛m̶̛̼ả̵͙n̸͎͛ā̴͚ ̶̡̒(̶͜͠4̸̧̍1̵̦̓ ̵̜̌+̴̩̔ ̸͍͂6̸̹̔ ̶̨͒ǧ̴̯ȋ̸͉ȍ̶̺ṙ̶̨ǹ̴̙i̴̙̒)̷̗͆;̴͇̈́]
 	(link:&quot;P̴̜̚ȍ̵̰s̵̊͜ẗ̴̡́-̶̠͝t̸͖̂ê̶̪r̵̫̈́m̷̻͘i̵̹̽n̷͖̐e̸̝̾&quot;)[(text-style:&quot;upside-down&quot;)[P̴̜̚ȍ̵̰s̵̊͜ẗ̴̡́-̶̠͝t̸͖̂ê̶̪r̵̫̈́m̷̻͘i̵̹̽n̷͖̐e̸̝̾]:̸̜́ ̴̹̚ḑ̶̿a̵̭͂l̶͚̿l̵̠͛&#39;̷͓͠ǐ̶̻ñ̴͖i̵͓̊z̸̨̏i̶̤͗o̶̝͠ ̷̱̃d̶͓͌é̵̥l̴̤͋l̵̺̾a̸̞͊ ̸͉̿4̵̤̈́2̵̖̔ª̵͉̑ ̴̱͊s̸̞͒e̶̛̬t̴̪̊t̴̰͝ĩ̵̲m̴̥̾a̶͖̒ń̶ͅâ̷̻.̸͈͆]
 	(text-style:&quot;blur&quot;)[[[Ȧ̴͙b̵̩͑o̷̬̽ŕ̷͖t̷̼̽i̴͍͆v̷͔͊o̶͔͗-&gt;Pass Out]]]
-]</tw-passagedata><tw-passagedata pid="52" name="Pass Out" tags="no_back" position="1026,1030.6666666666667" size="100,100">{
+]</tw-passagedata><tw-passagedata pid="52" name="Pass Out" tags="no_back" position="1519.3333333333335,1004.0000000000001" size="100,100">{
 (set: $dots to &quot;&quot;)
 (set: $dot_born to 0)
 (live:1s)[
@@ -512,7 +550,7 @@ Prenditi un momento per svuotare la mente.
 Prosegui non appena ti sentirai pronto.
 
 [[Sono pronto-&gt;Stillborn1]]
-(stop:)]</tw-passagedata><tw-passagedata pid="53" name="Stillborn1" tags="no_back" position="1001,1197.3333333333333" size="100,100">Ti trovi in un luogo angusto, umido.
+(stop:)]</tw-passagedata><tw-passagedata pid="53" name="Stillborn1" tags="no_back" position="1494.3333333333335,1170.6666666666665" size="100,100">Ti trovi in un luogo angusto, umido.
 Intorno a te è tutto molto buio, una lanterna appesa al basso soffitto illumina con luce irregolare la piccola stanza.
 
 [[- Mi guardo intorno-&gt;Look around]]
@@ -527,7 +565,7 @@ Intorno a te è tutto molto buio, una lanterna appesa al basso soffitto illumina
   audio.volume = 0;
   $(&quot;#bg-music&quot;).animate({volume: 0.5}, 3000);
   audio.play();
-&lt;/script&gt;</tw-passagedata><tw-passagedata pid="54" name="Look around" tags="no_back" position="1119,1201" size="100,100">Ti alzi, ma il soffitto è così basso che sei costretto a tener bassa la testa.
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="54" name="Look around" tags="no_back" position="1612.3333333333335,1174.3333333333333" size="100,100">Ti alzi, ma il soffitto è così basso che sei costretto a tener bassa la testa.
 {
 (live: 2s)[
 Poggi una mano sulla fredda parete metallica. È umida e arruginita.
@@ -541,7 +579,7 @@ Con tono rassicurante e scosso al tempo stesso dici: &quot;Abbiamo fatto tutto c
 (live: 6s)[
 [[- Ho parlato io? Non volevo dire quelle cose-&gt;Gesualdo]]
 [[- Con chi sto parlando?-&gt;Gesualdo]]
-]</tw-passagedata><tw-passagedata pid="55" name="Gesualdo" tags="no_back" position="1247,1202" size="100,100">Ti volti, per guardare il tuo interlocutore.
+]</tw-passagedata><tw-passagedata pid="55" name="Gesualdo" tags="no_back" position="1740.3333333333335,1175.3333333333333" size="100,100">Ti volti, per guardare il tuo interlocutore.
 Una figura dietro di te, a malapena illuminata.
 (set:$gesualdo to 0)
 (link:&quot;Su cosa è seduta?&quot;)[La figura è seduta su una cassa, una di quelle che si portano durante le spedizioni.(set:$gesualdo to $gesualdo+1)]
@@ -552,7 +590,7 @@ Una figura dietro di te, a malapena illuminata.
 
 (live: 2s)[(if: $gesualdo &gt;= 3) [
 [[Cerco un contatto, non trovo parole adatte in questo momento-&gt;Gesualdo2]]
-[[&quot;&quot;-&gt;Gesualdo2]]
+[[&quot;Ehy... come stai?&quot;-&gt;Gesualdo2]]
 (stop:)]]
 (set:$hug to false)</tw-passagedata><tw-passagedata pid="56" name="Gesualdo2" tags="no_back" position="1873.6666666666667,1177" size="100,100">Gesualdo toglie le mani dal volto, poggiandole lentamente sulle gambe.
 
@@ -760,8 +798,7 @@ Prendi l&#39;inchiostro e la carta mentre pensi a quali parole usare.
 
 &quot;La prima volta che capii cosa significasse perdere qualcuno fu al funerale di nonno Leo&quot;
 
-(link:&quot;- \&quot;Avrò avuto quanti, 2 anni al massimo?\&quot;&quot;)[
-- &quot;Avrò avuto quanti, 2 anni al massimo?&quot;
+(link:&quot;- \&quot;Avrò avuto quanti, 2 anni al massimo?\&quot;&quot;)[- &quot;Avrò avuto quanti, 2 anni al massimo?&quot;
 
 &quot;Non ti sopportavo, eri uno squalo furioso a quel tempo&quot; - ridacchia
 
@@ -788,7 +825,11 @@ Prendi l&#39;inchiostro e la carta mentre pensi a quali parole usare.
 [[- Lo abbraccio-&gt;Abbraccio empatico]]</tw-passagedata><tw-passagedata pid="74" name="Abbraccio empatico" tags="no_back" position="2191.9999999999995,2230.3333333333335" size="100,100">Assaporate un momento di silenzio, cullati dai dolci movimenti della nave.
 
 Un momento solo per voi.
-{(if:$hug is true)[
+
+(live: 3s)[(stop:)&quot;...che merda...&quot;]
+{
+(live: 7s)[(stop:)
+(if:$hug is true)[
 [[...-&gt;Grazie]]
 ]
 (else:)[
@@ -804,6 +845,7 @@ Un momento solo per voi.
   $(&quot;#cry-sound&quot;).animate({volume: 0.5}, 3000);
   audio.play();
 &lt;/script&gt;
+]
 ]}</tw-passagedata><tw-passagedata pid="75" name="Grazie" tags="no_back" position="2036.9999999999993,2228.6666666666665" size="100,100">&quot;Grazie Romualdo... ne avevo bisogno&quot;
 
 [[- &quot;In ogni momento&quot;-&gt;Grazie2]]
@@ -812,7 +854,7 @@ Un momento solo per voi.
 
 &quot;Si, è vero...&quot;
 
-Il suo sguardo, allegerito un poco dai tuoi gesti, si fa pensieroso.
+Il suo sguardo, allegerito un poco dai tuoi gesti e le tue parole, si fa pensieroso.
 
 [[- Non dico nulla, parlerà quando sarà pronto-&gt;Ti capisco]]
 [[- &quot;A che pensi?&quot;-&gt;Ti capisco]]
@@ -871,7 +913,7 @@ Strappala.
 
 Piegala e conservala in un luogo sicuro, Romualdo la terrà sempre con sé.
 
-[[...-&gt;Debriefing]]</tw-passagedata><tw-passagedata pid="83" name="Debriefing" tags="" position="1930,3047.4999999999995" size="100,100">Prendi una pausa, accendi la luce.
+[[...-&gt;Debriefing]]</tw-passagedata><tw-passagedata pid="83" name="Debriefing" tags="no_back" position="1930,3047.4999999999995" size="100,100">Prendi una pausa, accendi la luce.
 
 La cabina buia e umida lascia spazio ad una stanza luminosa.
 
@@ -912,31 +954,55 @@ Il centro dell&#39;isola sembra essere meno influenzato e diradare ad un ritmo m
   audio.volume = 0;
   $(&quot;#storm-music&quot;).animate({volume: 0.5}, 3000);
   audio.play();
-&lt;/script&gt;</tw-passagedata><tw-passagedata pid="85" name="Calcolo" tags="no_back" position="2323.3333333333335,3055.8333333333335" size="100,100">Inizi a calcolare, fai tutto ad alta voce ed usa le eccellenze (le domande sono per facilitarti):
-(set: $fav to 0)(set: $calcolo_scelte to 0)
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="85" name="Calcolo" tags="no_back" position="2303.3333333333335,3045.8333333333335" size="100,100">Inizi a calcolare, fai tutto ad alta voce ed usa le eccellenze (le domande sono per facilitarti):
+(set: $fav to 0)(set: $calcolo_scelte to (a:false,false,false))
 
-Vento:
+$u[Vento]:
  - Da dove arriva?
  - Intensità?
-(link:&quot;Favorevole&quot;)[(set: $fav to $fav+1)**favorevole**(set: $calcolo_scelte to $calcolo_scelte+1)]
-(link:&quot;Sfavorevole&quot;)[(set: $fav to $fav-1)**sfavorevole**(set: $calcolo_scelte to $calcolo_scelte+1)]
  
-Stato dei detriti atmosferici:
+Esito: |esito1&gt;[
+{(link:&quot;Favorevole&quot;)[
+(set: $fav to $fav+1)
+(replace:?esito1)[**favorevole**]
+(set: $calcolo_scelte&#39;s 1st to true)]}
+{(link:&quot;Sfavorevole&quot;)[
+(set: $fav to $fav-1)
+(replace:?esito1)[**sfavorevole**]
+(set: $calcolo_scelte&#39;s 1st to true)]}]
+ 
+$u[Stato dei detriti atmosferici]:
  - Quanto sono radi?
  - Sono visibili?
-(link:&quot;Favorevole&quot;)[(set: $fav to $fav+1)**favorevole**(set: $calcolo_scelte to $calcolo_scelte+1)]
-(link:&quot;Sfavorevole&quot;)[(set: $fav to $fav-1)**sfavorevole**(set: $calcolo_scelte to $calcolo_scelte+1)]
  
- Densità della nube:
+Esito: |esito2&gt;[
+{(link:&quot;Favorevole&quot;)[
+(set: $fav to $fav+1)
+(replace:?esito2)[**favorevole**]
+(set: $calcolo_scelte&#39;s 2nd to true)]}
+{(link:&quot;Sfavorevole&quot;)[
+(set: $fav to $fav-1)
+(replace:?esito2)[**sfavorevole**]
+(set: $calcolo_scelte&#39;s 2nd to true)]}]
+ 
+$u[Densità della nube]:
  - È da molto che ha iniziato a piovere?
  - La nebbia sopra le acque profonde si sta dirandando più velocemente, quanto?
-(link:&quot;Favorevole&quot;)[(set: $fav to $fav+1)**favorevole**(set: $calcolo_scelte to $calcolo_scelte+1)]
-(link:&quot;Sfavorevole&quot;)[(set: $fav to $fav-1)**sfavorevole**(set: $calcolo_scelte to $calcolo_scelte+1)]
+ 
+Esito: |esito3&gt;[
+{(link:&quot;Favorevole&quot;)[
+(set: $fav to $fav+1)
+(replace:?esito3)[**favorevole**]
+(set: $calcolo_scelte&#39;s 3rd to true)]}
+{(link:&quot;Sfavorevole&quot;)[
+(set: $fav to $fav-1)
+(replace:?esito3)[**sfavorevole**]
+(set: $calcolo_scelte&#39;s 3rd to true)]}]
 
 {(live:1s)[
-(if:$calcolo_scelte&gt;=3)[(stop:)
+(if:all of $calcolo_scelte is true)[(stop:)
 [[Ho tutto-&gt;Stato Nube]]
-]]}</tw-passagedata><tw-passagedata pid="86" name="Stato Nube" tags="" position="2475,3050.8333333333335" size="100,100">Abbiamo a disposizione:
+]]}</tw-passagedata><tw-passagedata pid="86" name="Stato Nube" tags="no_back" position="2475,3050.8333333333335" size="100,100">Abbiamo a disposizione:
 (print:$fav*3+30) minuti
 prima che la nube si diradi abbastanza da non coprirci più dalla luce.
 
