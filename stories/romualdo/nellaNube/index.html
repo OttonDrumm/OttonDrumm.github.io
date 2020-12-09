@@ -297,13 +297,13 @@ Scansione delle acque sottostanti in corso.
 {(if:$scan_time &lt; $req_scan)[
 Percentuale di completamento: (live:1s)[(round: $scan_time/$req_scan*100)%]
 ]}
-(if:$scan_time &lt; $req_scan)[
+(live:1s)[(if:$scan_time &lt; $req_scan)[
 [[Annulla la scansione-&gt;AbortScan]]
 [[Lascia scansionare e guarda altro-&gt;Principale]]
-] (else:) [
+] (else:) [(stop:)
 (goto:&quot;Done Scan Sotto&quot;)
 (hidden:)[[Done Scan Sotto]]
-]</tw-passagedata><tw-passagedata pid="33" name="Bio-Sonar-Prua" tags="no_back" position="1938.3333333333335,215" size="100,100">{
+]]</tw-passagedata><tw-passagedata pid="33" name="Bio-Sonar-Prua" tags="no_back" position="1938.3333333333335,215" size="100,100">{
 (if:$scan_type is not (passage:)&#39;s name)[
 Con alcuni e ponderati tocchi dirigi il Bio-Sonar a prua.
 (set:$scan_time to 0)
@@ -315,13 +315,13 @@ Scansione delle acque a prua in corso.
 {(if:$scan_time &lt; $req_scan)[
 Percentuale di completamento: (live:1s)[(round: $scan_time/$req_scan*100)%]
 ]}
-(if:$scan_time &lt; $req_scan)[
+(live:1s)[(if:$scan_time &lt; $req_scan)[
 [[Annulla la scansione-&gt;AbortScan]]
 [[Lascia scansionare e guarda altro-&gt;Principale]]
-] (else:) [
+] (else:) [(stop:)
 (goto:&quot;Done Scan Prua&quot;)
 (hidden:)[[Done Scan Prua]]
-]</tw-passagedata><tw-passagedata pid="34" name="Bio-Sonar-Sinistra" tags="no_back" position="2208.3333333333335,212" size="100,100">{
+]]</tw-passagedata><tw-passagedata pid="34" name="Bio-Sonar-Sinistra" tags="no_back" position="2208.3333333333335,212" size="100,100">{
 (if:$scan_type is not (passage:)&#39;s name)[
 Con alcuni e ponderati tocchi dirigi il Bio-Sonar verso la sinistra.
 (set:$scan_time to 0)
@@ -333,13 +333,13 @@ Scansione delle acque a prua in corso.
 {(if:$scan_time &lt; $req_scan)[
 Percentuale di completamento: (live:1s)[(round: $scan_time/$req_scan*100)%]
 ]}
-(if:$scan_time &lt; $req_scan)[
+(live:1s)[(if:$scan_time &lt; $req_scan)[
 [[Annulla la scansione-&gt;AbortScan]]
 [[Lascia scansionare e guarda altro-&gt;Principale]]
-] (else:) [
+] (else:) [(stop:)
 (goto:&quot;Done Scan Sinistra&quot;)
 (hidden:)[[Done Scan Sinistra]]
-]</tw-passagedata><tw-passagedata pid="35" name="Bio-Sonar-Destra" tags="no_back" position="2358.3333333333335,212" size="100,100">{
+]]</tw-passagedata><tw-passagedata pid="35" name="Bio-Sonar-Destra" tags="no_back" position="2358.3333333333335,212" size="100,100">{
 (if:$scan_type is not (passage:)&#39;s name)[
 Con alcuni e ponderati tocchi dirigi il Bio-Sonar verso nord-ovest.
 (set:$scan_time to 0)
@@ -351,13 +351,13 @@ Scansione delle acque a prua in corso, direzione: Nord-Ovest.
 {(if:$scan_time &lt; $req_scan)[
 Percentuale di completamento: (live:1s)[(round: $scan_time/$req_scan*100)%]
 ]}
-(if:$scan_time &lt; $req_scan)[
+(live:1s)[(if:$scan_time &lt; $req_scan)[
 [[Annulla la scansione-&gt;AbortScan]]
 [[Lascia scansionare e guarda altro-&gt;Principale]]
-] (else:) [
+] (else:) [(stop:)
 (goto:&quot;Done Scan Destra&quot;)
 (hidden:)[[Done Scan Destra]]
-]</tw-passagedata><tw-passagedata pid="36" name="AbortScan" tags="" position="2204.3333333333335,64" size="100,100">(set: $scan_type to false)
+]]</tw-passagedata><tw-passagedata pid="36" name="AbortScan" tags="" position="2204.3333333333335,64" size="100,100">(set: $scan_type to false)
 (goto: &quot;Bio-Sonar&quot;)</tw-passagedata><tw-passagedata pid="37" name="Done Scan Sotto" tags="no_back" position="1785.3333333333335,363" size="100,100">---Risultato della Scansione della zona sottostante---
 Attività Biologica: 17%
 Profondità massima: 11 metri
@@ -435,13 +435,13 @@ Scansione delle acque a poppa in corso.
 {(if:$scan_time &lt; $req_scan)[
 Percentuale di completamento: (live:1s)[(round: $scan_time/$req_scan*100)%]
 ]}
-(if:$scan_time &lt; $req_scan)[
+(live:1s)[(if:$scan_time &lt; $req_scan)[
 [[Annulla la scansione-&gt;AbortScan]]
 [[Lascia scansionare e guarda altro-&gt;Principale]]
-] (else:) [
+] (else:) [(stop:)
 (goto:&quot;Done Scan Poppa&quot;)
 (hidden:)[[Done Scan Poppa]]
-]</tw-passagedata><tw-passagedata pid="45" name="Done Scan Poppa" tags="no_back" position="2075.3333333333335,370" size="100,100">---Risultato della Scansione della zona a Poppa---
+]]</tw-passagedata><tw-passagedata pid="45" name="Done Scan Poppa" tags="no_back" position="2075.3333333333335,370" size="100,100">---Risultato della Scansione della zona a Poppa---
 Attività Biologica: 33%
 Profondità massima: 38 metri
 Precisione: 71%
