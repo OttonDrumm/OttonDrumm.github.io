@@ -11,89 +11,127 @@
 
 <tw-story></tw-story>
 
-<tw-storydata name="Out of Reach - Caronte" startnode="1" creator="Twine" creator-version="2.3.8" ifid="DF9123B2-BE0D-44BF-B578-09212E6DA072" zoom="1" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Intro" tags="" position="666,26" size="100,100"></tw-passagedata><tw-passagedata pid="2" name="Hey" tags="" position="889,37" size="100,100">Hey
+<tw-storydata name="Out of Reach - Caronte" startnode="1" creator="Twine" creator-version="2.3.8" ifid="DF9123B2-BE0D-44BF-B578-09212E6DA072" zoom="1" format="Harlowe" format-version="3.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-include[type="header"] > tw-hook > tw-link {
+	font-size: small!important;
+	color: gray!important;
+}
 
-[[Do we know each other?-&gt;I know you]]
-[[Who are you?-&gt;I know you]]</tw-passagedata><tw-passagedata pid="3" name="I know you" tags="" position="889,187" size="100,100">I know you.
+tw-hook[style^="color"] tw-link:not(:hover),
+		tw-hook[style*=" color"] tw-link:not(:hover),
+		tw-hook[style^="color"] .enchantment-link:not(:hover),
+		tw-hook[style*=" color"] .enchantment-link:not(:hover) {
+
+	color: inherit;
+}
+
+tw-include[type="startup"] {
+	display: none;
+}
+
+body, tw-story
+{
+  font-family: monospace;
+  font-size: 16px;
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Intro" tags="" position="666,25" size="100,100">You grab the vibrating phone.
+
+Someone is calling.
+You try to pick up, but nothing.
+Your phone is kinda broken.
+
+[[Start-&gt;Hey]]</tw-passagedata><tw-passagedata pid="2" name="Hey" tags="" position="889,37" size="100,100">Hey
+
+(link:&quot;Do we know each other?&quot;)[(set: $resp to &quot;Do we know each other?&quot;)(goto:&quot;I know you&quot;)]
+(link:&quot;Who are you?&quot;)[(set: $resp to &quot;Who are you?&quot;)(goto:&quot;I know you&quot;)]
+(hidden:)[
+[[I know you]]
+]</tw-passagedata><tw-passagedata pid="3" name="I know you" tags="" position="889,187" size="100,100">- (print:$resp)
+
+I know you.
 You also know me.
 
 [[I lost your number-&gt;Lost number]]
-[[That&#39;s creepy-&gt;Creep]]</tw-passagedata><tw-passagedata pid="4" name="No number" tags="" position="1029,41" size="100,100">1) Sorry, i lost your number. Who are you again?
-2) That&#39;s kinda creepy. </tw-passagedata><tw-passagedata pid="5" name="Lost number" tags="" position="814,337" size="100,100">- Sorry, i lost your number. Who are you again?
+[[That&#39;s creepy-&gt;Creep]]</tw-passagedata><tw-passagedata pid="4" name="Lost number" tags="" position="814,337" size="100,100">- Sorry, i lost your number. Who are you again?
 
 You never had my number.
 
 [[What can I do for you?-&gt;What can i do for you]]
-[[What do you want?-&gt;What do you want]]</tw-passagedata><tw-passagedata pid="6" name="Creep" tags="" position="981,335" size="100,100">- That&#39;s kinda creepy.
+[[What do you want?-&gt;What do you want]]</tw-passagedata><tw-passagedata pid="5" name="Creep" tags="" position="981,335" size="100,100">- That&#39;s kinda creepy.
 
 Yes, I know.
 
 [[*Block Number*-&gt;Block]]
-[[What do you want?-&gt;What do you want]] </tw-passagedata><tw-passagedata pid="7" name="What do you want" tags="" position="809,636" size="100,100">- So...
+[[What do you want?-&gt;What do you want]] </tw-passagedata><tw-passagedata pid="6" name="What do you want" tags="" position="809,636" size="100,100">- So...
 - What do you want?
 
 I want to help you with your project.
 
 [[My project?-&gt;Project]]
 [[I think that&#39;s none of your business-&gt;None of your business]]
-(set:$what to true)</tw-passagedata><tw-passagedata pid="8" name="Block" tags="" position="1088,788" size="100,100">[[*Blacklist Number*-&gt;Blacklist]]
-(link:&quot;*Nevermind*&quot;)[(goto:(history:)&#39;s last)]</tw-passagedata><tw-passagedata pid="9" name="Project" tags="" position="734,787" size="100,100">- What are you talink about
+(set:$what to true)</tw-passagedata><tw-passagedata pid="7" name="Block" tags="" position="1088,788" size="100,100">[[*Blacklist Number*-&gt;Blacklist]]
+(link:&quot;*Nevermind*&quot;)[(goto:(history:)&#39;s last)]</tw-passagedata><tw-passagedata pid="8" name="Project" tags="" position="734,787" size="100,100">- What are you talink about
 
 The shuttle.
 You have to reach the moon.
 
 [[What if i don&#39;t want to-&gt;I don&#39;t want to go]]
-[[How are you gonna help me?-&gt;How]]</tw-passagedata><tw-passagedata pid="10" name="What can i do for you" tags="" position="668,487" size="100,100">- Can I help you with something?
+[[How are you gonna help me?-&gt;How]]</tw-passagedata><tw-passagedata pid="9" name="What can i do for you" tags="" position="668,487" size="100,100">- Can I help you with something?
 
 No.
 
-[[What do you want then?-&gt;What do you want]]</tw-passagedata><tw-passagedata pid="11" name="Blacklist" tags="" position="1200,944" size="100,100">- I&#39;m just gonna block you.
+[[What do you want then?-&gt;What do you want]]</tw-passagedata><tw-passagedata pid="10" name="Blacklist" tags="" position="1200,944" size="100,100">- I&#39;m just gonna block you.
 - Bye.
-(live:10s)[(stop:)
+(live:3s)[(stop:)
 Sorry, you can&#39;t block me.
 You need me.
 
 [[Wth-&gt;WTH]]
 [[...need you for what?-&gt;Need]]
-]</tw-passagedata><tw-passagedata pid="12" name="WTH" tags="" position="1332,1079" size="100,100">- WTH is goin on?
+]</tw-passagedata><tw-passagedata pid="11" name="WTH" tags="" position="1302,1086" size="100,100">- WTH is goin on?
 - I just blocked you
 
 Do not panic.
 Everything is alright.
 
 [[Just leave me alone-&gt;Loner]]
-[[</tw-passagedata><tw-passagedata pid="13" name="Need" tags="" position="1085,1085" size="100,100">- ...
+(set: $loner to 1)</tw-passagedata><tw-passagedata pid="12" name="Need" tags="" position="1085,1085" size="100,100">- ...
 - How the hell do you know what i need?
 
 You need to go to the moon.
 I can take you there.
 
 [[I can do it by myself-&gt;Loner]]
-[[How are you supposed to help me?-&gt;How]]</tw-passagedata><tw-passagedata pid="14" name="Loner" tags="" position="1155,1221" size="100,100">- I can do it by myself
+[[How are you supposed to help me?-&gt;How]]
+(set: $loner to 0)</tw-passagedata><tw-passagedata pid="13" name="Loner" tags="" position="1176,1233" size="100,100">{
+(if: $loner is 0)[
+- I can do it by myself
+] (else:) [
+- f*king stalker
+]
+}
 - Just leave me alone
 
 You are alone.
 
 [[Well, fuck you too-&gt;Fuck you]]
-[[No shit-&gt;I know]]</tw-passagedata><tw-passagedata pid="15" name="How" tags="" position="872,1659" size="100,100">- How are you gonna help me?
+[[No shit-&gt;I know]]</tw-passagedata><tw-passagedata pid="14" name="How" tags="" position="872,1659" size="100,100">- How are you gonna help me?
 - I mean...
 - We are kinda far away from each other
 
 Do you remember Alex?
 
 [[Should I?-&gt;Should I]]
-[[Nope-&gt;Nope]]</tw-passagedata><tw-passagedata pid="16" name="None of your business" tags="" position="901,786.5" size="100,100">- I think that&#39;s none of your business.
+[[Nope-&gt;Nope]]</tw-passagedata><tw-passagedata pid="15" name="None of your business" tags="" position="901,786.5" size="100,100">- I think that&#39;s none of your business.
 
 It is actually.
 
 [[*Block Number*-&gt;Block]]
-[[How are you gonna help me?-&gt;How]]</tw-passagedata><tw-passagedata pid="17" name="I don&#39;t want to go" tags="" position="639,936" size="100,100">- What if I don&#39;t want to...
+[[How are you gonna help me?-&gt;How]]</tw-passagedata><tw-passagedata pid="16" name="I don&#39;t want to go" tags="" position="639,936" size="100,100">- What if I don&#39;t want to...
 
 You have to.
 You have no choice.
 
 [[That&#39;s dramatic-&gt;Drama]]
-[[Err I do have a choice-&gt;Choice]]</tw-passagedata><tw-passagedata pid="18" name="Fuck you" tags="" position="1080,1371" size="100,100">- Well
+[[Err I do have a choice-&gt;Choice]]</tw-passagedata><tw-passagedata pid="17" name="Fuck you" tags="" position="1079,1401" size="100,100">- Well
 - Fuck you too
 
 Sorry...
@@ -101,8 +139,8 @@ I&#39;m gonna give you some space.
 We&#39;ll catch up later.
 
 **Now it appears a button to launch the shuttle, but the player will not have any fuel available**
-(link:&quot;After you failed a run&quot;)[[[I can&#39;t go any further-&gt;Can&#39;t go further]]
-]</tw-passagedata><tw-passagedata pid="19" name="I know" tags="" position="1230,1371" size="100,100">- No shit
+**This option appears after you failed a run**
+[[I can&#39;t go any further-&gt;Can&#39;t go further]]</tw-passagedata><tw-passagedata pid="18" name="I know" tags="" position="1315,1236" size="100,100">- No shit
 - I know I&#39;m alone
 
 Yeah...
@@ -111,18 +149,30 @@ I was a bit blunt.
 Do you want my help now?
 
 [[Ok, whatever-&gt;Help]]
-[[No.-&gt;No help]]</tw-passagedata><tw-passagedata pid="20" name="Help" tags="" position="1156,1521" size="100,100"></tw-passagedata><tw-passagedata pid="21" name="No help" tags="" position="1305,1521" size="100,100">Double-click this passage to edit it.</tw-passagedata><tw-passagedata pid="22" name="Can&#39;t go further" tags="" position="1003,1519" size="100,100">- I can&#39;t go any furhter
+[[No.-&gt;No help]]</tw-passagedata><tw-passagedata pid="19" name="Help" tags="" position="1356,1462" size="100,100">- Ok, whatever
+
+Great.
+
+[[How are you gonna help me?-&gt;How]]</tw-passagedata><tw-passagedata pid="20" name="No help" tags="" position="1229,1393" size="100,100">- No.
+
+It&#39;s ok.
+I&#39;m gonna give you some space.
+We&#39;ll catch up later.
+
+**Now it appears a button to launch the shuttle, but the player will not have any fuel available**
+**This option appears after you failed a run**
+[[I can&#39;t go any further-&gt;Can&#39;t go further]]</tw-passagedata><tw-passagedata pid="21" name="Can&#39;t go further" tags="" position="1127,1594" size="100,100">- I can&#39;t go any furhter
 
 It&#39;s fine.
 I&#39;m here for you.
 
-[[How are you gonna help me?-&gt;How]]</tw-passagedata><tw-passagedata pid="23" name="Drama" tags="" position="742,1083" size="100,100">- That&#39;s so dramatic
+[[How are you gonna help me?-&gt;How]]</tw-passagedata><tw-passagedata pid="22" name="Drama" tags="" position="742,1083" size="100,100">- That&#39;s so dramatic
 
 I&#39;m a natural.
 Now.
 You want to keep chatting or you want to go ahead and reach the moon?
 
-[[Fine, let&#39;s go-&gt;Let&#39;s go]] </tw-passagedata><tw-passagedata pid="24" name="Choice" tags="" position="549,1084" size="100,100">- Err
+[[Fine, let&#39;s go-&gt;Let&#39;s go]] </tw-passagedata><tw-passagedata pid="23" name="Choice" tags="" position="549,1084" size="100,100">- Err
 - I don&#39;t want to be rude but
 - I do have a choice
 
@@ -131,34 +181,34 @@ You can either leave everything frozen in a perpetual limbo.
 Or you can go to the moon.
 
 [[Ok, let&#39;s go-&gt;Let&#39;s go]]
-[[Limbo it is-&gt;Limbo]]</tw-passagedata><tw-passagedata pid="25" name="Let&#39;s go" tags="" position="628,1225" size="100,100">- Ok, sure.
+[[Limbo it is-&gt;Limbo]]</tw-passagedata><tw-passagedata pid="24" name="Let&#39;s go" tags="" position="628,1225" size="100,100">- Ok, sure.
 - Let&#39;s go to the moon
 
 Wonderful.
 
-[[What&#39;s next?-&gt;How]]</tw-passagedata><tw-passagedata pid="26" name="Limbo" tags="" position="476,1218" size="100,100">The game closes.
+[[What&#39;s next?-&gt;How]]</tw-passagedata><tw-passagedata pid="25" name="Limbo" tags="" position="476,1218" size="100,100">The game closes.
 
 Once it opens this message arrives:
 
 Are you ready now?
 
 [[Nope-&gt;Limbo]]
-[[Ok, you won-&gt;Let&#39;s go]]</tw-passagedata><tw-passagedata pid="27" name="Who&#39;s Alex" tags="" position="871,1954" size="100,100">- Who&#39;s Alex?
+[[Ok, you won-&gt;Let&#39;s go]]</tw-passagedata><tw-passagedata pid="26" name="Who&#39;s Alex" tags="" position="871,1954" size="100,100">- Who&#39;s Alex?
 
 The person that&#39;s non stop calling you.
 
-[[I can&#39;t get the call-&gt;Out of reach]]</tw-passagedata><tw-passagedata pid="28" name="Should I" tags="" position="795,1799" size="100,100">- Should I?
+[[I can&#39;t get the call-&gt;Out of reach]]</tw-passagedata><tw-passagedata pid="27" name="Should I" tags="" position="795,1799" size="100,100">- Should I?
 
 Yes.
 But it&#39;s fine.
 We&#39;ll eventually get there.
 
-[[Who&#39;s Alex?-&gt;Who&#39;s Alex]]</tw-passagedata><tw-passagedata pid="29" name="Nope" tags="" position="936,1799" size="100,100">- Nope
+[[Who&#39;s Alex?-&gt;Who&#39;s Alex]]</tw-passagedata><tw-passagedata pid="28" name="Nope" tags="" position="936,1799" size="100,100">- Nope
 
 You should.
 We&#39;ll eventually get there.
 
-[[Who&#39;s Alex?-&gt;Who&#39;s Alex]]</tw-passagedata><tw-passagedata pid="30" name="Out of reach" tags="" position="871,2104" size="100,100">- I can&#39;t get the call tho
+[[Who&#39;s Alex?-&gt;Who&#39;s Alex]]</tw-passagedata><tw-passagedata pid="29" name="Out of reach" tags="" position="871,2104" size="100,100">- I can&#39;t get the call tho
 - My phone is broken
 
 I know.
@@ -166,17 +216,17 @@ Here.
 * Unknown has sent an audio *
 
 [[*Download the audio*-&gt;Download]]
-[[I&#39;m not doing that-&gt;No way]]</tw-passagedata><tw-passagedata pid="31" name="Download" tags="" position="743,2562" size="100,100">* Plays a very short corrupted audio, a voice of someone*
+[[I&#39;m not doing that-&gt;No way]]</tw-passagedata><tw-passagedata pid="30" name="Download" tags="" position="743,2562" size="100,100">* Plays a very short corrupted audio, a voice of someone*
 * Fills the fuel bar *
 
 [[What was that-&gt;Corrupted]]
-[[My fuel bar just went up-&gt;Fuel]]</tw-passagedata><tw-passagedata pid="32" name="No way" tags="" position="946,2254" size="100,100">- No way i&#39;m downloading something sent from a stranger
+[[My fuel bar just went up-&gt;Fuel]]</tw-passagedata><tw-passagedata pid="31" name="No way" tags="" position="946,2254" size="100,100">- No way i&#39;m downloading something sent from a stranger
 
 I&#39;m not a stranger.
 I&#39;m your guide.
 
 [[Whatever, my phone is broken-&gt;Broken]]
-[[I&#39;m gonna ignore that-&gt;Ignore]]</tw-passagedata><tw-passagedata pid="33" name="Broken" tags="" position="871,2404" size="100,100">- Whatever
+[[I&#39;m gonna ignore that-&gt;Ignore]]</tw-passagedata><tw-passagedata pid="32" name="Broken" tags="" position="871,2404" size="100,100">- Whatever
 - My phone is already broken
 
 Ok.
@@ -186,13 +236,13 @@ Just let me know when you got the audio.
 (link:&quot;Np i&#39;m fine&quot;)[- Np
 - I&#39;m fine]
 
-[[*Download the audio*-&gt;Download]] </tw-passagedata><tw-passagedata pid="34" name="Ignore" tags="" position="1021,2404" size="100,100">- I&#39;m just gonna ignore that &quot;guide&quot; thing
+[[*Download the audio*-&gt;Download]] </tw-passagedata><tw-passagedata pid="33" name="Ignore" tags="" position="1021,2404" size="100,100">- I&#39;m just gonna ignore that &quot;guide&quot; thing
 
 Ok.
 We&#39;ll go bak on that.
 Just tell me when you got the audio.
 
-[[*Download the audio*-&gt;Download]] </tw-passagedata><tw-passagedata pid="35" name="Corrupted" tags="" position="667,2713" size="100,100">- What was that???
+[[*Download the audio*-&gt;Download]] </tw-passagedata><tw-passagedata pid="34" name="Corrupted" tags="" position="667,2713" size="100,100">- What was that???
 - It was just noise
 
 That&#39;s Alex.
@@ -200,25 +250,25 @@ You&#39;ll get what it means later.
 Now your fuel bar should be full now.
 
 [[It is-&gt;Let me see]]
-[[Nope-&gt;No fuel]]</tw-passagedata><tw-passagedata pid="36" name="Fuel" tags="" position="818,2712" size="100,100">- My fuel bar
+[[Nope-&gt;No fuel]]</tw-passagedata><tw-passagedata pid="35" name="Fuel" tags="" position="818,2712" size="100,100">- My fuel bar
 - It went up
 
 I know.
 That was Alex.
 
-</tw-passagedata><tw-passagedata pid="37" name="Let me see" tags="" position="592,2863" size="100,100">- It&#39;s full/Ok got it
+</tw-passagedata><tw-passagedata pid="36" name="Let me see" tags="" position="592,2863" size="100,100">- It&#39;s full/Ok got it
 
 Perfect.
 Now let me see your shuttle.
 
-[[*Take a picture*-&gt;Picture]]</tw-passagedata><tw-passagedata pid="38" name="No fuel" tags="" position="742,2863" size="100,100">- Nope
+[[*Take a picture*-&gt;Picture]]</tw-passagedata><tw-passagedata pid="37" name="No fuel" tags="" position="742,2863" size="100,100">- Nope
 - It&#39;s not full
 
 You should add at least some fuel tank then.
 With a couple of them you should be fine.
 &#39;&#39;-Double Fuel tank emoji-&#39;&#39;
 
-[[Ok got it-&gt;Let me see]]</tw-passagedata><tw-passagedata pid="39" name="Picture" tags="" position="671,3024" size="100,100">*Send picture*
+[[Ok got it-&gt;Let me see]]</tw-passagedata><tw-passagedata pid="38" name="Picture" tags="" position="671,3024" size="100,100">*Send picture*
 
 *evaluates requisites*
 * missing propeller: You should have 2 or 3 propulsors
@@ -229,18 +279,26 @@ With a couple of them you should be fine.
 * perfect: It&#39;s perfect.
 * invalid pieces: Some pieces are on top of each other, move them.
 
-[[I&#39;m ready-&gt;Ready]]</tw-passagedata><tw-passagedata pid="40" name="Ready" tags="" position="671,3174" size="100,100">- Ok I think I&#39;m ready
+[[I&#39;m ready-&gt;Ready]]</tw-passagedata><tw-passagedata pid="39" name="Ready" tags="" position="671,3174" size="100,100">- Ok I think I&#39;m ready
 
 Good.
 Now i&#39;m going to call you.
 Pick up.
 
 [[*Pick up*-&gt;Launch]]
-[[*Hang up*-&gt;Delay]]</tw-passagedata><tw-passagedata pid="41" name="Launch" tags="" position="596,3324" size="100,100">*Lauch gameplay*</tw-passagedata><tw-passagedata pid="42" name="Delay" tags="" position="746,3324" size="100,100">- Sorry, not ready yet
+[[*Hang up*-&gt;Delay]]</tw-passagedata><tw-passagedata pid="40" name="Launch" tags="" position="596,3324" size="100,100">*Lauch gameplay*
+
+(link:&quot;Again&quot;)[(reload:)]</tw-passagedata><tw-passagedata pid="41" name="Delay" tags="" position="746,3324" size="100,100">- Sorry, not ready yet
 
 Just tell me when you are.
 
-[[I&#39;m ready-&gt;Ready]]</tw-passagedata></tw-storydata>
+[[I&#39;m ready-&gt;Ready]]</tw-passagedata><tw-passagedata pid="42" name="Header" tags="header" position="455,89" size="100,100">{(text-colour: gray)[(link:&quot;Restart&quot;)[
+(set: $r to false)
+(set: $r to (confirm: &quot;Vuoi davvero ricominciare tutto da capo? Perderai tutti i tuoi progressi e le scelte fatte.&quot;))
+(live:1)[(if: $r is true)[(set:$r to false)(reload:)]]
+]]}
+
+</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
